@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Hugo 0.58.3 with theme Tranquilpeak 0.4.7-BETA">
+<meta name="author" content="Agony的小金库">
+<meta name="keywords" content="tech, C, C&#43;&#43;, PAT">
+<meta name="description" content="">
+
+
+<meta property="og:description" content="">
+<meta property="og:type" content="article">
+<meta property="og:title" content="第一篇博客">
+<meta name="twitter:title" content="第一篇博客">
+<meta property="og:url" content="https://ccplease.github.io/2019/10/%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/">
+<meta property="twitter:url" content="https://ccplease.github.io/2019/10/%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/">
+<meta property="og:site_name" content="agony的梦想屋">
+<meta property="og:description" content="">
+<meta name="twitter:description" content="">
+<meta property="og:locale" content="zh-cn">
+
+  
+    <meta property="article:published_time" content="2019-10-07T15:43:25">
+  
+  
+    <meta property="article:modified_time" content="2019-10-07T15:43:25">
+  
+  
+  
+    
+      <meta property="article:section" content="category">
+    
+      <meta property="article:section" content="subcategory">
+    
+  
+  
+    
+      <meta property="article:tag" content="tag1">
+    
+      <meta property="article:tag" content="tag2">
+    
+  
+
+
+<meta name="twitter:card" content="summary">
+
+
+
+
+
+
+
+
+  <meta property="og:image" content="https://ccplease.github.io/images/1001.png">
+  <meta property="twitter:image" content="https://ccplease.github.io/images/1001.png">
+
+
+
+
+  <meta property="og:image" content="https://ccplease.github.io/images/1.jpg">
+  <meta property="twitter:image" content="https://ccplease.github.io/images/1.jpg">
+
+
+    <title>第一篇博客</title>
+
+    <link rel="icon" href="images/1000.png">
+    
+
+    
+
+    <link rel="canonical" href="https://ccplease.github.io/2019/10/%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/">
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/jquery.fancybox.min.css" integrity="sha256-vuXZ9LGmmwtjqFX1F+EKin1ThZMub58gKULUyf0qECk=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.css" integrity="sha256-SEa4XYAHihTcEP1f5gARTB2K26Uk8PsndQYHQC1f4jU=" crossorigin="anonymous" />
+    
+    
+    <link rel="stylesheet" href="https://ccplease.github.io/css/style-twzjdbqhmnnacqs0pwwdzcdbt8yhv8giawvjqjmyfoqnvazl0dalmnhdkvp7.min.css" />
+    
+    
+
+    
+      
+    
+    
+  </head>
+
+  <body>
+    <div id="blog">
+      <header id="header" data-behavior="5">
+  <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+  <div class="header-title">
+    <a class="header-title-link" href="https://ccplease.github.io/">agony的梦想屋</a>
+  </div>
+  
+    
+      <a class="header-right-picture "
+         href="https://ccplease.github.io/#about">
+    
+    
+    
+      
+        <img class="header-picture" src="https://ccplease.github.io/images/1.jpg" alt="作者的图片" />
+      
+    
+    </a>
+  
+</header>
+
+      <nav id="sidebar" data-behavior="5">
+  <div class="sidebar-container">
+    
+      <div class="sidebar-profile">
+        <a href="https://ccplease.github.io/#about">
+          <img class="sidebar-profile-picture" src="https://ccplease.github.io/images/1.jpg" alt="作者的图片" />
+        </a>
+        <h4 class="sidebar-profile-name">Agony的小金库</h4>
+        
+          <h5 class="sidebar-profile-bio">try to do something you can&rsquo;t do!</h5>
+        
+      </div>
+    
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://ccplease.github.io/">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+      
+      <span class="sidebar-button-desc">首页</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://ccplease.github.io/categories">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
+      
+      <span class="sidebar-button-desc">类别</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://ccplease.github.io/tags">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
+      
+      <span class="sidebar-button-desc">标签</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://ccplease.github.io/archives">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+      
+      <span class="sidebar-button-desc">归档</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://ccplease.github.io/#about">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-question"></i>
+      
+      <span class="sidebar-button-desc">关于</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://github.com/ccplease" target="_blank" rel="noopener">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-github"></i>
+      
+      <span class="sidebar-button-desc">GitHub</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://ccplease.github.io/index.xml">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-rss"></i>
+      
+      <span class="sidebar-button-desc">RSS</span>
+    </a>
+  </li>
+
+
+    </ul>
+  </div>
+  <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=250 height=52 src="//music.163.com/outchain/player?type=2&id=29049251&auto=1&height=32"></iframe>
+</nav>
+
+      
+  <div class="post-header-cover
+              text-center
+              post-header-cover--full"
+       style="background-image:url('/images/1001.png')"
+       data-behavior="5">
+    
+  </div>
+
+
+      <div id="main" data-behavior="5"
+        class="hasCover
+               hasCoverMetaOut
+               hasCoverCaption">
+        <article class="post" itemscope itemType="http://schema.org/BlogPosting">
+          
+            <span class="post-header-cover-caption caption">薰衣草</span>
+          
+          
+            <div class="post-header main-content-wrap text-center">
+  
+    <h1 class="post-title" itemprop="headline">
+      第一篇博客
+    </h1>
+  
+  
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2019-10-07T15:43:25&#43;08:00">
+        
+  
+  
+  
+  
+    7109年100月9号
+  
+
+      </time>
+    
+    
+  
+  
+    <span>发布在</span>
+    
+      <a class="category-link" href="https://ccplease.github.io/categories/category">category</a>, 
+    
+      <a class="category-link" href="https://ccplease.github.io/categories/subcategory">subcategory</a>
+    
+  
+
+  </div>
+
+</div>
+          
+          <div class="post-content markdown" itemprop="articleBody">
+            <div class="main-content-wrap">
+              <ul>
+<li><p>提前概要</p>
+
+<pre><code>这是第一个blog，也是从我开始入坑（创建静态blog）的第五天，我开始发表了第一篇blog，关于markdown的用法
+why？因为这东西耽误了我写blog，本可爱主攻的是后端知识，像C，C++，linux服务器搭建及运维等，前端网页这
+种根本不是的可爱的强项可是，没办法为了拥有自己的blog，只能硬着头皮学，各种模板，各种前端语法，简直天书。
+
+好在有贵人相助，虽然依旧踩了很多坑（真的很多坑，网页打不开，找了半天，没发现哪里有错，结果是自己域名记
+错了，我XX）
+
+但好在构建了一个静态博客的雏形，所以之后我会旷课每天更新blog和新的好玩的东西（欸？我咋把我旷课的事情说
+出来了，嘘~。算了，反正你们不知道我哪个学校，不在乎，嘿嘿），如果你们有什么需求，都可以留言，或者写在
+愿望版（后期会加），我都会看到，然后用我蠢萌蠢萌的头脑
+疯狂学习我不会的，来满足大家的要求，嘿嘿。
+</code></pre></li>
+
+<li><p><a href="#1">关于markdown</a></p>
+
+<ul>
+<li><a href="#1.1">软件介绍</a></li>
+<li><a href="#1.2">语法简介</a></li>
+<li><a href="#1.3">温馨提示</a></li>
+</ul></li>
+
+<li><p><a href="#2">blog</a></p>
+
+<ul>
+<li><a href="#2.1">更新的内容</a>
+
+<ul>
+<li><a href="#2.2">C/C++</a></li>
+<li><a href="#2.3">linux基础</a></li>
+<li><a href="#2.4">linux服务器架设</a></li>
+<li><a href="#2.5">本可爱不会的知识</a></li>
+</ul></li>
+<li><a href="#2.6">agony的小梦想</a></li>
+<li><a href="#2.7">对静态博客排版的建议</a></li>
+</ul></li>
+</ul>
+
+<h2 id=1> 关于 markdown </h2>
+-----------------------------------
+
+<h2 id="1.1"> 软件介绍 </h2>
+    
+
+<pre><code>自行可以下载（360，腾讯软件管家，百度都行），反正是这个图标就行.
+</code></pre>
+
+<p><img src="https://raw.githubusercontent.com/CCplease/map_depot/master/20191009224821.png" alt="" /></p>
+
+<p><br></p>
+
+<ul>
+<li>但是这个会出错，在win8，win10上面会显示html渲染错误</li>
+</ul>
+
+<p><img src="https://raw.githubusercontent.com/CCplease/map_depot/master/20191010131051.png" alt="" /></p>
+
+<ul>
+<li><p>你要高兴可以百度去搜一下解决办法，反正我不用这个，还有一个更好用的东西</p></li>
+
+<li><p>就是一个网页版的<a href="http://mahua.jser.me/" title="主页">markdown</a>，进去就可以看到，直接写就行，很方便！</p>
+
+<pre><code>这里备注一下：markdown网页版是不支持win10自带的中文输入法，但是支持第三方软件（如搜狗）
+</code></pre></li>
+</ul>
+
+<h2 id="h2-id-1-2-语法简介-h2"><h2 id="1.2"> <strong>语法简介</strong> </h2></h2>
+
+<ul>
+<li>因为markdown的语法比较简单，所以推荐大家去看这个<a href="https://www.bilibili.com/video/av68984507/?p=5">markdown语法</a>.</li>
+</ul>
+
+<h2 id="h2-id-1-3-温馨提示-h2"><h2 id="1.3"> <strong>温馨提示</strong> </h2></h2>
+
+<pre><code>    现在写博客大多用markdown去写啦，就比如你们耳熟能详的github再创建的时候会伴随一个readme.md
+    这就是markdown的后缀哟，而且markdown兼容了html的所有语法，使用起来快捷方便，但是一定动手
+    敲哦~~~~~~
+</code></pre>
+
+<h2 id="h2-id-2-blog-h2"><h2 id="2"> blog </h2></h2>
+
+<p><h2 id="2.1"> 更新的内容 </h2>
+<br>
+<h2 id="2.2"> C/C++ </h2></p>
+
+<pre><code>    C/C++是本可爱最开始学的东西，由于本可爱很笨，C学了很久，因为本可爱是电气工程及自动化专业
+    所以编程都是自学（苦死了，呜呜呜~~~），所以可爱乐意为大家解答相关问题。可爱也是摔胳膊断
+    腿过来的，大家可以在这篇博客下面评论，我会一条条看，你们提的问题，我会在下面的推出博客
+    给你解答
+</code></pre>
+
+<p><br></p>
+
+<h2 id="h2-id-2-3-linux基础-h2"><h2 id="2.3"> linux基础 </h2></h2>
+
+<pre><code>    关于linux的话，涉及的内容比较多，我分基础部分和服务器搭建给大家介绍，基础部分我会为大
+    家介绍linux的历史，安装centos发行版本，相关linux命令，文件系统，vim，shell script，
+    selinux，例行性工作，内核启动流程，以及基于linux C的编程`等`（附带可爱自己写的 QQ
+    聊天系统，github上面开源代码有）。
+</code></pre>
+
+<p><br></p>
+
+<p>大家可以去买《鸟哥的私房菜》第四版（注意哦，是第4版）这本书，但是这本书很厚（八百多页，
+啧啧~~），怕大家啃不下来，所以我提炼一下给大家，方便大家学习（可爱断断续续啃了很久呢）。
+因为这本书讲的是centos系统，有很多小伙伴是用ubuntu的，centos和ubuntu在很多地方还是有
+区别的，所以为了方便大家，我也会一起介绍。</p>
+
+<p><br></p>
+
+<h2 id="h2-id-2-4-linux服务器架设-h2"><h2 id="2.4"> linux服务器架设 </h2></h2>
+
+<pre><code>    这一块，可爱给大家介绍网络的基本概念，局域网架构简介，linux中常用的网络命令，网络
+    安全和主机基本维护，相关服务器搭建（例如：dhcp，nfs，nis，ntp，samba，ftp等），
+    这一块可能会有点枯燥，所以大家必须要自己动手操作，高兴的话买个`树莓派`玩玩，那就
+    更好了。
+</code></pre>
+
+<p><br></p>
+
+<p>网络服务器搭建对初学者来说是很有难度的，因为涉及到的知识非常多，如果不动手，只看书学习==没学
+（为啥用两个等号，会编程的都知道哈,嘻嘻~）。所以需要大家认真学习，而且大家如果会了，大家考研
+复试的时候就会让导师刮目相看啦。</p>
+
+<p><br></p>
+
+<h2 id="h2-id-2-5-本可爱不会的知识-h2"><h2 id="2.5"> 本可爱不会的知识 </h2></h2>
+
+<pre><code>    知识千千万，术业有专攻，肯定有不会的嘛。但是可爱现在时间还算富裕，毕竟明年才考研
+    所以可以帮大家解决其他技术的问题，比如汇编，matlab等。这些知识虽然可爱不会，但是
+    我可以通宵学习帮小伙伴们解答疑问，只要你们提出来了，可爱就会疯狂拼命学习并且给你
+    们解答（牺牲可爱的头发，保住你们发际线~~）。
+</code></pre>
+
+<p><br></p>
+
+<h2 id="h2-id-2-6-agony的小梦想-h2"><h2 id="2.6"> agony的小梦想 </h2></h2>
+
+<pre><code>    可爱是电气专业的学生，但是可爱很早就开始自学编程（专业课疯狂旷，保不挂科，嘘~~~）
+    所以可爱一直想跨考去计算机专业，所以可爱一直努力自学相关知识，一路走来，摔得次数
+    也已经数不清了，所以相帮助大家少走点弯路，也帮助自己巩固知识，互帮互助。
+    
+    前面介绍了未来博客会推写的内容，并且大家可以在评论区留言提出自己的问题，但是可能
+    有些小伙伴的问题需要尽快解决（八百里加急那种~~），你们可以加可爱的QQ：649447097
+    直接来问我。BUT，别都来加，可爱顶不住的。
+
+    最后，agony创建自己的静态博客是为了让自己和大家更好的学习，如果有地方写错，或者
+    知识点讲的不全面，大家一定要提出来,一定一定哦。
+</code></pre>
+
+<p><br></p>
+
+<h2 id="h2-id-2-7-对静态博客排版的建议-h2"><h2 id="2.7"> 对静态博客排版的建议 </h2></h2>
+
+<pre><code>    可爱比较花里胡哨，如果大家对博客的排版有好的建议，我都会用代码帮大家实现，比如希
+    望首页音乐多一点（后期会修改），或者添加一些新功能，都可以在评论区告诉可爱，可爱
+    会尽力帮你们实现，打造一个大家相对喜欢，不讨厌的风格的博客
+</code></pre>
+
+<p><br></p>
+              
+            </div>
+          </div>
+          <div id="post-footer" class="post-footer main-content-wrap">
+            
+              
+                
+                
+                  <div class="post-footer-tags">
+                    <span class="text-color-light text-small">标签</span><br/>
+                    
+  <a class="tag tag--primary tag--small" href="https://ccplease.github.io/tags/tag1/">tag1</a>
+
+  <a class="tag tag--primary tag--small" href="https://ccplease.github.io/tags/tag2/">tag2</a>
+
+                  </div>
+                
+              
+            
+            <div class="post-actions-wrap">
+  
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--disabled">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--disabled">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+      
+      
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#disqus_thread">
+            <i class="fa fa-comment-o"></i>
+          </a>
+        </li>
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  
+</div>
+
+            
+              <span id="/2019/10/%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/" class="leancloud_visitors" data-flag-title="第一篇博客">
+                <span class="post-meta-item-text">文章阅读量 </span>
+                <span class="leancloud-visitors-count">1000000</span>
+                <p></p>
+              </span>
+              <div id="vcomments"></div>
+              <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+              <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+              <script type="text/javascript">
+                new Valine({
+                  el: '#vcomments' ,
+                  appId: 'KS9KiLoz8opPRPlsIOwh97nY-MdYXbMMI',
+                  appKey: 'lKP9LsbdWY08ltRrlzF6Rkra',
+                  notify: 'false',
+                  verify: '',
+                  avatar:'mp', 
+                  placeholder: '说啥都行，不许开车，年纪大了，你懂的~',
+                  visitor: 'true'
+                });
+              </script>
+            
+            
+            
+              
+                <div id="disqus_thread">
+  <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+              
+            
+          </div>
+        </article>
+        <footer id="footer" class="main-content-wrap">
+  <span class="copyrights">
+    &copy; 2019 Agony的小金库. All Rights Reserved
+  </span>
+</footer>
+
+      </div>
+      <div id="bottom-bar" class="post-bottom-bar" data-behavior="5">
+        <div class="post-actions-wrap">
+  
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--disabled">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--disabled">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+      
+      
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#disqus_thread">
+            <i class="fa fa-comment-o"></i>
+          </a>
+        </li>
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  
+</div>
+
+      </div>
+      <div id="share-options-bar" class="share-options-bar" data-behavior="5">
+  <i id="btn-close-shareoptions" class="fa fa-close"></i>
+  <ul class="share-options">
+    
+  </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+    </div>
+    
+    <div id="about">
+  <div id="about-card">
+    <div id="about-btn-close">
+      <i class="fa fa-remove"></i>
+    </div>
+    
+      <img id="about-card-picture" src="https://ccplease.github.io/images/1.jpg" alt="作者的图片" />
+    
+    <h4 id="about-card-name">Agony的小金库</h4>
+    
+      <div id="about-card-bio">try to do something you can&rsquo;t do!</div>
+    
+    
+      <div id="about-card-job">
+        <i class="fa fa-briefcase"></i>
+        <br/>
+        学生
+      </div>
+    
+    
+      <div id="about-card-location">
+        <i class="fa fa-map-marker"></i>
+        <br/>
+        武汉
+      </div>
+    
+  </div>
+</div>
+
+    
+
+    
+  
+    
+      <div id="cover" style="background-image:url('https://ccplease.github.io/images/2.jpg');"></div>
+    
+  
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.7/js/jquery.fancybox.min.js" integrity="sha256-GEAnjcTqVP+vBp3SSc8bEDQqvWAZMiHyUSIorrWwH50=" crossorigin="anonymous"></script>
+
+
+<script src="https://ccplease.github.io/js/script-pcw6v3xilnxydl1vddzazdverrnn9ctynvnxgwho987mfyqkuylcb1nlt.min.js"></script>
+
+
+  
+    <script src="https://ccplease.github.io/js/clicklove.js"></script>
+  
+
+<script lang="javascript">
+window.onload = updateMinWidth;
+window.onresize = updateMinWidth;
+document.getElementById("sidebar").addEventListener("transitionend", updateMinWidth);
+function updateMinWidth() {
+  var sidebar = document.getElementById("sidebar");
+  var main = document.getElementById("main");
+  main.style.minWidth = "";
+  var w1 = getComputedStyle(main).getPropertyValue("min-width");
+  var w2 = getComputedStyle(sidebar).getPropertyValue("width");
+  var w3 = getComputedStyle(sidebar).getPropertyValue("left");
+  main.style.minWidth = `calc(${w1} - ${w2} - ${w3})`;
+}
+</script>
+
+<script>
+$(document).ready(function() {
+  hljs.configure({ classPrefix: '', useBR: false });
+  $('pre.code-highlight > code, pre > code').each(function(i, block) {
+    if (!$(this).hasClass('codeblock')) {
+      $(this).addClass('codeblock');
+    }
+    hljs.highlightBlock(block);
+  });
+});
+</script>
+
+
+  
+    
+      <script>
+        var disqus_config = function () {
+          this.page.url = 'https:\/\/ccplease.github.io\/2019\/10\/%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2\/';
+          
+            this.page.identifier = '\/2019\/10\/%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2\/'
+          
+        };
+        (function() {
+          
+          
+          if (window.location.hostname == "localhost") {
+            return;
+          }
+          var d = document, s = d.createElement('script');
+          var disqus_shortname = 'valine';
+          s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+        })();
+      </script>
+    
+  
+
+
+
+
+    
+  </body>
+</html>
+
+
+
