@@ -13,22 +13,7 @@
   </url>
   
   <url>
-    <loc>https://ccplease.github.io/categories/category/</loc>
-    <lastmod>2019-10-24T16:40:17+08:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://ccplease.github.io/post/</loc>
-    <lastmod>2019-10-24T16:40:17+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://ccplease.github.io/categories/subcategory/</loc>
-    <lastmod>2019-10-24T16:40:17+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://ccplease.github.io/tags/tag1/</loc>
     <lastmod>2019-10-24T16:40:17+08:00</lastmod>
   </url>
   
@@ -43,12 +28,37 @@
   </url>
   
   <url>
+    <loc>https://ccplease.github.io/categories/%E6%95%99%E7%A8%8B/</loc>
+    <lastmod>2019-10-24T16:40:17+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://ccplease.github.io/tags/%E7%AE%97%E6%B3%95%E6%8E%92%E5%BA%8F/</loc>
     <lastmod>2019-10-24T16:40:17+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://ccplease.github.io/tags/tag2/</loc>
+    <loc>https://ccplease.github.io/categories/%E7%AE%97%E6%B3%95%E6%8E%92%E5%BA%8F/</loc>
+    <lastmod>2019-10-24T16:40:17+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ccplease.github.io/tags/%E7%BC%96%E7%A8%8B/</loc>
+    <lastmod>2019-10-24T16:40:17+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ccplease.github.io/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/</loc>
+    <lastmod>2019-10-07T15:43:25+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ccplease.github.io/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/</loc>
+    <lastmod>2019-10-07T15:43:25+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ccplease.github.io/tags/%E6%95%99%E7%A8%8B/</loc>
     <lastmod>2019-10-07T15:43:25+08:00</lastmod>
   </url>
   

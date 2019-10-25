@@ -31,14 +31,14 @@
   
   
     
-      <meta property="article:section" content="category">
+      <meta property="article:section" content="教程">
     
-      <meta property="article:section" content="subcategory">
+      <meta property="article:section" content="算法排序">
     
   
   
     
-      <meta property="article:tag" content="tag1">
+      <meta property="article:tag" content="编程">
     
       <meta property="article:tag" content="算法排序">
     
@@ -221,7 +221,17 @@
        style="background-image:url('/images/cover.jpg')"
        data-behavior="5">
     
-      <div class="post-header main-content-wrap text-center">
+  </div>
+
+
+      <div id="main" data-behavior="5"
+        class="hasCover
+               hasCoverMetaOut
+               ">
+        <article class="post" itemscope itemType="http://schema.org/BlogPosting">
+          
+          
+            <div class="post-header main-content-wrap text-center">
   
     <h1 class="post-title" itemprop="headline">
       初识排序
@@ -232,12 +242,7 @@
     
       <time itemprop="datePublished" datetime="2019-10-24T16:40:17&#43;08:00">
         
-  
-  
-  
-  
-    24109年100月9号
-  
+  十月 24, 2019
 
       </time>
     
@@ -246,38 +251,22 @@
   
     <span>发布在</span>
     
-      <a class="category-link" href="https://ccplease.github.io/categories/category">category</a>, 
+      <a class="category-link" href="https://ccplease.github.io/categories/%e6%95%99%e7%a8%8b">教程</a>, 
     
-      <a class="category-link" href="https://ccplease.github.io/categories/subcategory">subcategory</a>
+      <a class="category-link" href="https://ccplease.github.io/categories/%e7%ae%97%e6%b3%95%e6%8e%92%e5%ba%8f">算法排序</a>
     
   
 
   </div>
 
 </div>
-    
-  </div>
-
-
-      <div id="main" data-behavior="5"
-        class="hasCover
-               hasCoverMetaIn
-               hasCoverCaption">
-        <article class="post" itemscope itemType="http://schema.org/BlogPosting">
-          
-            <span class="post-header-cover-caption caption">文章cover图片描述</span>
-          
           
           <div class="post-content markdown" itemprop="articleBody">
             <div class="main-content-wrap">
-              <ul>
-<li><p>前提提要</p>
-
-<pre><code>从今天开始，我将给大家介绍算法中入门的知识--排序--，学过编程的都知道最开始接触
-的有冒泡排序、快速排序、插入排序、希尔排序、归并排序、基数排序以及堆排序等，大
+              <p>从今天开始，我将给大家介绍算法中入门的知识&ndash;排序&ndash;，学过编程的都知道最开始接触
+的有<code>冒泡排序</code>、<code>快速排序</code>、<code>插入排序</code>、<code>希尔排序</code>、<code>归并排序</code>、<code>基数排序</code>以及<code>堆排序</code>等，大
 家刚开始学的时候肯定一脸懵逼（本可爱就是），所以可爱用最简单的方式，让大家学会
-（你这要是学不会，那一首凉凉送给你，可爱都要鄙视你了）。
-</code></pre>
+（你这要是学不会，那一首凉凉送给你，可爱都要鄙视你了）。</p>
 
 <h1 id="table-of-contents">目录</h1><nav id="TableOfContents">
 <ul>
@@ -287,8 +276,7 @@
 </ul></li>
 <li><a href="#总结一下">总结一下</a></li>
 </ul>
-</nav></li>
-</ul>
+</nav>
 
 <h1 id="初识排序">初识排序</h1>
 
@@ -306,8 +294,37 @@
 <li><p>首先创建一个数组
 <img src="https://raw.githubusercontent.com/CCplease/map_depot/master/20191024171509.png" alt="" /></p></li>
 
-<li><p>接下来就是代码
-<img src="https://raw.githubusercontent.com/CCplease/map_depot/master/20191024205916.png" alt="" /></p></li>
+<li><p>接下来就是代码</p>
+
+<pre><code>#include&lt;stdio.h&gt;
+
+int main()
+{
+	int a[11],i,j,l;
+	int num=0;
+	for(i=0;i&lt;=10;i++)	//这个循环就是给我们创建的数组赋个初值，把它都变成0，因为数组的
+		a[i]=0;			//值是用来计数的
+		
+	for(i=1;i&lt;=5;i++)	//这个循环好理解，输入5个你要排序的数，注意哦，这个数不可以
+	{					//大于9，原因看看我画的图你就知道了，数组的下标是分数的大小
+		scanf(&quot;%d&quot;,&amp;l);
+		a[l]++;
+	}
+	
+	for(i=0;i&lt;=10;i++)		//这个循环就是把数组从下标0-9，输出，比如a[1]=2，说明，有两个的分数都是1
+	{						
+		for(j=1;j&lt;=a[i];j++)
+		{	
+			printf(&quot;%d &quot;,i);
+			num++;
+		}
+		num++;
+	}
+	printf(&quot;\n%d\n&quot;,num);	//这个是我用来测量时间复杂度的，下面会看到
+	getchar();		//这个getcahr(),可有可无，如果你是在ide运行这段代码，那加不加无所谓，如果是写在记事本
+	return 0;		//用cmd或者powershell等终端运行，那就必须得加，原因你们懂的
+}
+</code></pre></li>
 </ul>
 
 <h1 id="总结一下">总结一下</h1>
@@ -335,7 +352,7 @@
                   <div class="post-footer-tags">
                     <span class="text-color-light text-small">标签</span><br/>
                     
-  <a class="tag tag--primary tag--small" href="https://ccplease.github.io/tags/tag1/">tag1</a>
+  <a class="tag tag--primary tag--small" href="https://ccplease.github.io/tags/%E7%BC%96%E7%A8%8B/">编程</a>
 
   <a class="tag tag--primary tag--small" href="https://ccplease.github.io/tags/%E7%AE%97%E6%B3%95%E6%8E%92%E5%BA%8F/">算法排序</a>
 
