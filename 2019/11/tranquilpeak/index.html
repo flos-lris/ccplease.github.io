@@ -13,34 +13,34 @@
 
 <meta property="og:description" content="">
 <meta property="og:type" content="article">
-<meta property="og:title" content="初识排序">
-<meta name="twitter:title" content="初识排序">
-<meta property="og:url" content="https://ccplease.github.io/2019/10/%E5%88%9D%E8%AF%86%E6%8E%92%E5%BA%8F/">
-<meta property="twitter:url" content="https://ccplease.github.io/2019/10/%E5%88%9D%E8%AF%86%E6%8E%92%E5%BA%8F/">
+<meta property="og:title" content="Tranquilpeak">
+<meta name="twitter:title" content="Tranquilpeak">
+<meta property="og:url" content="https://ccplease.github.io/2019/11/tranquilpeak/">
+<meta property="twitter:url" content="https://ccplease.github.io/2019/11/tranquilpeak/">
 <meta property="og:site_name" content="agony的梦想屋">
 <meta property="og:description" content="">
 <meta name="twitter:description" content="">
 <meta property="og:locale" content="zh-cn">
 
   
-    <meta property="article:published_time" content="2019-10-24T16:40:17">
+    <meta property="article:published_time" content="2019-11-15T17:53:11">
   
   
-    <meta property="article:modified_time" content="2019-10-24T16:40:17">
+    <meta property="article:modified_time" content="2019-11-15T17:53:11">
   
   
   
     
       <meta property="article:section" content="教程">
     
-      <meta property="article:section" content="算法排序">
+      <meta property="article:section" content="博客教程">
     
   
   
     
-      <meta property="article:tag" content="编程">
+      <meta property="article:tag" content="教程">
     
-      <meta property="article:tag" content="算法排序">
+      <meta property="article:tag" content="博客教程">
     
   
 
@@ -67,14 +67,14 @@
   <meta property="twitter:image" content="https://ccplease.github.io/images/1.jpg">
 
 
-    <title>初识排序</title>
+    <title>Tranquilpeak</title>
 
     <link rel="icon" href="images/1000.png">
     
 
     
 
-    <link rel="canonical" href="https://ccplease.github.io/2019/10/%E5%88%9D%E8%AF%86%E6%8E%92%E5%BA%8F/">
+    <link rel="canonical" href="https://ccplease.github.io/2019/11/tranquilpeak/">
 
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
@@ -227,22 +227,24 @@
       <div id="main" data-behavior="5"
         class="hasCover
                hasCoverMetaOut
-               ">
+               hasCoverCaption">
         <article class="post" itemscope itemType="http://schema.org/BlogPosting">
+          
+            <span class="post-header-cover-caption caption">ooooooo</span>
           
           
             <div class="post-header main-content-wrap text-center">
   
     <h1 class="post-title" itemprop="headline">
-      初识排序
+      Tranquilpeak
     </h1>
   
   
   <div class="postShorten-meta post-meta">
     
-      <time itemprop="datePublished" datetime="2019-10-24T16:40:17&#43;08:00">
+      <time itemprop="datePublished" datetime="2019-11-15T17:53:11&#43;08:00">
         
-  十月 24, 2019
+  十一月 15, 2019
 
       </time>
     
@@ -253,7 +255,7 @@
     
       <a class="category-link" href="https://ccplease.github.io/categories/%e6%95%99%e7%a8%8b">教程</a>, 
     
-      <a class="category-link" href="https://ccplease.github.io/categories/%e7%ae%97%e6%b3%95%e6%8e%92%e5%ba%8f">算法排序</a>
+      <a class="category-link" href="https://ccplease.github.io/categories/%e5%8d%9a%e5%ae%a2%e6%95%99%e7%a8%8b">博客教程</a>
     
   
 
@@ -263,84 +265,204 @@
           
           <div class="post-content markdown" itemprop="articleBody">
             <div class="main-content-wrap">
-              <p>从今天开始，我将给大家介绍算法中入门的知识&ndash;排序&ndash;，学过编程的都知道最开始接触
-的有<code>冒泡排序</code>、<code>快速排序</code>、<code>插入排序</code>、<code>希尔排序</code>、<code>归并排序</code>、<code>基数排序</code>以及<code>堆排序</code>等，大
-家刚开始学的时候肯定一脸懵逼（本可爱就是），所以可爱用最简单的方式，让大家学会
-（你这要是学不会，那一首凉凉送给你，可爱都要鄙视你了）。</p>
+              <p>一个尽可能详细的在windows平台上hugo+github部署个人博客的教程。一方面为了记录自己建立博客时候的过程和遇到的困难，另一方面为了给那些学习建立个人博客的同学提供参考。</p>
+
+<p>　　在参照本教程的时候可以和B站up主CodeSheep的视频搭配食用。</p>
+
+<p>　　链接地址：<a href="https://www.bilibili.com/video/av51574688">手把手教你从0开始搭建自己的个人博客 |第二种姿势 | hugo</a></p>
+
+<pre><code>以上的链接是英文版，如果你有chrome，那你可以翻译成中文看，但是最好中英结合一起学习。
+![](https://raw.githubusercontent.com/CCplease/map_depot/master/20191115183115.png)
+</code></pre>
 
 <h1 id="table-of-contents">目录</h1><nav id="TableOfContents">
 <ul>
-<li><a href="#初识排序">初识排序</a>
+<li><a href="#hugo-个人博客搭建">HUGO 个人博客搭建</a>
 <ul>
-<li><a href="#举个栗子">举个栗子</a></li>
+<li><a href="#前提提要">前提提要</a></li>
+<li><a href="#安装git">安装git</a></li>
+<li><a href="#安装hugo">安装hugo</a></li>
+<li><a href="#安装vscode">安装vscode</a>
+<ul>
+<li><a href="#设置vscode的终端类型">设置vscode的终端类型</a></li>
 </ul></li>
-<li><a href="#总结一下">总结一下</a></li>
+<li><a href="#创建并配置hugo站点">创建并配置hugo站点</a>
+<ul>
+<li><a href="#下载并配置站点主题-以tranquilpeak主题为例">下载并配置站点主题（以tranquilpeak主题为例）</a>
+<ul>
+<li><a href="#下载主题">下载主题</a></li>
+<li><a href="#主题配置">主题配置</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
 </ul>
 </nav>
 
-<h1 id="初识排序">初识排序</h1>
+<h1 id="hugo-个人博客搭建">HUGO 个人博客搭建</h1>
 
-<pre><code>    从本篇开始到以后（我也不知道啥时候，旷课旷的多就结束的早，你懂的~~），我将介绍
-    大家所学过的入门级排序排序，本篇就带领大家进入算法的世界喽，开车，嘟嘟嘟~~~
-</code></pre>
-
-<h2 id="举个栗子">举个栗子</h2>
-
-<pre><code>    主人公可爱班里有5个人，5个人分别考了5分，3分，5分，2分和8分，现在需要给他们的
-    分数排个序，咋搞嘞，这个时候我们可以借助数组来帮忙
-</code></pre>
+<h2 id="前提提要">前提提要</h2>
 
 <ul>
-<li><p>首先创建一个数组
-<img src="https://raw.githubusercontent.com/CCplease/map_depot/master/20191024171509.png" alt="" /></p></li>
+<li><del>首先你要学会计算机网络，算法，服务器搭建等相关知识</del>（he-tui 根本不用，会认字就行）</li>
+<li><a href="https://github.com/">github</a>这个东西是一定要有的，我们的代码全部放在这里，相当于蹭一下github的服务器</li>
+<li><a href="https://leancloud.cn/">LeanCloud</a>账户（评论系统，挺好玩的，可拓展性好）</li>
+<li>markdown是一定要学会的，已经是一个很大众化的工具了，<a href="https://www.bilibili.com/video/av68984507">markdown-教程</a></li>
+<li>如果你想打理好这个博客，html的基本语法也可以了解一下哈，因为markdown本身兼容markdown的语法</li>
+<li>所有的操作最好使用vscode进行(别问why，问就是方便)，强大插件、终端和控制台，让你爱不释手</li>
 
-<li><p>接下来就是代码</p>
+<li><p>最重要的：每个下载的东西最好都放在除C盘以外的盘符且给文件夹取好名字，否则上午下载，下午就忘</p>
 
-<pre><code>#include&lt;stdio.h&gt;
+<h2 id="安装git">安装git</h2>
 
-int main()
-{
-	int a[11],i,j,l;
-	int num=0;
-	for(i=0;i&lt;=10;i++)	//这个循环就是给我们创建的数组赋个初值，把它都变成0，因为数组的
-		a[i]=0;			//值是用来计数的
-		
-	for(i=1;i&lt;=5;i++)	//这个循环好理解，输入5个你要排序的数，注意哦，这个数不可以
-	{					//大于9，原因看看我画的图你就知道了，数组的下标是分数的大小
-		scanf(&quot;%d&quot;,&amp;l);
-		a[l]++;
-	}
-	
-	for(i=0;i&lt;=10;i++)		//这个循环就是把数组从下标0-9，输出，比如a[1]=2，说明，有两个的分数都是1
-	{						
-		for(j=1;j&lt;=a[i];j++)
-		{	
-			printf(&quot;%d &quot;,i);
-			num++;
-		}
-		num++;
-	}
-	printf(&quot;\n%d\n&quot;,num);	//这个是我用来测量时间复杂度的，下面会看到
-	getchar();		//这个getcahr(),可有可无，如果你是在ide运行这段代码，那加不加无所谓，如果是写在记事本
-	return 0;		//用cmd或者powershell等终端运行，那就必须得加，原因你们懂的
-}
+<p>自行安装git版本工具，可爱大发慈悲给个链接吧<a href="https://www.jianshu.com/p/414ccd423efc">git安装教程</a></p>
+
+<h2 id="安装hugo">安装hugo</h2>
+
+<p>　　windows10下安装hugo，可以参照<a href="https://gohugo.io/getting-started/installing/">Hugo官方手册</a>的方法，这里讲一个相对简单稳定的方法。
+以下<code>安装hugo</code>转自<a href="https://saquarius.com/2019/07/hugo-github搭建个人博客windows10/">呆神的博客</a></p></li>
+
+<li><p>下载hugo程序压缩包：前往<a href="https://github.com/gohugoio/hugo/releases">https://github.com/gohugoio/hugo/releases</a>下载和自己系统版本相符合的hugo程序压缩包。<img src="https://raw.githubusercontent.com/SAquarius/PICGO/master/img/hugozip_.png?token=AMKXNPQBISH56FIPYUUI6O25FAYYO" alt="" /></p></li>
+
+<li><p>解压到某个文件夹中（路径不要有中文，而且自己要记得文件夹的路径），最好是不常改动的文件夹下边，以防文件被误删或者丢失。</p></li>
+
+<li><p>添加hugo到系统环境变量PATH中</p>
+
+<ol>
+<li>找到“系统环境变量”的设置位置，在开始菜单的搜索栏搜索环境变量<img src="https://raw.githubusercontent.com/SAquarius/PICGO/master/img/path.png" alt="" /></li>
+<li>添加系统环境变量，依此：点击环境变量，找到系统变量中的path，点击编辑，然后点击新建，在使用浏览按钮选中文件夹，即可使用hugo。（选中到hugo.exe所在的文件夹即可，不需要选中hugo.exe）<img src="https://raw.githubusercontent.com/SAquarius/PICGO/master/img/addpath.png" alt="" /></li>
+</ol></li>
+</ul>
+
+<ol>
+<li><p>接下来，为了万无一失，还是要检查一下hugo是否安装完成。以管理员方式打开cmd命令窗口，然后输入以下指令：</p>
+
+<pre><code>hugo version
+</code></pre></li>
+</ol>
+
+<p>　　如果得到如下响应，（即显示版本信息），说明安装成功，接下来就可以玩转hugo了。
+<img src="https://raw.githubusercontent.com/CCplease/map_depot/master/20191115184528.png" alt="" /></p>
+
+<h2 id="安装vscode">安装vscode</h2>
+
+<pre><code>因为之后的操作我们需要在vscode里面进行，所以我们需要先把vscode安装好，因为要用到`终端`。
+你也可以用git自带的终端gui界面，我是为了方便才使用vscode(是真的方便)。
+</code></pre>
+
+<ol>
+<li><p>去官网下载<a href="https://code.visualstudio.com/">vscode</a>，按照如下步骤，就OK啦
+<img src="https://raw.githubusercontent.com/CCplease/map_depot/master/20191115185629.png" alt="" />
+<img src="https://raw.githubusercontent.com/CCplease/map_depot/master/20191115185740.png" alt="" /></p></li>
+
+<li><p>然后安装好后，打开vscode，按照步骤安装好这些必要插件
+其中图片中3和5可以不装，3是把软件文字变成中文(刚下载的英文)，5是敲代码的模式，24K帅炸，本可爱的招牌插件
+<img src="https://raw.githubusercontent.com/CCplease/map_depot/master/20191115190518.png" alt="" /></p></li>
+
+<li><p>接下来需要调试出终端，控制台等界面。
+<img src="https://raw.githubusercontent.com/CCplease/map_depot/master/20191115190958.png" alt="" />
+<img src="https://raw.githubusercontent.com/CCplease/map_depot/master/20191115190929.png" alt="" />
+最后的结果就是
+<img src="https://raw.githubusercontent.com/CCplease/map_depot/master/20191115191204.png" alt="" /></p></li>
+</ol>
+
+<h3 id="设置vscode的终端类型">设置vscode的终端类型</h3>
+
+<ul>
+<li>最后我们需要设置一下终端的脚本，默认是cmd，但我上面的截图是bash，为什么呢？因为bash是linux大多发行版本的默认脚本语言，可爱比较熟悉，所以就用bash了，可爱不会cmd命令，也懒得学了，嘻嘻，你们要是会也可以用，不做要求。
+<span class="highlight-text red">
+    选做
+    </span>
+
+<br /></li>
+</ul>
+
+<ol>
+<li><p>本文使用的安装git时自带的bash.exe，第一步找到你安装Git的目录，在bin目录下有个bash.exe，复制bash的地址，比如：D:\git\Git\bin\bash.exe
+<img src="https://raw.githubusercontent.com/CCplease/map_depot/master/20191115193531.png" alt="" /></p></li>
+
+<li><p>打开vscode的设置,如下图所示：
+<img src="https://raw.githubusercontent.com/CCplease/map_depot/master/20191115194517.png" alt="" /></p></li>
+
+<li><p>复制bash的地址到settings.json，如下图
+<img src="https://raw.githubusercontent.com/CCplease/map_depot/master/20191115194704.png" alt="" /></p></li>
+
+<li><p>然后重启vscode，就会出现bash了
+<img src="https://raw.githubusercontent.com/CCplease/map_depot/master/20191115194820.png" alt="" /></p></li>
+</ol>
+
+<h2 id="创建并配置hugo站点">创建并配置hugo站点</h2>
+
+<div class="alert warning ">
+  <p><strong>以下的操作均在我们刚才调出的bash终端里面执行</strong></p>
+</div>
+
+<ul>
+<li><p>创建站点命令，选择一个文件夹(一个新的目录，跟之前下载hugo的文件夹最好分开，比如：d:\hugo_file)，在其中存放站点的相关文件，
+<span class="highlight-text red">
+    文件路径不要有中文
+</span></p>
+
+<pre><code>hugo new site d:/hugo_file（这个不固定）
 </code></pre></li>
 </ul>
 
-<h1 id="总结一下">总结一下</h1>
+<h3 id="下载并配置站点主题-以tranquilpeak主题为例">下载并配置站点主题（以tranquilpeak主题为例）</h3>
 
-<pre><code>    这篇文章讲的其实是简化版的桶排序。桶排序从1956年就开始被使用，该算法思想是由`E.J Issac`和
-    `R.C Singleton`提出来的，而且这个简化版的桶排序相当快哦。第7行循环m（m为桶的个数）次，第10
-    行循环了n（n为待排序个数）次，第16，17行循环了m+n次（也就是变量num），所以这个时间复杂度为
-    O（m+n+m+n）=O(2*(m+n)),这里告诉大家，我们说时间复杂度的时候一般忽略较小的常熟，所以桶排序
-    最终复杂度为O（m+n），所以相当快。
+<h4 id="下载主题">下载主题</h4>
 
-    这个虽然有排序功能，但这个并不是实际意义的排序，为啥呢？因为实际生活中，考试分数不可能只有9
-    分一般都是几十几百，那这个时候我们就需要创建a[1-1000]这样大的数组，很明显不合理
-
-    而且实际生活中成绩得跟姓名等信息挂钩，如果这样，这个排序就无法实现，所以我们需要学习新的
-    排序方法，我们的`冒泡排序`就出来了
+<pre><code>以下`下载主题教程`转自[呆神博客](https://saquarius.com/2019/07/hugo-github搭建个人博客windows10/)
 </code></pre>
+
+<p>　　你可以在<a href="https://themes.gohugo.io/">Hugo的主题库</a>中选择你喜欢的主题，这里以tranquilpeak主题作为教程示例。</p>
+
+<p>　　<strong>为了解决使用git clone到本地速度特别慢的问题，我们需要修改一下host</strong>，找到C:\Windows\System32\drivers\etc下的hosts文件，使用vs code打开，并在结尾处添加以下dns映射内容：</p>
+
+<pre><code># Github
+151.101.88.249 github.global.ssl.fastly.net 
+151.101.16.249 github.global.ssl.fastly.net 
+151.101.76.249 github.global.ssl.fastly.net 
+151.101.24.249 github.global.ssl.fastly.net 
+151.101.16.133 assets-cdn.github.com documentcloud.github.com raw.github.com training.github.com
+151.101.100.133 assets-cdn.github.com documentcloud.github.com raw.github.com training.github.com
+151.101.24.133  assets-cdn.github.com documentcloud.github.com raw.github.com training.github.com
+151.101.40.133 assets-cdn.github.com documentcloud.github.com raw.github.com training.github.com
+192.30.253.112 github.com www.github.com
+192.30.253.113  github.com www.github.com
+192.30.253.120  nodeload.github.com
+192.30.253.121  nodeload.github.com
+50.19.102.235   status.github.com
+174.129.238.225   status.github.com
+50.16.250.205   status.github.com
+23.21.89.183   status.github.com
+</code></pre>
+
+<p>在任意的文件目录下使用以下命令重新配置windows IP配置，并刷新DNS缓存：</p>
+
+<pre><code>ipconfig/flushdns
+</code></pre>
+
+<p>　　在根目录下使用CD命令来到themes文件夹下，并且在<a href="https://github.com/kakawait/hugo-tranquilpeak-theme">tranquilpeak主题</a>下很容易找到clone命令如下：</p>
+
+<pre><code>cd themes
+git clone https://github.com/kakawait/hugo-tranquilpeak-theme.git tranquilpeak
+
+#以下为注释说明，可以在clone的整句命令后加上你要clone到的文件夹名字，默认是hugo-tranquilpeak-theme
+#可是默认的文件夹名称实在是太长了，为了方便使用，可以在命令后边加上空格然后指定为一个短点儿的文件夹名字，比如这里的tranquilpeak
+</code></pre>
+
+<p><img src="https://raw.githubusercontent.com/SAquarius/PICGO/master/img/clone.png" alt="" />
+　　一般情况下可以很快完成clone，如果速度还是很慢，可以尝试重新修改hosts，或者采用拉取最近版本，然后再拉去全部版本内容，命令如下：</p>
+
+<pre><code>git clone https://github.com/kakawait/hugo-tranquilpeak-theme.git tranquilpeak --depth 1
+#等待这条命令走完后访问该主题的文件夹
+cd tranquilpeak
+#然后clone全部内容
+git fetch --unshallow
+</code></pre>
+
+<h4 id="主题配置">主题配置</h4>
+
+<p>将根目录\themes\tranquilpeak\exampleSite路径下的config.toml文件复制到根目录下，覆盖掉根目录下的config.toml文件。具体的大家可以看原版，这里我给大家解读一下不太好懂的东西</p>
               
             </div>
           </div>
@@ -352,9 +474,9 @@ int main()
                   <div class="post-footer-tags">
                     <span class="text-color-light text-small">标签</span><br/>
                     
-  <a class="tag tag--primary tag--small" href="https://ccplease.github.io/tags/%E7%BC%96%E7%A8%8B/">编程</a>
+  <a class="tag tag--primary tag--small" href="https://ccplease.github.io/tags/%E6%95%99%E7%A8%8B/">教程</a>
 
-  <a class="tag tag--primary tag--small" href="https://ccplease.github.io/tags/%E7%AE%97%E6%B3%95%E6%8E%92%E5%BA%8F/">算法排序</a>
+  <a class="tag tag--primary tag--small" href="https://ccplease.github.io/tags/%E5%8D%9A%E5%AE%A2%E6%95%99%E7%A8%8B/">博客教程</a>
 
                   </div>
                 
@@ -367,7 +489,7 @@ int main()
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://ccplease.github.io/2019/10/%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/" data-tooltip="第一篇博客">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://ccplease.github.io/2019/10/%E5%88%9D%E8%AF%86%E6%8E%92%E5%BA%8F/" data-tooltip="初识排序">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -375,7 +497,7 @@ int main()
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://ccplease.github.io/2019/11/tranquilpeak/" data-tooltip="Tranquilpeak">
+                <a class="post-action-btn btn btn--disabled">
               
                   <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                   <i class="fa fa-angle-right"></i>
@@ -412,7 +534,7 @@ int main()
 </div>
 
             
-              <span id="/2019/10/%E5%88%9D%E8%AF%86%E6%8E%92%E5%BA%8F/" class="leancloud_visitors" data-flag-title="初识排序">
+              <span id="/2019/11/tranquilpeak/" class="leancloud_visitors" data-flag-title="Tranquilpeak">
                 <span class="post-meta-item-text">文章阅读量 </span>
                 <span class="leancloud-visitors-count">1000000</span>
                 <p></p>
@@ -458,7 +580,7 @@ int main()
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://ccplease.github.io/2019/10/%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/" data-tooltip="第一篇博客">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://ccplease.github.io/2019/10/%E5%88%9D%E8%AF%86%E6%8E%92%E5%BA%8F/" data-tooltip="初识排序">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -466,7 +588,7 @@ int main()
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://ccplease.github.io/2019/11/tranquilpeak/" data-tooltip="Tranquilpeak">
+                <a class="post-action-btn btn btn--disabled">
               
                   <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                   <i class="fa fa-angle-right"></i>
@@ -598,9 +720,9 @@ $(document).ready(function() {
     
       <script>
         var disqus_config = function () {
-          this.page.url = 'https:\/\/ccplease.github.io\/2019\/10\/%E5%88%9D%E8%AF%86%E6%8E%92%E5%BA%8F\/';
+          this.page.url = 'https:\/\/ccplease.github.io\/2019\/11\/tranquilpeak\/';
           
-            this.page.identifier = '\/2019\/10\/%E5%88%9D%E8%AF%86%E6%8E%92%E5%BA%8F\/'
+            this.page.identifier = '\/2019\/11\/tranquilpeak\/'
           
         };
         (function() {
