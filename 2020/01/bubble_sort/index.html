@@ -8,18 +8,18 @@
 <meta name="generator" content="Hugo 0.58.3 with theme Tranquilpeak 0.4.7-BETA">
 <meta name="author" content="Agony的小金库">
 <meta name="keywords" content="tech, C, C&#43;&#43;, PAT">
-<meta name="description" content="#缩略显示的梗概，这里把注释删去，写成文章的简介或者梗概，在首页时候可以只显示梗概">
+<meta name="description" content="">
 
 
-<meta property="og:description" content="#缩略显示的梗概，这里把注释删去，写成文章的简介或者梗概，在首页时候可以只显示梗概">
+<meta property="og:description" content="">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Bubble_sort">
 <meta name="twitter:title" content="Bubble_sort">
 <meta property="og:url" content="https://ccplease.github.io/2020/01/bubble_sort/">
 <meta property="twitter:url" content="https://ccplease.github.io/2020/01/bubble_sort/">
 <meta property="og:site_name" content="agony的梦想屋">
-<meta property="og:description" content="#缩略显示的梗概，这里把注释删去，写成文章的简介或者梗概，在首页时候可以只显示梗概">
-<meta name="twitter:description" content="#缩略显示的梗概，这里把注释删去，写成文章的简介或者梗概，在首页时候可以只显示梗概">
+<meta property="og:description" content="">
+<meta name="twitter:description" content="">
 <meta property="og:locale" content="zh-cn">
 
   
@@ -265,9 +265,91 @@
           
           <div class="post-content markdown" itemprop="articleBody">
             <div class="main-content-wrap">
-              <p>#缩略显示的梗概，这里把注释删去，写成文章的简介或者梗概，在首页时候可以只显示梗概</p>
+              <pre><code>    看过之前的桶排序，相信大家对排序有一个基本的认识啦。那接下来就开始介绍我们的冒泡排序喽。
+从本篇开始才正式带领大家进入排序算法的世界，因为从今天开始讲的各种排序是可以解决生活中的碰到
+的问题的。
+</code></pre>
 
-<h1 id="table-of-contents">目录</h1>
+<h1 id="table-of-contents">目录</h1><nav id="TableOfContents">
+<ul>
+<li><a href="#基本思想">基本思想</a>
+<ul>
+<li><a href="#核心代码">核心代码</a>
+<ul>
+<li><a href="#全部代码">全部代码</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#总结一下">总结一下</a></li>
+</ul>
+</nav>
+
+<h1 id="基本思想">基本思想</h1>
+
+<pre><code>冒泡排序是所有排序算法中最通俗易懂的，基本思想：是每次比较两个相邻的元素，如果他们的顺序错误
+就把他们交换过来。
+</code></pre>
+
+<h2 id="核心代码">核心代码</h2>
+
+<ul>
+<li><p>1、第一步先了解<code>冒泡排序</code>核心算法的大概</p>
+
+<pre><code>冒泡排序的原理是：每一趟只能确定将一个数归位。即第一趟（大循环）只能确定将末位上的数归位，第
+二趟只能将倒数第2位上的数归位，以此类推，跟冒泡泡一样。了解这个之后请看下列代码
+</code></pre>
+
+<p><img src="https://raw.githubusercontent.com/CCplease/map_depot/master/111.png" alt="" /></p></li>
+
+<li><p>2、让我来看一下核心代码的一些细节及注意事项
+<img src="https://raw.githubusercontent.com/CCplease/map_depot/master/20200107181027.png" alt="" /></p></li>
+</ul>
+
+<h3 id="全部代码">全部代码</h3>
+
+<pre><code>#include&lt;iostream&gt;
+using namespace std;
+
+int main()
+{
+	int i = NULL;
+	int arr[] = { 23,94,-23,9,84,8,19,-3,8,4 };
+	for ( i = 0; i &lt; 10; i++)
+	{
+		for (int j = 0; j &lt; (10 - i); j++)
+		{
+			if (arr[j] &lt; arr[j + 1])
+			{
+				int t = NULL;
+				t = arr[j];
+				arr[j] = arr[j + 1];
+				arr[j + 1] = t;
+			}
+		}
+	}
+	
+	cout &lt;&lt; &quot;冒泡的结果为：&quot; &lt;&lt; endl;
+	for (i = 0; i &lt; 10; i++)
+	{
+		cout &lt;&lt; arr[i] &lt;&lt; &quot;\t&quot;;
+	}
+	getchar();
+	return 0;
+}
+</code></pre>
+
+<h1 id="总结一下">总结一下</h1>
+
+<pre><code>基本上大家看到冒泡排序第一反应就是————双重嵌套循环，通过上次的桶排序大家应该很快知道冒泡排序正常
+情况下，时间复杂度是T(N)=O(n^2)，也就是双循环的次数。
+这是一个非常高的时间复杂度，可能很多人没感觉，初学排序的小伙伴对这个n^2没啥感觉，对比之前的桶排序
+好像是快点，但是具体快多少呢，我们可以测试一下冒泡的速度，这里采用库函数去测试，如果会最短路径的小
+伙伴也可以自行测试哟！
+</code></pre>
+
+<p><img src="https://raw.githubusercontent.com/CCplease/map_depot/master/20200107191049.png" alt="" />
+</br>
+* 看到了么，我们生成10000元素的数组，用随机函数生成10000个1000以内的数，只要几百毫秒，可能小伙伴
+还是没什么感觉，这道底为啥说n^2很慢啊，这才几百毫秒么。等到我们讲完下面的排序大家就会恍然大悟，先卖个关子。</p>
               
             </div>
           </div>
