@@ -13,20 +13,20 @@
 
 <meta property="og:description" content="">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Bubble_sort">
-<meta name="twitter:title" content="Bubble_sort">
-<meta property="og:url" content="https://ccplease.github.io/2020/01/bubble_sort/">
-<meta property="twitter:url" content="https://ccplease.github.io/2020/01/bubble_sort/">
+<meta property="og:title" content="快速排序">
+<meta name="twitter:title" content="快速排序">
+<meta property="og:url" content="https://ccplease.github.io/2020/01/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/">
+<meta property="twitter:url" content="https://ccplease.github.io/2020/01/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/">
 <meta property="og:site_name" content="agony的梦想屋">
 <meta property="og:description" content="">
 <meta name="twitter:description" content="">
 <meta property="og:locale" content="zh-cn">
 
   
-    <meta property="article:published_time" content="2020-01-07T16:56:55">
+    <meta property="article:published_time" content="2020-01-11T16:31:30">
   
   
-    <meta property="article:modified_time" content="2020-01-07T16:56:55">
+    <meta property="article:modified_time" content="2020-01-11T16:31:30">
   
   
   
@@ -53,12 +53,12 @@
 
 
 
-  <meta property="og:image" content="https://ccplease.github.io/images/bubble_sort.jpg">
-  <meta property="twitter:image" content="https://ccplease.github.io/images/bubble_sort.jpg">
+  <meta property="og:image" content="https://ccplease.github.io/images/11.jpg">
+  <meta property="twitter:image" content="https://ccplease.github.io/images/11.jpg">
 
 
-  <meta property="og:image" content="https://ccplease.github.io/images/bubble_sort.jpg">
-  <meta property="twitter:image" content="https://ccplease.github.io/images/bubble_sort.jpg">
+  <meta property="og:image" content="https://ccplease.github.io/images/11.jpg">
+  <meta property="twitter:image" content="https://ccplease.github.io/images/11.jpg">
 
 
 
@@ -67,14 +67,14 @@
   <meta property="twitter:image" content="https://ccplease.github.io/images/1.jpg">
 
 
-    <title>Bubble_sort</title>
+    <title>快速排序</title>
 
     <link rel="icon" href="images/1000.png">
     
 
     
 
-    <link rel="canonical" href="https://ccplease.github.io/2020/01/bubble_sort/">
+    <link rel="canonical" href="https://ccplease.github.io/2020/01/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/">
 
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
@@ -218,7 +218,7 @@
   <div class="post-header-cover
               text-center
               post-header-cover--full"
-       style="background-image:url('/images/bubble_sort.jpg')"
+       style="background-image:url('/images/11.jpg')"
        data-behavior="5">
     
   </div>
@@ -230,21 +230,21 @@
                hasCoverCaption">
         <article class="post" itemscope itemType="http://schema.org/BlogPosting">
           
-            <span class="post-header-cover-caption caption">你的名字</span>
+            <span class="post-header-cover-caption caption">文章cover图片描述</span>
           
           
             <div class="post-header main-content-wrap text-center">
   
     <h1 class="post-title" itemprop="headline">
-      Bubble_sort
+      快速排序
     </h1>
   
   
   <div class="postShorten-meta post-meta">
     
-      <time itemprop="datePublished" datetime="2020-01-07T16:56:55&#43;08:00">
+      <time itemprop="datePublished" datetime="2020-01-11T16:31:30&#43;08:00">
         
-  一月 7, 2020
+  一月 11, 2020
 
       </time>
     
@@ -265,57 +265,249 @@
           
           <div class="post-content markdown" itemprop="articleBody">
             <div class="main-content-wrap">
-              <pre><code>    看过之前的桶排序，相信大家对排序有一个基本的认识啦。那接下来就开始介绍我们的冒泡排序喽。
-从本篇开始才正式带领大家进入排序算法的世界，因为从今天开始讲的各种排序是可以解决生活中的碰到
-的问题的。
+              <pre><code>这章我们要介绍一个家喻户晓的排序算法————快速排序（递归和非递归双版本），接着上一期的冒泡排序，我带大家
+体会一下时间复杂度的真实感受。快排是一个不稳定的排序方法，但却是最常用，且相对较快的排序，在中等数据量
+（100~100000）的表现相当不错
 </code></pre>
 
 <h1 id="table-of-contents">目录</h1><nav id="TableOfContents">
 <ul>
 <li><a href="#基本思想">基本思想</a>
 <ul>
-<li><a href="#核心代码">核心代码</a>
+<li><a href="#核心代码-指针交换法-1">核心代码(指针交换法)1</a></li>
+<li><a href="#核心代码-指针交换法-2">核心代码(指针交换法)2</a></li>
+<li><a href="#核心代码-挖坑法">核心代码(挖坑法)</a>
 <ul>
 <li><a href="#全部代码">全部代码</a></li>
 </ul></li>
 </ul></li>
-<li><a href="#总结一下">总结一下</a></li>
+<li><a href="#总结">总结</a></li>
 </ul>
 </nav>
 
 <h1 id="基本思想">基本思想</h1>
 
-<pre><code>冒泡排序是所有排序算法中最通俗易懂的，基本思想：是每次比较两个相邻的元素，如果他们的顺序错误
-就把他们交换过来。
+<pre><code>快速排序大家肯定都听过，可爱在学这个排序的时候老师说是冒泡排序的进化(晕~，当时学完对这句话一脸懵逼，感觉跟
+冒泡没啥关系)。快排的基本思想就是：二分法。把数列分成两半，再递归直到只剩2个数或者1个数。所以总结快排的大致
+方法就是：二分+递归==快排。那么逻辑上是如何的呢？1、确定主元(也叫基准数 or pivot)。2、找出主元后如何分出两
+个独立的子集。请看图(紫色的为主元)
 </code></pre>
 
-<h2 id="核心代码">核心代码</h2>
+<p><img src="https://raw.githubusercontent.com/CCplease/map_depot/master/20200111170317.png" alt="" />
+</br></p>
 
 <ul>
-<li><p>1、第一步先了解<code>冒泡排序</code>核心算法的大概</p>
-
-<pre><code>冒泡排序的原理是：每一趟只能确定将一个数归位。即第一趟（大循环）只能确定将末位上的数归位，第
-二趟只能将倒数第2位上的数归位，以此类推，跟冒泡泡一样。了解这个之后请看下列代码
-</code></pre>
-
-<p><img src="https://raw.githubusercontent.com/CCplease/map_depot/master/111.png" alt="" /></p></li>
-
-<li><p>2、让我来看一下核心代码的一些细节及注意事项
-<img src="https://raw.githubusercontent.com/CCplease/map_depot/master/20200107181027.png" alt="" /></p></li>
+<li>如果以上你都清楚，那么我们继续，如果不清楚请查阅相关资料，否则你可能看不懂代码</li>
 </ul>
+
+<h2 id="核心代码-指针交换法-1">核心代码(指针交换法)1</h2>
+
+<ul>
+<li>那么何谓指针交换，我们来看看<br>
+我们首先选定基准元素Pivot，并且设置两个指针left和right，指向数列的最左和最右两个元素：
+<img src="https://raw.githubusercontent.com/CCplease/map_depot/master/20200112194043.png" alt="" />
+接下来是第一次循环，从right指针开始，把指针所指向的元素和基准元素做比较。如果大于等于Pivot，则指针向左移动；
+如果小于Pivot，则right指针停止移动，切换到left指针。
+在当前数列中，1<4，所以right直接停止移动，换到left指针，进行下一步行动。
+轮到left指针行动，把指针所指向的元素和基准元素做比较。如果小于等于Pivot，则指针向右移动；如果大于Pivot，则
+left指针停止移动。
+由于left一开始指向的是基准元素，判断肯定相等，所以left右移一位。
+![](https://raw.githubusercontent.com/CCplease/map_depot/master/20200112194144.png)
+由于7 > 4，left指针在元素7的位置停下。这时候，我们让left和right指向的元素进行交换。
+<img src="https://raw.githubusercontent.com/CCplease/map_depot/master/20200112194208.png" alt="" />
+接下来，我们进入第二次循环，重新切换到right向左移动。right先移动到8，8&gt;4，继续左移。由于2<4，停止在2的位置。
+切换到left，6>4，停止在6的位置。
+元素6和2交换。
+<img src="https://raw.githubusercontent.com/CCplease/map_depot/master/20200112194244.png" alt="" />
+进入第三次循环，right移动到元素3停止，left移动到元素5停止。
+<img src="https://raw.githubusercontent.com/CCplease/map_depot/master/20200112194313.png" alt="" />
+元素5和3交换。
+进入第四次循环，right移动到元素3停止，这时候请注意，left和right指针已经重合在了一起。
+<img src="https://raw.githubusercontent.com/CCplease/map_depot/master/20200112194326.png" alt="" />
+当left和right指针重合之时，我们让Pivot元素和left与right重合点的元素进行交换。此时数列左边的元素都小于4，数
+列右边的元素都大于4，这一轮交换终告结束。
+<img src="https://raw.githubusercontent.com/CCplease/map_depot/master/20200112194356.png" alt="" />
+大致流程讲完了，看下代码吧
+<img src="https://raw.githubusercontent.com/CCplease/map_depot/master/20200112191722.png" alt="" /></li>
+</ul>
+
+<h2 id="核心代码-指针交换法-2">核心代码(指针交换法)2</h2>
+
+<ul>
+<li><p>这个方法也可以叫指针交换，但是它不同于上面的，这里是用下标进行操作。看图
+<img src="https://raw.githubusercontent.com/CCplease/map_depot/master/20200112193626.png" alt="" />
+看懂了吗，其实一直是有一个空着的元素，但注意，那个空的地方程序在运行时是有值的，图片画空白是为了方便你理解
+<img src="https://raw.githubusercontent.com/CCplease/map_depot/master/20200112193458.png" alt="" /></p>
+
+<h2 id="核心代码-挖坑法">核心代码(挖坑法)</h2></li>
+
+<li><p>其实上面的两种方法你都会了，基本上就可以了，这里呢我在给小伙伴看一下另一种快排，请注意，这个方法慢于上面的方法哦
+<img src="https://raw.githubusercontent.com/CCplease/map_depot/master/20200112194527.png" alt="" /></p>
 
 <h3 id="全部代码">全部代码</h3>
 
 <pre><code>#include&lt;iostream&gt;
+#include&lt;cstdio&gt;
 using namespace std;
 
+int getPartition(int nums[], int low, int height);
+
+void quicksort(int arr[], int left, int right)
+{
+	// 递归结束条件：left大等于right的时候
+	if (left &gt;= right) {
+		return;
+	}
+	// 得到基准元素位置,而且数列已经被分成2部分了
+	int pivotIndex = getPartition(arr, left, right);
+	// 根据基准元素，分成两部分递归排序
+	quicksort(arr, left, pivotIndex - 1);
+	quicksort(arr, pivotIndex + 1, right);
+}
+
+int getPartition(int nums[], int low, int height)
+{
+	int keyVal = nums[low];
+	while (low &lt; height)
+	{
+		while (low &lt; height&amp;&amp;nums[height] &gt;= keyVal)
+			height--;
+		nums[low] = nums[height];
+		while (low &lt; height&amp;&amp;nums[low] &lt;= keyVal)
+			low++;
+		nums[height] = nums[low];
+	}
+	nums[low] = keyVal;
+	return low;
+}
+
+
+void Quick(int arr[], int n)
+{
+	getPartition(arr, 0, n - 1);
+	
+}
 int main()
 {
+	int arr[] = { 3,4,8,38,4,-12,93,74,23,-48 };
+	int i;
+	cout &lt;&lt; &quot;原始数组：&quot; &lt;&lt; endl;
+	for (i = 0; i &lt; 10; i++)
+		cout &lt;&lt; arr[i] &lt;&lt; &quot;\t&quot;;
+
+	Quick(arr, 10);
+	cout &lt;&lt; endl &lt;&lt; &quot;快排后的数组：&quot; &lt;&lt; endl;
+	for (i = 0; i &lt; 10; i++)
+		cout &lt;&lt; arr[i] &lt;&lt; &quot;\t&quot;;
+
+	getchar();
+	return 0;
+}
+</code></pre></li>
+</ul>
+
+<hr />
+
+<h1 id="总结">总结</h1>
+
+<p>以上就是快排所有的代码，让我们来讨论一下快排的注意点。<br></p>
+
+<ul>
+<li><p>关于pivot的选择<br>
+首先，我上面的所有快排主元都是选择数列最左边的元素，这个办法好不好呢？说实话还可以，但是有一种情况就不行了，即数列为有序
+数列，因为每次递归你都得重新遍历。所以很多教材或者网上都会对<code>pivot</code>放在单独得函数先进行处理一下，我例举其中一种(方法有很多)
+<img src="https://raw.githubusercontent.com/CCplease/map_depot/master/20200111231046.png" alt="" />
+但是对于初学者你把最左边的那个数当作主元也还可以(而且挺快的，实测)，毕竟一般有序数列不太出现，影响不太大。而且加了这个主
+元的确定会增加遍历的时间，但是作为学习敲代码很有好处</p></li>
+
+<li><p>最好 &amp; 最坏的情况<br>
+我们都知道任何排序都有最好最坏的情况，就快排而言，它的时间复杂度为：T(N)=O(Nlog·N)。当主元每次都在中间，换言之不用遍历元素，
+每轮循环都在正确的位置为最好情况。但如果让我们对一个数组从大到小排序，但数组顺序正好是从小到大的呢？思考一下，根据快排的原理，
+我们每一轮的排序仅仅只是确定了主元的位置，而却没有分成两个独立的子集，这就很闹心了，这不就变成了冒泡排序了么(我当时想到这里
+才觉得快排是冒泡的进化，晕~，也不知道是不是)。那么这样时间复杂度：T(N)=O(N^2),不懂？将下面的图跟基本原理的图进行比对。
+<img src="https://raw.githubusercontent.com/CCplease/map_depot/master/20200111172745.png" alt="" /></p></li>
+
+<li><p>历史小知识(看着玩的)<br>
+快排是由C.A.R.Hoare(东尼·霍尔，Chrarles Antony Richard Hoare)在1960年提出，并且后续又有许多人对此进行了优化，如果感兴趣
+可以看看《算法导论》第七章或者其他相关书籍，我在这里给大家一个思路，本章所说的快排以及小伙伴平时学的快排大都是只有一个主元，
+其实还可以有两个，三个主元(3个以上的主元就没必要了，速度随着主元的增多开始下降了)，其中两个主元的快排(Dual-pivot)是最快的。
+比三个主元，一个主元都要快，且快排(dual-pivot)的排序速度仅次于基位排序，这是一个相当快的排序算法哦！有兴趣的小伙伴可以尝试。</p></li>
+
+<li><p>排序速度测试(惯例)<br>
+这是一个一般冒泡和单主元比较快的快排的比较，设置100000个小于1000000的随机数，结果显而易见
+<img src="https://raw.githubusercontent.com/CCplease/map_depot/master/20200111234238.png" alt="" /></p></li>
+</ul>
+
+<p>附上代码，有兴趣的小伙伴可以自己尝试去玩一下</p>
+
+<pre><code>#include&lt;iostream&gt;
+#include&lt;cstdio&gt;
+#include&lt;cmath&gt;
+#include&lt;ctime&gt;
+#include&lt;algorithm&gt;
+using namespace std;
+#define N 100000
+
+int partition(int arr[], int low, int high);
+
+
+void quicksort(int arr[], int left, int right)
+{
+	// 递归结束条件：left大等于right的时候
+	if (left &gt;= right) {
+		return;
+	}
+	// 得到基准元素位置,而且数列已经被分成2部分了
+	int pivotIndex = partition(arr, left, right);
+	// 根据基准元素，分成两部分递归排序
+	quicksort(arr, left, pivotIndex - 1);
+	quicksort(arr, pivotIndex + 1, right);
+}
+
+
+int partition(int arr[], int i, int j) {
+	// 取第一个位置的元素作为基准元素
+	int pivot = arr[i];
+	int left = i;
+	int right = j;
+	while (left != right) {
+		//控制right指针比较并左移
+		while (left&lt;right &amp;&amp; arr[right] &gt; pivot) {
+			right--;
+		}
+		//控制right指针比较并右移
+		while (left &lt; right &amp;&amp; arr[left] &lt;= pivot) {
+			left++;
+		}
+		//交换left和right指向的元素
+		if (left &lt; right) 
+		{
+			int p = arr[left];
+			arr[left] = arr[right];
+			arr[right] = p;
+		
+		}
+	}
+	//主元和指针重合点交换，主元不是pivot
+	int p = arr[left];
+	arr[left] = arr[i];
+	arr[i] = p;
+	
+
+	return left;
+}
+
+void Quick(int arr[], int n)
+{
+	quicksort(arr, 0, n - 1);
+}
+
+void bubble(int arr[], int n)
+{
 	int i = NULL;
-	int arr[] = { 23,94,-23,9,84,8,19,-3,8,4 };
-	for ( i = 0; i &lt; 10; i++)
+	for (i = 0; i &lt; N; i++)
 	{
-		for (int j = 0; j &lt; (10 - i); j++)
+		for (int j = 0; j &lt; (N - i); j++)
 		{
 			if (arr[j] &lt; arr[j + 1])
 			{
@@ -326,30 +518,33 @@ int main()
 			}
 		}
 	}
+}
+
+int main()
+{
+	int *p = new int[N];	//	原数组，会变
+	int *cpy = new int[N];	//用来暂时存放的数组，因为设计多个算法
+
+	int i = 0;
+	clock_t begin;
+	srand((unsigned)time(NULL));
+	for (i = 0; i &lt; N; i++)
+		p[i] = rand() % 1000000;
+
+	memcpy(cpy, p, sizeof p);
+	begin = clock();
+
+	Quick(p, N);
+	cout &lt;&lt; &quot;指针交换快排的速度：&quot; &lt;&lt; clock() - begin &lt;&lt; &quot;毫秒&quot; &lt;&lt; endl;
+
+	bubble(cpy, N);
+	cout &lt;&lt; &quot;冒泡排序的速度：&quot; &lt;&lt; clock() - begin &lt;&lt; &quot;毫秒&quot; &lt;&lt; endl;
+
 	
-	cout &lt;&lt; &quot;冒泡的结果为：&quot; &lt;&lt; endl;
-	for (i = 0; i &lt; 10; i++)
-	{
-		cout &lt;&lt; arr[i] &lt;&lt; &quot;\t&quot;;
-	}
 	getchar();
 	return 0;
 }
 </code></pre>
-
-<h1 id="总结一下">总结一下</h1>
-
-<pre><code>基本上大家看到冒泡排序第一反应就是————双重嵌套循环，通过上次的桶排序大家应该很快知道冒泡排序正常
-情况下，时间复杂度是T(N)=O(n^2)，也就是双循环的次数。
-这是一个非常高的时间复杂度，可能很多人没感觉，初学排序的小伙伴对这个n^2没啥感觉，对比之前的桶排序
-好像是快点，但是具体快多少呢，我们可以测试一下冒泡的速度，这里采用库函数去测试，如果会最短路径的小
-伙伴也可以自行测试哟！
-</code></pre>
-
-<p><img src="https://raw.githubusercontent.com/CCplease/map_depot/master/20200107191049.png" alt="" />
-</br>
-* 看到了么，我们生成10000元素的数组，用随机函数生成10000个1000以内的数，只要几百毫秒，可能小伙伴
-还是没什么感觉，这道底为啥说n^2很慢啊，这才几百毫秒么。等到我们讲完下面的排序大家就会恍然大悟，先卖个关子。</p>
               
             </div>
           </div>
@@ -376,7 +571,7 @@ int main()
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://ccplease.github.io/2019/11/tranquilpeak/" data-tooltip="Tranquilpeak">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://ccplease.github.io/2020/01/bubble_sort/" data-tooltip="Bubble_sort">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -384,7 +579,7 @@ int main()
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://ccplease.github.io/2020/01/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/" data-tooltip="快速排序">
+                <a class="post-action-btn btn btn--disabled">
               
                   <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                   <i class="fa fa-angle-right"></i>
@@ -421,7 +616,7 @@ int main()
 </div>
 
             
-              <span id="/2020/01/bubble_sort/" class="leancloud_visitors" data-flag-title="Bubble_sort">
+              <span id="/2020/01/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/" class="leancloud_visitors" data-flag-title="快速排序">
                 <span class="post-meta-item-text">文章阅读量 </span>
                 <span class="leancloud-visitors-count">1000000</span>
                 <p></p>
@@ -467,7 +662,7 @@ int main()
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://ccplease.github.io/2019/11/tranquilpeak/" data-tooltip="Tranquilpeak">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://ccplease.github.io/2020/01/bubble_sort/" data-tooltip="Bubble_sort">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -475,7 +670,7 @@ int main()
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://ccplease.github.io/2020/01/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/" data-tooltip="快速排序">
+                <a class="post-action-btn btn btn--disabled">
               
                   <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                   <i class="fa fa-angle-right"></i>
@@ -611,9 +806,9 @@ $(document).ready(function() {
     
       <script>
         var disqus_config = function () {
-          this.page.url = 'https:\/\/ccplease.github.io\/2020\/01\/bubble_sort\/';
+          this.page.url = 'https:\/\/ccplease.github.io\/2020\/01\/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F\/';
           
-            this.page.identifier = '\/2020\/01\/bubble_sort\/'
+            this.page.identifier = '\/2020\/01\/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F\/'
           
         };
         (function() {
