@@ -307,13 +307,13 @@
 我们首先选定基准元素Pivot，并且设置两个指针left和right，指向数列的最左和最右两个元素：
 <img src="https://raw.githubusercontent.com/CCplease/map_depot/master/20200112194043.png" alt="" />
 接下来是第一次循环，从right指针开始，把指针所指向的元素和基准元素做比较。如果大于等于Pivot，则指针向左移动；
-如果小于Pivot，则right指针停止移动，切换到left指针。
-在当前数列中，1<4，所以right直接停止移动，换到left指针，进行下一步行动。
+如果小于Pivot，则right指针停止移动，切换到left指针。<br>
+在当前数列中，1<4，所以right直接停止移动，换到left指针，进行下一步行动。<br>
 轮到left指针行动，把指针所指向的元素和基准元素做比较。如果小于等于Pivot，则指针向右移动；如果大于Pivot，则
-left指针停止移动。
-由于left一开始指向的是基准元素，判断肯定相等，所以left右移一位。
-![](https://raw.githubusercontent.com/CCplease/map_depot/master/20200112194144.png)
-由于7 > 4，left指针在元素7的位置停下。这时候，我们让left和right指向的元素进行交换。
+left指针停止移动。<br>
+由于left一开始指向的是基准元素，判断肯定相等，所以left右移一位。<br>
+<img src="https://raw.githubusercontent.com/CCplease/map_depot/master/20200112194144.png" alt="" />
+由于7 &gt; 4，left指针在元素7的位置停下。这时候，我们让left和right指向的元素进行交换。
 <img src="https://raw.githubusercontent.com/CCplease/map_depot/master/20200112194208.png" alt="" />
 接下来，我们进入第二次循环，重新切换到right向左移动。right先移动到8，8&gt;4，继续左移。由于2<4，停止在2的位置。
 切换到left，6>4，停止在6的位置。
