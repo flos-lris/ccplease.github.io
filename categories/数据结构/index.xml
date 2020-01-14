@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>数据结构 on agony的梦想屋</title>
+    <link>https://ccplease.github.io/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</link>
+    <description>Recent content in 数据结构 on agony的梦想屋</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 14 Jan 2020 19:39:33 +0800</lastBuildDate>
+    
+	<atom:link href="https://ccplease.github.io/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>线性表-单链表</title>
+      <link>https://ccplease.github.io/2020/01/%E7%BA%BF%E6%80%A7%E8%A1%A8-%E5%8D%95%E9%93%BE%E8%A1%A8/</link>
+      <pubDate>Tue, 14 Jan 2020 19:39:33 +0800</pubDate>
+      
+      <guid>https://ccplease.github.io/2020/01/%E7%BA%BF%E6%80%A7%E8%A1%A8-%E5%8D%95%E9%93%BE%E8%A1%A8/</guid>
+      <description>&lt;p&gt;#缩略显示的梗概，这里把注释删去，写成文章的简介或者梗概，在首页时候可以只显示梗概&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
