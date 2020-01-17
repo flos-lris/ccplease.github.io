@@ -293,7 +293,9 @@ C++的语法忘得差不多了，正在疯狂补ing)，所以小伙伴语法对C
 
 <h1 id="前提提要">前提提要</h1>
 
-<p>数据结构有很多，在前面已经介绍过了，本章开始给大家介绍线性表的一些知识，闲话不多说，上干货，go~。</p>
+<p>恕可爱直言，可爱以为这个教程应该很快，单链表嘛多简单，结果写了真的很久，细节错误一大堆，程序在其他软件都
+可以运行，唯独vs不行，用过vs的都知道vs的内存管理机制很严格(就是太牛逼了，做的太好了)，导致我的程序无法运
+行，卡了很久，在下面我会告诉大家哪里卡住了，也希望大家注意</p>
 
 <h1 id="线性表">线性表</h1>
 
@@ -326,7 +328,12 @@ C++的语法忘得差不多了，正在疯狂补ing)，所以小伙伴语法对C
 
 <p>这里是精华，首先交代一下，我把添加节点和插入节点写在一起了，讲道理应该写个函数，因为编程遵循“低内聚，高耦合”，
 但是我发现这样也挺方便
-<img src="https://raw.githubusercontent.com/CCplease/map_depot/master/20200114235859.png" alt="" /></p>
+<img src="https://raw.githubusercontent.com/CCplease/map_depot/master/20200114235859.png" alt="" />
+牛逼的小伙伴应该发现了我有个地方写的不严谨，请看图
+<img src="https://raw.githubusercontent.com/CCplease/map_depot/master/20200115130354.png" alt="" />
+就是这个地方，卡了我整整一个晚上，既然发现了我也给大家科普一下vs的严格内存管理机制(这个时候就体现vs与其他编译器的差距了)
+以后不要再错了喽！
+<img src="https://raw.githubusercontent.com/CCplease/map_depot/master/20200115131137.png" alt="" /></p>
 
 <h3 id="遍历链表">遍历链表</h3>
 
