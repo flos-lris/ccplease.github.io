@@ -8,18 +8,18 @@
 <meta name="generator" content="Hugo 0.58.3 with theme Tranquilpeak 0.4.7-BETA">
 <meta name="author" content="Agony的小金库">
 <meta name="keywords" content="tech, C, C&#43;&#43;, PAT">
-<meta name="description" content="#缩略显示的梗概，这里把注释删去，写成文章的简介或者梗概，在首页时候可以只显示梗概">
+<meta name="description" content="">
 
 
-<meta property="og:description" content="#缩略显示的梗概，这里把注释删去，写成文章的简介或者梗概，在首页时候可以只显示梗概">
+<meta property="og:description" content="">
 <meta property="og:type" content="article">
 <meta property="og:title" content="线性表-单链表">
 <meta name="twitter:title" content="线性表-单链表">
 <meta property="og:url" content="https://ccplease.github.io/2020/01/%E7%BA%BF%E6%80%A7%E8%A1%A8-%E5%8D%95%E9%93%BE%E8%A1%A8/">
 <meta property="twitter:url" content="https://ccplease.github.io/2020/01/%E7%BA%BF%E6%80%A7%E8%A1%A8-%E5%8D%95%E9%93%BE%E8%A1%A8/">
 <meta property="og:site_name" content="agony的梦想屋">
-<meta property="og:description" content="#缩略显示的梗概，这里把注释删去，写成文章的简介或者梗概，在首页时候可以只显示梗概">
-<meta name="twitter:description" content="#缩略显示的梗概，这里把注释删去，写成文章的简介或者梗概，在首页时候可以只显示梗概">
+<meta property="og:description" content="">
+<meta name="twitter:description" content="">
 <meta property="og:locale" content="zh-cn">
 
   
@@ -263,9 +263,7 @@
           
           <div class="post-content markdown" itemprop="articleBody">
             <div class="main-content-wrap">
-              <p>#缩略显示的梗概，这里把注释删去，写成文章的简介或者梗概，在首页时候可以只显示梗概</p>
-
-<pre><code>从这章开始可爱将给大家介绍数据结构的相关内容，包括线性表、堆栈、队列、树、图。数据结构不同于排序，从难度，
+              <pre><code>从这章开始可爱将给大家介绍数据结构的相关内容，包括线性表、堆栈、队列、树、图。数据结构不同于排序，从难度，
 代码复杂度都要高于排序算法，最重要的，仅靠我所介绍的远远不够，必须得自己动手写X3(说三遍得意思)，因为写着
 写着你就发现有很多细节的问题会影响你理解数据结构。其次，整个数据结构系列我都采用C语言去写(因为可爱已经把
 C++的语法忘得差不多了，正在疯狂补ing)，所以小伙伴语法对C的语法稍微熟悉一点，否则看代码都会很吃力。
@@ -293,68 +291,68 @@ C++的语法忘得差不多了，正在疯狂补ing)，所以小伙伴语法对C
 
 <h1 id="前提提要">前提提要</h1>
 
-<p>恕可爱直言，可爱以为这个教程应该很快，单链表嘛多简单，结果写了真的很久，细节错误一大堆，程序在其他软件都
+<p>　　恕可爱直言，可爱以为这个教程应该很快，单链表嘛多简单，结果写了真的很久，细节错误一大堆，程序在其他软件都
 可以运行，唯独vs不行，用过vs的都知道vs的内存管理机制很严格(就是太牛逼了，做的太好了)，导致我的程序无法运
 行，卡了很久，在下面我会告诉大家哪里卡住了，也希望大家注意</p>
 
 <h1 id="线性表">线性表</h1>
 
-<p>关于线性表的概念，我用mooc数据结构课程老师讲的来解释
+<p>　　关于线性表的概念，我用mooc数据结构课程老师讲的来解释
 <img src="https://raw.githubusercontent.com/CCplease/map_depot/master/20200114200820.png" alt="" /><br>
-那么线性表的存储结构可以分为<code>顺序存储</code>和<code>链式存储</code>，本章我们只讲链式存储，为什么不讲顺序存储呢，因为顺序
+　　那么线性表的存储结构可以分为<code>顺序存储</code>和<code>链式存储</code>，本章我们只讲链式存储，为什么不讲顺序存储呢，因为顺序
 存储时间复杂度和空间复杂度有点高，并且顺序存储能够做的事可以被链式代替，所以链式有典型性哦~</p>
 
 <h2 id="线性表-单链表">线性表-单链表</h2>
 
-<p>单链表，由很多很多存储空间，是通过线连在一起的表。在编程中，单链表又是通过节点+指针，将这些存储空间连接在
+<p>　　单链表，由很多很多存储空间，是通过线连在一起的表。在编程中，单链表又是通过节点+指针，将这些存储空间连接在
 一起，可以方便的进行操作。
 <img src="https://raw.githubusercontent.com/CCplease/map_depot/master/20200114202108.png" alt="" /></p>
 
 <h3 id="初始化链表">初始化链表</h3>
 
-<p>首先，既然是链表，那么节点的结构体和链表的结构体是不可少的
+<p>　　首先，既然是链表，那么节点的结构体和链表的结构体是不可少的
 <img src="https://raw.githubusercontent.com/CCplease/map_depot/master/20200114233728.png" alt="" /><br>
-然后我们要初始化链表，可能会有人有疑惑，啥是初始化呀，请看图
+　　然后我们要初始化链表，可能会有人有疑惑，啥是初始化呀，请看图
 <img src="https://raw.githubusercontent.com/CCplease/map_depot/master/20200114234222.png" alt="" />
-红色框框就是初始化，因为是动态空间，所以得在堆区先来一个最原始得链表，及只有一个头节点得链表
+　　红色框框就是初始化，因为是动态空间，所以得在堆区先来一个最原始得链表，及只有一个头节点得链表
 <img src="https://raw.githubusercontent.com/CCplease/map_depot/master/20200114234455.png" alt="" /></p>
 
 <h3 id="获取链表长度">获取链表长度</h3>
 
-<p>这里可能又有小伙伴看不懂了，按照正常逻辑，初始完链表应该添加节点才对，但是可爱在这里做了点改动，请往下看
+<p>　　这里可能又有小伙伴看不懂了，按照正常逻辑，初始完链表应该添加节点才对，但是可爱在这里做了点改动，请往下看
 <img src="https://raw.githubusercontent.com/CCplease/map_depot/master/20200114235140.png" alt="" /></p>
 
 <h3 id="插入节点">插入节点</h3>
 
-<p>这里是精华，首先交代一下，我把添加节点和插入节点写在一起了，讲道理应该写个函数，因为编程遵循“低内聚，高耦合”，
+<p>　　这里是精华，首先交代一下，我把添加节点和插入节点写在一起了，讲道理应该写个函数，因为编程遵循“低内聚，高耦合”，
 但是我发现这样也挺方便
 <img src="https://raw.githubusercontent.com/CCplease/map_depot/master/20200114235859.png" alt="" />
-牛逼的小伙伴应该发现了我有个地方写的不严谨，请看图
+　　牛逼的小伙伴应该发现了我有个地方写的不严谨，请看图
 <img src="https://raw.githubusercontent.com/CCplease/map_depot/master/20200115130354.png" alt="" />
-就是这个地方，卡了我整整一个晚上，既然发现了我也给大家科普一下vs的严格内存管理机制(这个时候就体现vs与其他编译器的差距了)
+　　就是这个地方，卡了我整整一个晚上，既然发现了我也给大家科普一下vs的严格内存管理机制(这个时候就体现vs与其他编译器的差距了)
 以后不要再错了喽！
 <img src="https://raw.githubusercontent.com/CCplease/map_depot/master/20200115131137.png" alt="" /></p>
 
 <h3 id="遍历链表">遍历链表</h3>
 
-<p>遍历没什么好说的，要注意的是，遍历函数中可以直接输出元素，到这一步，你可以检验一下你的程序是否正确，因为可以看到具体的东西了
+<p>　　遍历没什么好说的，要注意的是，遍历函数中可以直接输出元素，到这一步，你可以检验一下你的程序是否正确，因为可以看到具体的东西了
 <img src="https://raw.githubusercontent.com/CCplease/map_depot/master/20200115000100.png" alt="" /></p>
 
 <h3 id="查找节点">查找节点</h3>
 
-<p>这也没啥好说的，需要提醒大家，查找节点可以按值来查找，也可以按节点位置查找，我这里提供的位置查找，感兴趣你可以写一下另一种
+<p>　　这也没啥好说的，需要提醒大家，查找节点可以按值来查找，也可以按节点位置查找，我这里提供的位置查找，感兴趣你可以写一下另一种
 <img src="https://raw.githubusercontent.com/CCplease/map_depot/master/20200115000218.png" alt="" /></p>
 
 <h3 id="删除节点及销毁链表">删除节点及销毁链表</h3>
 
-<p>这个就很重要的，首先是删除节点，也有位置删除和值删除
+<p>　　这个就很重要的，首先是删除节点，也有位置删除和值删除
 <img src="https://raw.githubusercontent.com/CCplease/map_depot/master/20200115000438.png" alt="" /><br>
 <img src="https://raw.githubusercontent.com/CCplease/map_depot/master/20200115000455.png" alt="" /></p>
 
-<p>重点来了，销毁链表的顺序很重要，首先我们有两个要销毁，一个是节点结构，一个是链表结构，这个首先要明确，不能不知道销毁啥
+<p>　　重点来了，销毁链表的顺序很重要，首先我们有两个要销毁，一个是节点结构，一个是链表结构，这个首先要明确，不能不知道销毁啥
 其次，先销毁谁也很重要，请看图
 <img src="https://raw.githubusercontent.com/CCplease/map_depot/master/20200115000856.png" alt="" />
-再结合我的代码理解
+　　再结合我的代码理解
 <img src="https://raw.githubusercontent.com/CCplease/map_depot/master/20200115001400.png" alt="" /></p>
 
 <h3 id="全部代码">全部代码</h3>
@@ -544,7 +542,7 @@ int main()
 
 <h1 id="总结">总结</h1>
 
-<p>链表这种数据结构，恕我直言写一次就够了，写完保存，要用的时候拿出来就好，没必要写那么多，以后的队列，堆栈都是如此
+<p>　　链表这种数据结构，恕我直言写一次就够了，写完保存，要用的时候拿出来就好，没必要写那么多，以后的队列，堆栈都是如此
 ，没必要都写一遍，只要懂里面的逻辑就行，最重要的是熟悉语法及其实现原理以及能够解决哪些方面的问题</p>
               
             </div>
@@ -750,9 +748,7 @@ int main()
 
     
   
-    
-      <div id="cover" style="background-image:url('https://ccplease.github.io/images/2.jpg');"></div>
-    
+    <div id="cover" style="background-image:url('https://api.sunweihu.com/api/bing1/api.php');"></div>
   
 
 
@@ -772,7 +768,7 @@ int main()
   
 
   
-    <script src="https://ccplease.github.io/js/snow.js"></script>
+    <script src="https://ccplease.github.io/js/sakura.js"></script>
   
 
 <script lang="javascript">
