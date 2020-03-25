@@ -6,10 +6,28 @@
     <description>Recent content in Categories on agony的梦想屋</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 17 Mar 2020 20:25:55 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 24 Mar 2020 20:59:27 +0800</lastBuildDate>
     
 	<atom:link href="https://ccplease.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>PAT</title>
+      <link>https://ccplease.github.io/categories/pat/</link>
+      <pubDate>Tue, 24 Mar 2020 20:59:27 +0800</pubDate>
+      
+      <guid>https://ccplease.github.io/categories/pat/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>PAT-A</title>
+      <link>https://ccplease.github.io/categories/pat-a/</link>
+      <pubDate>Tue, 24 Mar 2020 20:59:27 +0800</pubDate>
+      
+      <guid>https://ccplease.github.io/categories/pat-a/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>教程</title>

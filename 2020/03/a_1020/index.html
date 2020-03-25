@@ -8,39 +8,39 @@
 <meta name="generator" content="Hugo 0.58.3 with theme Tranquilpeak 0.4.7-BETA">
 <meta name="author" content="Agony的小金库">
 <meta name="keywords" content="tech, C, C&#43;&#43;, PAT">
-<meta name="description" content="#缩略显示的梗概，这里把注释删去，写成文章的简介或者梗概，在首页时候可以只显示梗概">
+<meta name="description" content="">
 
 
-<meta property="og:description" content="#缩略显示的梗概，这里把注释删去，写成文章的简介或者梗概，在首页时候可以只显示梗概">
+<meta property="og:description" content="">
 <meta property="og:type" content="article">
-<meta property="og:title" content="二叉树终体验-哈夫曼树">
-<meta name="twitter:title" content="二叉树终体验-哈夫曼树">
-<meta property="og:url" content="https://ccplease.github.io/2020/03/%E4%BA%8C%E5%8F%89%E6%A0%91%E7%BB%88%E4%BD%93%E9%AA%8C-%E5%93%88%E5%A4%AB%E6%9B%BC%E6%A0%91/">
-<meta property="twitter:url" content="https://ccplease.github.io/2020/03/%E4%BA%8C%E5%8F%89%E6%A0%91%E7%BB%88%E4%BD%93%E9%AA%8C-%E5%93%88%E5%A4%AB%E6%9B%BC%E6%A0%91/">
+<meta property="og:title" content="A_1020">
+<meta name="twitter:title" content="A_1020">
+<meta property="og:url" content="https://ccplease.github.io/2020/03/a_1020/">
+<meta property="twitter:url" content="https://ccplease.github.io/2020/03/a_1020/">
 <meta property="og:site_name" content="agony的梦想屋">
-<meta property="og:description" content="#缩略显示的梗概，这里把注释删去，写成文章的简介或者梗概，在首页时候可以只显示梗概">
-<meta name="twitter:description" content="#缩略显示的梗概，这里把注释删去，写成文章的简介或者梗概，在首页时候可以只显示梗概">
+<meta property="og:description" content="">
+<meta name="twitter:description" content="">
 <meta property="og:locale" content="zh-cn">
 
   
-    <meta property="article:published_time" content="2020-03-17T20:25:55">
+    <meta property="article:published_time" content="2020-03-24T20:59:27">
   
   
-    <meta property="article:modified_time" content="2020-03-17T20:25:55">
+    <meta property="article:modified_time" content="2020-03-24T20:59:27">
   
-  
-  
-    
-      <meta property="article:section" content="教程">
-    
-      <meta property="article:section" content="数据结构">
-    
   
   
     
-      <meta property="article:tag" content="教程">
+      <meta property="article:section" content="PAT">
     
-      <meta property="article:tag" content="数据结构">
+      <meta property="article:section" content="PAT-A">
+    
+  
+  
+    
+      <meta property="article:tag" content="PAT">
+    
+      <meta property="article:tag" content="PAT题目">
     
   
 
@@ -67,14 +67,14 @@
   <meta property="twitter:image" content="https://ccplease.github.io/images/1.jpg">
 
 
-    <title>二叉树终体验-哈夫曼树</title>
+    <title>A_1020</title>
 
     <link rel="icon" href="images/1000.png">
     
 
     
 
-    <link rel="canonical" href="https://ccplease.github.io/2020/03/%E4%BA%8C%E5%8F%89%E6%A0%91%E7%BB%88%E4%BD%93%E9%AA%8C-%E5%93%88%E5%A4%AB%E6%9B%BC%E6%A0%91/">
+    <link rel="canonical" href="https://ccplease.github.io/2020/03/a_1020/">
 
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
@@ -236,15 +236,15 @@
             <div class="post-header main-content-wrap text-center">
   
     <h1 class="post-title" itemprop="headline">
-      二叉树终体验-哈夫曼树
+      A_1020
     </h1>
   
   
   <div class="postShorten-meta post-meta">
     
-      <time itemprop="datePublished" datetime="2020-03-17T20:25:55&#43;08:00">
+      <time itemprop="datePublished" datetime="2020-03-24T20:59:27&#43;08:00">
         
-  三月 17, 2020
+  三月 24, 2020
 
       </time>
     
@@ -253,9 +253,9 @@
   
     <span>发布在</span>
     
-      <a class="category-link" href="https://ccplease.github.io/categories/%e6%95%99%e7%a8%8b">教程</a>, 
+      <a class="category-link" href="https://ccplease.github.io/categories/pat">PAT</a>, 
     
-      <a class="category-link" href="https://ccplease.github.io/categories/%e6%95%b0%e6%8d%ae%e7%bb%93%e6%9e%84">数据结构</a>
+      <a class="category-link" href="https://ccplease.github.io/categories/pat-a">PAT-A</a>
     
   
 
@@ -265,9 +265,96 @@
           
           <div class="post-content markdown" itemprop="articleBody">
             <div class="main-content-wrap">
-              <p>#缩略显示的梗概，这里把注释删去，写成文章的简介或者梗概，在首页时候可以只显示梗概</p>
+              <h1 id="table-of-contents">目录</h1>
 
-<h1 id="table-of-contents">目录</h1>
+<pre><code>#include&lt;iostream&gt;
+#include&lt;cstdlib&gt;
+#include&lt;cstdio&gt;
+#include&lt;vector&gt;
+#include&lt;queue&gt;
+#include&lt;sstream&gt;
+#include&lt;algorithm&gt;
+using namespace std;
+
+typedef struct Node
+{
+	int data;
+	Node *lchild, *rchild;
+}NODE;
+
+vector&lt;int&gt; post_v, in_v;
+NODE* createorder( int postL, int postR, int inL, int inR)
+{
+	if (postL &gt; postR)
+		return NULL;
+	NODE *root = new NODE;
+	root-&gt;data = post_v[postR];
+
+	int k;
+	for (k = inL; k &lt; inR; k++)
+	{
+		if (root-&gt;data == in_v[k])
+		{
+			break;
+		}
+	}
+	int numleft = k - inL;
+	root-&gt;lchild = createorder(postL,postL + numleft - 1, inL,k-1);
+	root-&gt;rchild = createorder(postL + numleft, postR - 1, k + 1, inR);
+
+	return root;
+}
+
+int num = 0;
+void LayerOrder(NODE* root)
+{
+	queue&lt;NODE*&gt; q;
+	q.push(root);
+	while (!q.empty())
+	{
+		NODE *now = q.front();
+		q.pop();
+		if (num == 0)	printf(&quot;%d&quot;, now-&gt;data);
+		else
+			printf(&quot; %d&quot;, now-&gt;data);
+		num++;
+		if (now-&gt;lchild != NULL) q.push(now-&gt;lchild);
+		if (now-&gt;rchild != NULL) q.push(now-&gt;rchild);
+	}
+}
+
+int main()
+{
+#ifdef ONLINE_JUDGE
+#else
+	freopen(&quot;1.txt&quot;, &quot;r&quot;, stdin);
+#endif
+
+	int n,tmp;
+	cin &gt;&gt; n;
+
+	for (int i = 0; i &lt; n; i++)
+	{
+		cin &gt;&gt; tmp;
+		post_v.push_back(tmp);
+	}
+
+	for (int i = 0; i &lt; n; i++)
+	{
+		cin &gt;&gt; tmp;
+		in_v.push_back(tmp);
+	}
+
+	NODE *root = createorder(0, n - 1, 0, n - 1);
+	LayerOrder(root);
+
+	system(&quot;pause&quot;);
+	return 0;
+}
+
+
+
+</code></pre>
               
             </div>
           </div>
@@ -279,9 +366,9 @@
                   <div class="post-footer-tags">
                     <span class="text-color-light text-small">标签</span><br/>
                     
-  <a class="tag tag--primary tag--small" href="https://ccplease.github.io/tags/%E6%95%99%E7%A8%8B/">教程</a>
+  <a class="tag tag--primary tag--small" href="https://ccplease.github.io/tags/pat/">PAT</a>
 
-  <a class="tag tag--primary tag--small" href="https://ccplease.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a>
+  <a class="tag tag--primary tag--small" href="https://ccplease.github.io/tags/pat%E9%A2%98%E7%9B%AE/">PAT题目</a>
 
                   </div>
                 
@@ -294,7 +381,7 @@
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://ccplease.github.io/2020/03/%E6%A0%91%E7%9A%84%E5%86%8D%E4%BD%93%E9%AA%8C-%E4%BA%8C%E5%8F%89%E5%B9%B3%E8%A1%A1%E6%A0%91avl/" data-tooltip="树的再体验-二叉平衡树(AVL）">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://ccplease.github.io/2020/03/a_1053/" data-tooltip="A_1053">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -302,7 +389,7 @@
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://ccplease.github.io/2020/03/a_1034/" data-tooltip="A_1034">
+                <a class="post-action-btn btn btn--disabled">
               
                   <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                   <i class="fa fa-angle-right"></i>
@@ -339,7 +426,7 @@
 </div>
 
             
-              <span id="/2020/03/%E4%BA%8C%E5%8F%89%E6%A0%91%E7%BB%88%E4%BD%93%E9%AA%8C-%E5%93%88%E5%A4%AB%E6%9B%BC%E6%A0%91/" class="leancloud_visitors" data-flag-title="二叉树终体验-哈夫曼树">
+              <span id="/2020/03/a_1020/" class="leancloud_visitors" data-flag-title="A_1020">
                 <span class="post-meta-item-text">文章阅读量 </span>
                 <span class="leancloud-visitors-count">1000000</span>
                 <p></p>
@@ -385,7 +472,7 @@
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://ccplease.github.io/2020/03/%E6%A0%91%E7%9A%84%E5%86%8D%E4%BD%93%E9%AA%8C-%E4%BA%8C%E5%8F%89%E5%B9%B3%E8%A1%A1%E6%A0%91avl/" data-tooltip="树的再体验-二叉平衡树(AVL）">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://ccplease.github.io/2020/03/a_1053/" data-tooltip="A_1053">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -393,7 +480,7 @@
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://ccplease.github.io/2020/03/a_1034/" data-tooltip="A_1034">
+                <a class="post-action-btn btn btn--disabled">
               
                   <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                   <i class="fa fa-angle-right"></i>
@@ -527,9 +614,9 @@ $(document).ready(function() {
     
       <script>
         var disqus_config = function () {
-          this.page.url = 'https:\/\/ccplease.github.io\/2020\/03\/%E4%BA%8C%E5%8F%89%E6%A0%91%E7%BB%88%E4%BD%93%E9%AA%8C-%E5%93%88%E5%A4%AB%E6%9B%BC%E6%A0%91\/';
+          this.page.url = 'https:\/\/ccplease.github.io\/2020\/03\/a_1020\/';
           
-            this.page.identifier = '\/2020\/03\/%E4%BA%8C%E5%8F%89%E6%A0%91%E7%BB%88%E4%BD%93%E9%AA%8C-%E5%93%88%E5%A4%AB%E6%9B%BC%E6%A0%91\/'
+            this.page.identifier = '\/2020\/03\/a_1020\/'
           
         };
         (function() {
