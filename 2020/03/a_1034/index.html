@@ -53,12 +53,12 @@
 
 
 
-  <meta property="og:image" content="https://ccplease.github.io/images/cover.jpg">
-  <meta property="twitter:image" content="https://ccplease.github.io/images/cover.jpg">
+  <meta property="og:image" content="https://ccplease.github.io/images/4.jpg">
+  <meta property="twitter:image" content="https://ccplease.github.io/images/4.jpg">
 
 
-  <meta property="og:image" content="https://ccplease.github.io/images/cover.jpg">
-  <meta property="twitter:image" content="https://ccplease.github.io/images/cover.jpg">
+  <meta property="og:image" content="https://ccplease.github.io/images/4.jpg">
+  <meta property="twitter:image" content="https://ccplease.github.io/images/4.jpg">
 
 
 
@@ -218,7 +218,7 @@
   <div class="post-header-cover
               text-center
               post-header-cover--full"
-       style="background-image:url('/images/cover.jpg')"
+       style="background-image:url('/images/4.jpg')"
        data-behavior="5">
     
   </div>
@@ -266,6 +266,134 @@
           <div class="post-content markdown" itemprop="articleBody">
             <div class="main-content-wrap">
               <h1 id="table-of-contents">目录</h1>
+
+<pre><code>#include&lt;iostream&gt;
+#include&lt;cstdlib&gt;
+#include&lt;cstdio&gt;
+#include&lt;vector&gt;
+#include&lt;map&gt;
+#include&lt;sstream&gt;
+#include&lt;algorithm&gt;
+#pragma warning(disable:4996)
+using namespace std;
+
+//这个题拿到手，看完题基本上敲定用图这种数据结构，看完输入的case，那么你可能还会还想到并查集
+//1、首先第一个问题-存储，这里我们选择用数组存，不用表，表太麻烦，主要是我还不会，二维数组矩阵存储
+//2、存储的时候要注意，你们，因为这是一个无向图，再加上我们用散列配合map，导致一个通话记录会被存储两边，反应到图上就是边权*2，所以在遍历
+//的时候，记得把他删除，就是说只用一次边权，防止回溯
+//3、那么图的遍历一般就两种dfs和bfs，那么根据题目，你会发现，这其实是由多个连通块组成的，说白了，先判断选出每一个连通块，在DFS
+
+constexpr auto maxn = 2001;
+
+int n, k;
+int num_person = 0;
+int G[maxn][maxn] = { 0 }, weight[maxn] = { 0 };
+map&lt;string, int&gt; string_to_int;
+map&lt;int, string&gt; int_to_string;
+map&lt;string, int&gt; m;
+bool vis[maxn] = { false };
+
+int change(string &amp;s);
+void DFSTrave();
+void DFS(int visit, int &amp;head, int &amp;numMember, int &amp;total_value);
+
+int main()
+{
+#ifdef ONLINE_JUDGE                
+#else    
+	freopen(&quot;1.txt&quot;, &quot;r&quot;, stdin);
+#endif 
+
+	cin &gt;&gt; n &gt;&gt; k;
+	
+	//开始存储,先要散列一下,因为数组下标是int
+	string s1, s2;
+	int time;
+	for (int i = 0; i &lt; n; i++)
+	{
+		cin &gt;&gt; s1 &gt;&gt; s2 &gt;&gt; time;
+
+		int id1 = change(s1);
+		int id2 = change(s2);
+
+		//为什么要放两次呢
+		G[id1][id2] += time;
+		G[id2][id1] += time;
+		
+		//这是点权，矩阵的是边权
+		weight[id1] += time;
+		weight[id2] += time;
+	}
+
+	DFSTrave();
+
+	cout &lt;&lt; m.size() &lt;&lt; endl;
+	if (m.size() != 0)
+	{
+		for (map&lt;string, int&gt;::iterator it = m.begin(); it != m.end(); it++)
+		{
+			cout &lt;&lt; it-&gt;first &lt;&lt; &quot; &quot; &lt;&lt; it-&gt;second &lt;&lt; endl;
+		}
+	}
+	system(&quot;pause&quot;);
+	return 0;
+}
+
+int change(string &amp;s)
+{
+	if (string_to_int.find(s) != string_to_int.end())
+	{
+		return string_to_int[s];
+	}
+	else
+	{
+		string_to_int[s] = num_person;
+		int_to_string[num_person] = s;
+		return num_person++;
+	}
+}
+
+void DFSTrave()
+{
+	for (int i = 0; i &lt; num_person; i++)
+	{
+		//先判断一下，这个人是否被访问过,0号(AAA)先开始
+		if (vis[i] == false)
+		{
+			int head = i, numMember = 0, total_value = 0;
+			DFS(i, head,numMember, total_value);
+
+			//到这里，说明dfs执行了一个单连通块，根据题意，我们要判断一下他符不符合输出条件
+			if (numMember &gt; 2 &amp;&amp; total_value &gt; k)
+				m[int_to_string[head]] = numMember;	
+		}
+	}
+}
+
+void DFS(int visit, int &amp;head, int &amp;numMember,int &amp;total_value)
+{
+	//把自己算进去
+	numMember++;
+
+	//表示这个节点我已经遍历过了，刚进来是AAA，也就是0
+	vis[visit] = true;
+
+	if (weight[visit] &gt; weight[head])
+		head = visit;
+
+	//这个地方开始判断一个单连通块
+	for (int i = 0; i &lt; num_person; i++)
+	{
+		if (G[visit][i] &gt; 0)
+		{
+			total_value += G[visit][i];
+			G[visit][i] = G[i][visit] = 0;
+			if (vis[i] == false)
+				DFS(i, head, numMember, total_value);
+		}
+	}
+}
+</code></pre>
               
             </div>
           </div>
