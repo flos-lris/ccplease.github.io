@@ -8,18 +8,18 @@
 <meta name="generator" content="Hugo 0.58.3 with theme Tranquilpeak 0.4.7-BETA">
 <meta name="author" content="Agony的小金库">
 <meta name="keywords" content="tech, C, C&#43;&#43;, PAT">
-<meta name="description" content="#缩略显示的梗概，这里把注释删去，写成文章的简介或者梗概，在首页时候可以只显示梗概">
+<meta name="description" content="">
 
 
-<meta property="og:description" content="#缩略显示的梗概，这里把注释删去，写成文章的简介或者梗概，在首页时候可以只显示梗概">
+<meta property="og:description" content="">
 <meta property="og:type" content="article">
 <meta property="og:title" content="A_1003">
 <meta name="twitter:title" content="A_1003">
 <meta property="og:url" content="https://ccplease.github.io/2020/03/a_1003/">
 <meta property="twitter:url" content="https://ccplease.github.io/2020/03/a_1003/">
 <meta property="og:site_name" content="agony的梦想屋">
-<meta property="og:description" content="#缩略显示的梗概，这里把注释删去，写成文章的简介或者梗概，在首页时候可以只显示梗概">
-<meta name="twitter:description" content="#缩略显示的梗概，这里把注释删去，写成文章的简介或者梗概，在首页时候可以只显示梗概">
+<meta property="og:description" content="">
+<meta name="twitter:description" content="">
 <meta property="og:locale" content="zh-cn">
 
   
@@ -69,7 +69,7 @@
 
     <title>A_1003</title>
 
-    <link rel="icon" href="images/1000.png">
+    <link rel="icon" href="images/111.png">
     
 
     
@@ -193,6 +193,16 @@
     </a>
   </li>
 
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="http://v2u5yz.coding-pages.com/" target="_blank" rel="noopener">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-gratipay"></i>
+      
+      <span class="sidebar-button-desc">My love</span>
+    </a>
+  </li>
+
 
     </ul>
     <ul class="sidebar-buttons">
@@ -265,9 +275,125 @@
           
           <div class="post-content markdown" itemprop="articleBody">
             <div class="main-content-wrap">
-              <p>#缩略显示的梗概，这里把注释删去，写成文章的简介或者梗概，在首页时候可以只显示梗概</p>
+              <h1 id="table-of-contents">目录</h1>
 
-<h1 id="table-of-contents">目录</h1>
+<pre><code>#include&lt;iostream&gt;
+#include&lt;cstdlib&gt;
+#include&lt;cstdio&gt;
+#include&lt;vector&gt;
+#include&lt;queue&gt;
+#include&lt;sstream&gt;
+#include&lt;algorithm&gt;
+#pragma warning(disable:4996)
+using namespace std;
+
+constexpr auto MAXN = 501;
+constexpr auto INF = 1000000000;
+
+int G[MAXN][MAXN], weight[MAXN],d[MAXN],w[MAXN],num[MAXN];
+int n,line,origin,destin;
+void Dijkstra(int origin);
+bool vis[MAXN] = { false };
+
+int main()
+{
+#ifdef ONLINE_JUDGE                
+#else    
+	freopen(&quot;1.txt&quot;, &quot;r&quot;, stdin);
+#endif 
+
+	cin &gt;&gt; n &gt;&gt; line &gt;&gt; origin &gt;&gt; destin;
+
+	for (int i = 0; i &lt; n; i++)
+	{
+		cin &gt;&gt; weight[i];
+	}
+
+	fill(G[0], G[0] + MAXN * MAXN, INF);
+	int a1, a2, a3;
+	for (int i = 0; i &lt; line; i++)
+	{
+		cin &gt;&gt; a1 &gt;&gt; a2 &gt;&gt; a3;
+		G[a1][a2] = G[a2][a1] = a3;
+	}
+
+	//这样，一个无向图就好了，那为啥一定要无向图，不可以是有向图呢
+	Dijkstra(origin);
+
+	cout &lt;&lt; num[destin] &lt;&lt; &quot; &quot; &lt;&lt; w[destin];
+
+	system(&quot;pause&quot;);
+	return 0;
+}
+
+void Dijkstra(int origin)
+{
+	//记录一下最短的距离，来个数组d
+	fill(d, d + MAXN, INF);
+	//然后我们再初始化一下最大点权之和，因为因为要求输出救援小组数目之和
+	//再初始化最短路径的条数，同样是题目要求
+	memset(w, 0, sizeof(w));
+	memset(num, 0, sizeof(num));
+
+	d[origin] = 0;
+	w[origin] = weight[origin];
+	//这个1我说下，因为不管怎么样，顶点0-顶点2，有且至少有一条路，所以不肯能是0条
+	num[origin] = 1;
+
+	for (int i = 0; i &lt; n; i++)
+	{
+		int u = -1, MIN = INF;
+		for (int j = 0; j &lt; n; j++)
+		{
+			//这个时候需要一个vis，来判断节点有没有被访问过
+			if (vis[j] == false &amp;&amp; d[j] &lt; MIN)
+			{
+				u = j;
+				MIN = d[j];
+			}
+		}
+
+        //这个不解释了吧，就是说没找到相应的u，什么情况会执行return呢，就是全都遍历完了，所有节点都遍历完了，算是退出条件
+		if (u == -1)	return;
+
+		//程序能到这里，说明找到了一个节点是我们没访问过的，并且路径(d数组)是最小的,(路径好好理解一下，是从起点到节点的最短路径,也就是边权相加最小值)
+		//这个时候解释一下u这个变量的作用，u表示我们当前的中介点的下标，也表示当前我们正在处理这个节点
+		//这个标记的深层含义要理解，不仅仅是标记访问过，这表示这个点我哦们处理完了，也就是d[u]更新过了，以后我们再去用这个点可以直接用
+		vis[u] = true;
+
+		//u找到了，那么开始开放从u出发的边
+		for (int v = 0; v &lt; n; v++)
+		{
+			//什么叫开放u出发的边呢，首先，之前访问过的，不会访问，因为已经处理过了(就是d数组更新过了），所以肯定之后的边
+			//举个例子，当u=1，那么就有1-&gt;0 and 1-&gt;2这两条边，1-&gt;0肯定不处理，因为d[0]更新过了，所以要处理1-&gt;2，所以这个循环
+			//只有当v=2的时候，才是会往下面走的，其余直接跳过
+			if (vis[v] == false &amp;&amp; G[u][v] != INF)
+			{
+				//程序到这，我们接着u=1来解释，到这里，除了数组d要更新，题目要求要求点权和路径个数(也就是数组 w 和 num)
+				//程序能走到这里，说明1-&gt;2这条边存在，也就是说2这个节点，从起点开始走，起码有一条路是通往2的，所以num[2]=0变为num[2]=1；
+				//所以不管是if还是else if都是要处理num的，得让节点2的路径条数更新，同理w也是
+				if (d[u] + G[u][v] &lt; d[v])
+				{
+					d[v] = d[u] + G[u][v];
+					w[v] = w[u] + weight[v];
+					num[v] = num[u];
+				}
+				else if (d[u] + G[u][v] == d[v])
+				{
+					if (w[u] + weight[v] &gt; w[v])
+						w[v] = w[u] + weight[v];
+					num[v] += num[u];
+				}
+				//那这里num[v]=num[u] and num[v]+=num[u];为什么这两个不一样呢.首先你要知道什么情况会进到if,什么时候会进到else if
+				//进到if里面的，肯定是num[v]=0的情况，也就是第一次找到可以从起点到v节点的路径，那么如果到else if里面说明num[v]&gt;=1
+				//也就是说，之前已经找了通路，现在又有一条通路,所以直接+就行。
+
+                //思考一下，为啥没有d[u]+G[u][v]&gt;d[v]的情况，如果这个你懂了，那你就真的懂了，略略略~
+			}
+		}
+	}
+}
+</code></pre>
               
             </div>
           </div>
