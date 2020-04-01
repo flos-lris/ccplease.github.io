@@ -18,27 +18,27 @@
   </url>
   
   <url>
-    <loc>https://ccplease.github.io/categories/category/</loc>
+    <loc>https://ccplease.github.io/tags/pat/</loc>
+    <lastmod>2020-04-01T13:18:29+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ccplease.github.io/categories/pat/</loc>
+    <lastmod>2020-04-01T13:18:29+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ccplease.github.io/categories/pat-a/</loc>
+    <lastmod>2020-04-01T13:18:29+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ccplease.github.io/tags/pat%E9%A2%98%E7%9B%AE/</loc>
     <lastmod>2020-04-01T13:18:29+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://ccplease.github.io/post/</loc>
-    <lastmod>2020-04-01T13:18:29+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://ccplease.github.io/categories/subcategory/</loc>
-    <lastmod>2020-04-01T13:18:29+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://ccplease.github.io/tags/tag1/</loc>
-    <lastmod>2020-04-01T13:18:29+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://ccplease.github.io/tags/tag2/</loc>
     <lastmod>2020-04-01T13:18:29+08:00</lastmod>
   </url>
   
@@ -50,6 +50,26 @@
   <url>
     <loc>https://ccplease.github.io/2020/03/a_1003/</loc>
     <lastmod>2020-03-29T13:02:48+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ccplease.github.io/categories/category/</loc>
+    <lastmod>2020-03-29T13:01:55+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ccplease.github.io/categories/subcategory/</loc>
+    <lastmod>2020-03-29T13:01:55+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ccplease.github.io/tags/tag1/</loc>
+    <lastmod>2020-03-29T13:01:55+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ccplease.github.io/tags/tag2/</loc>
+    <lastmod>2020-03-29T13:01:55+08:00</lastmod>
   </url>
   
   <url>
@@ -73,32 +93,12 @@
   </url>
   
   <url>
-    <loc>https://ccplease.github.io/2020/03/1076/</loc>
+    <loc>https://ccplease.github.io/2020/03/a-1076/</loc>
     <lastmod>2020-03-27T19:39:21+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://ccplease.github.io/2020/03/a_1020/</loc>
-    <lastmod>2020-03-24T20:59:27+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://ccplease.github.io/tags/pat/</loc>
-    <lastmod>2020-03-24T20:59:27+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://ccplease.github.io/categories/pat/</loc>
-    <lastmod>2020-03-24T20:59:27+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://ccplease.github.io/categories/pat-a/</loc>
-    <lastmod>2020-03-24T20:59:27+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://ccplease.github.io/tags/pat%E9%A2%98%E7%9B%AE/</loc>
     <lastmod>2020-03-24T20:59:27+08:00</lastmod>
   </url>
   
@@ -118,12 +118,12 @@
   </url>
   
   <url>
-    <loc>https://ccplease.github.io/categories/%E6%95%99%E7%A8%8B/</loc>
+    <loc>https://ccplease.github.io/tags/%E6%95%99%E7%A8%8B/</loc>
     <lastmod>2020-03-17T20:25:55+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://ccplease.github.io/tags/%E6%95%99%E7%A8%8B/</loc>
+    <loc>https://ccplease.github.io/categories/%E6%95%99%E7%A8%8B/</loc>
     <lastmod>2020-03-17T20:25:55+08:00</lastmod>
   </url>
   
@@ -208,12 +208,12 @@
   </url>
   
   <url>
-    <loc>https://ccplease.github.io/categories/%E5%8D%9A%E5%AE%A2%E6%95%99%E7%A8%8B/</loc>
+    <loc>https://ccplease.github.io/tags/%E5%8D%9A%E5%AE%A2%E6%95%99%E7%A8%8B/</loc>
     <lastmod>2019-11-15T17:53:11+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://ccplease.github.io/tags/%E5%8D%9A%E5%AE%A2%E6%95%99%E7%A8%8B/</loc>
+    <loc>https://ccplease.github.io/categories/%E5%8D%9A%E5%AE%A2%E6%95%99%E7%A8%8B/</loc>
     <lastmod>2019-11-15T17:53:11+08:00</lastmod>
   </url>
   
