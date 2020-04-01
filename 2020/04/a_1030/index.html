@@ -281,11 +281,165 @@
               <p>词汇总结：
 A traveler&rsquo;s map gives the distances between cities along the highways, together with the cost of each highway.
 together with &ndash;以及，连同
-<h1 id="table-of-contents">目录</h1></p>
+<h1 id="table-of-contents">目录</h1><nav id="TableOfContents">
+<ul>
+<li><a href="#样例输入">样例输入</a></li>
+<li><a href="#notes">Notes</a></li>
+</ul>
+</nav></p>
 
-<p>我先强调一点，取变量名不能偷懒，不能偷懒，不能偷懒，否则编译会报出很多一脸懵逼并且百度都找不到的错误，你信我，真的(都是血和泪)，因为当我刷这题的时候因为偷懒不好好取名字，导致我崩溃，幸好有贵人相助，所以请善待变量名称，谢谢！</p>
+<p>我先强调一点，取变量名不能偷懒，不能偷懒，不能偷懒，否则编译会报出很多一脸懵逼并且百度都找不到的错误，你信我，真的(都是血和泪)，因为当我刷这题的时候因为偷懒不好好取名字，导致我崩溃，幸好有贵人相助，所以请善待变量名称，谢谢！
+<img src="https://gitee.com/agonyus/agonyus_pic/raw/master/20200401200546.png" alt="" /></p>
 
-<pre><code>
+<h1 id="样例输入">样例输入</h1>
+
+<p>Input:</p>
+
+<pre><code>4 5 0 3
+0 1 1 20
+1 3 2 30
+0 3 4 10
+0 2 2 20
+2 3 1 20
+</code></pre>
+
+<p>Output:</p>
+
+<pre><code>0 2 3 3 40
+</code></pre>
+
+<h1 id="notes">Notes</h1>
+
+<pre><code>#include&lt;iostream&gt;
+#include&lt;cstdio&gt;
+#include&lt;vector&gt;
+#include&lt;cstring&gt;
+#include&lt;sstream&gt;
+#include&lt;algorithm&gt;
+#pragma warning(disable:4996)
+using namespace std;
+
+constexpr auto MAXN = 510;
+constexpr auto INF = 1000000000;
+
+int n, m, s, d;
+int G[MAXN][MAXN] , cost[MAXN][MAXN];
+
+int D[MAXN];
+bool vis[MAXN] = { false };
+void Dijktra(int origin);
+vector&lt;int&gt; pre[MAXN];
+void DFS(int dest);
+int mincost=INF, answ;
+vector&lt;int&gt; tempPath, path;
+
+
+int main()
+{
+#ifdef ONLINE_JUDGE                
+#else    
+	freopen(&quot;1.txt&quot;, &quot;r&quot;, stdin);
+#endif 
+
+	cin &gt;&gt; n &gt;&gt; m &gt;&gt; s &gt;&gt; d;
+
+	fill(G[0], G[0] + MAXN * MAXN, INF);
+	fill(cost[0], cost[0] + MAXN * MAXN, INF);
+
+	int a1, a2, a3, a4;
+	for (int i = 0; i &lt; m; i++)
+	{
+		cin &gt;&gt; a1 &gt;&gt; a2 &gt;&gt; a3 &gt;&gt; a4;
+		G[a1][a2] = G[a2][a1] = a3;
+		cost[a1][a2] = cost[a2][a1] = a4;
+	}
+
+	Dijktra(s);
+
+	DFS(d);
+	
+
+	//这个地方注意下，按照道理，vector.size()，应该用size_t类型，但是这里有-1，所以用int，注意下就行
+	for (int i = path.size() - 1; i &gt;= 0; i--)
+	{
+		cout &lt;&lt; path[i] &lt;&lt; &quot; &quot;;
+	}
+
+	cout &lt;&lt; D[d] &lt;&lt; &quot; &quot; &lt;&lt; mincost;
+	system(&quot;pause&quot;);
+	return 0;
+}
+
+void Dijktra(int orig)
+{
+	fill(D, D + MAXN, INF);
+
+	D[orig] = 0;
+	for (int i = 0; i &lt; n; i++)
+	{
+		int u = -1, MIN = INF;
+		for (int j = 0; j &lt; n; j++)
+		{
+			if (vis[j] == false &amp;&amp; D[j] &lt; MIN)
+			{
+				u = j;
+				MIN = D[j];
+			}
+		}
+
+		if (u == -1) return;
+
+		//老样子，找到了节点，准备开放路线;
+		vis[u] = true;
+		for (int v = 0; v &lt; n; v++)
+		{
+			if (vis[v] == false &amp;&amp; G[u][v] != INF)
+			{
+				if (D[u] + G[u][v] &lt; D[v])
+				{
+					D[v] = D[u] + G[u][v];
+					pre[v].clear();
+					pre[v].push_back(u);
+				}
+				else if (D[u] + G[u][v] == D[v])
+					pre[v].push_back(u);
+			}
+		}
+	}
+}
+
+void DFS(int dest)
+{
+	if (dest == s)
+	{
+		tempPath.push_back(dest);
+		int tempcost = 0;
+		for (int i = tempPath.size() - 1; i &gt; 0; i--)
+		{
+			int id = tempPath[i], idNext = tempPath[i - 1];
+			tempcost += cost[id][idNext];
+		}
+		//这个地方mincost如果你初值给inf，那就是小于，如果你初值想给0 or -1，那么这地方得大于,这个地方一定要注意，如果符号错了，那你的
+        //mincost和path最终都是0，也就是程序没有进去，直接跳到下面的pop_back()
+		if (tempcost &lt; mincost)
+		{
+			mincost = tempcost;
+			path = tempPath;
+		}
+        //这里的pop是把刚加入的节点删除
+		tempPath.pop_back();
+		return;
+	}
+
+	tempPath.push_back(dest);
+	for (size_t i = 0; i &lt; pre[dest].size(); i++)
+		DFS(pre[dest][i]);
+    
+    //这个地方的pop_back和上面的pop_back的区别，是一个重点，一定要理解
+    //这里的pop是遍历完所有前驱节点，比如题目的重点是3号节点，那么pre[3]={1,2};那么他就是把1号，2号节点全部排除，完成这个dfs
+    //所以你会发现，这题push和pop是成对出现的，往向量里推入一个，就会弹出一个，当然，是因为这题需要
+	tempPath.pop_back();
+}
 </code></pre>
               
             </div>

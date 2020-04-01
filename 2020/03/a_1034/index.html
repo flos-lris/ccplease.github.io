@@ -278,7 +278,53 @@
           
           <div class="post-content markdown" itemprop="articleBody">
             <div class="main-content-wrap">
-              <h1 id="table-of-contents">目录</h1>
+              <h1 id="table-of-contents">目录</h1><nav id="TableOfContents">
+<ul>
+<li><a href="#样例输入">样例输入</a></li>
+</ul>
+</nav>
+
+<p><img src="https://gitee.com/agonyus/agonyus_pic/raw/master/20200401210618.png" alt="" /></p>
+
+<h1 id="样例输入">样例输入</h1>
+
+<p>Input 1:</p>
+
+<pre><code>8 59
+AAA BBB 10
+BBB AAA 20
+AAA CCC 40
+DDD EEE 5
+EEE DDD 70
+FFF GGG 30
+GGG HHH 20
+HHH FFF 10
+</code></pre>
+
+<p>Output 1:</p>
+
+<pre><code>2
+AAA 3
+GGG 3
+</code></pre>
+
+<p>Input 2:</p>
+
+<pre><code>8 70
+AAA BBB 10
+BBB AAA 20
+AAA CCC 40
+DDD EEE 5
+EEE DDD 70
+FFF GGG 30
+GGG HHH 20
+HHH FFF 10
+</code></pre>
+
+<p>Output:</p>
+
+<pre><code>0
+</code></pre>
 
 <pre><code>#include&lt;iostream&gt;
 #include&lt;cstdlib&gt;
