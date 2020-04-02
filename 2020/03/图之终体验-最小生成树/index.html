@@ -200,9 +200,19 @@
     
       <a class="sidebar-button-link " href="http://ew50wk.coding-pages.com/" target="_blank" rel="noopener">
     
-      <i class="sidebar-button-icon fa fa-lg fa-gratipay"></i>
+      <i class="sidebar-button-icon fa fa-lg fa-heart"></i>
       
       <span class="sidebar-button-desc">My love</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://gitee.com/agonyus/agonyus_pic/raw/master/20200402143921.png" target="_blank" rel="noopener">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-qrcode"></i>
+      
+      <span class="sidebar-button-desc">Contact</span>
     </a>
   </li>
 
@@ -278,7 +288,133 @@
           
           <div class="post-content markdown" itemprop="articleBody">
             <div class="main-content-wrap">
-              <h1 id="table-of-contents">目录</h1>
+              <h1 id="table-of-contents">目录</h1><nav id="TableOfContents">
+<ul>
+<li><a href="#题目">题目</a></li>
+<li><a href="#样例输入">样例输入</a>
+<ul>
+<li><a href="#input">Input:</a></li>
+<li><a href="#output">Output:</a></li>
+</ul></li>
+</ul>
+</nav>
+
+<h1 id="题目">题目</h1>
+
+<p>亚历山大要讨伐恶魔大陆，但是恶魔大陆提前知道了亚历山大要来攻打，因此恶魔们事先对所有道路进行了冻结，希望以此消
+耗亚历山大的体力去回复这些道路。但是亚历山大在分析恶魔大陆的地图之后打算从防守最薄弱的V0开始进攻，并且使用“爆
+裂模式”来对抗他们，亚历山大可以随时回复任意一条已攻占城市所连接的道路，但是需要消耗那条道路的距离大小的体力（也
+就是说，道路有多长，就需要消耗多少体力去回复）。并且在恢复某条路之后，亚历山大趁机攻占道路所连接的未攻占城市。
+为了尽可能节省体力，它需要解决一个问题：<code>如何选择需要恢复的道路，使得亚历山大可以消耗最少的体力，并保证他可以攻
+占所有城市。</code></p>
+
+<h1 id="样例输入">样例输入</h1>
+
+<p>第一行给出城市个数和道路数，第二行开始，每行依次输入i,j,k，i和j表示节点i-节点j，k表示节点i-节点j的路径长短。</p>
+
+<h2 id="input">Input:</h2>
+
+<pre><code>6 10
+0 1 4
+0 4 1
+0 5 2
+1 2 6
+1 5 3
+2 3 6
+2 5 5
+3 4 4
+3 5 5
+4 5 3
+</code></pre>
+
+<p>输出第一行是消耗的最少的体力</p>
+
+<h2 id="output">Output:</h2>
+
+<pre><code>15
+</code></pre>
+
+<pre><code>#include&lt;iostream&gt;
+#include&lt;cstdio&gt;
+#include&lt;vector&gt;
+#include&lt;cstring&gt;
+#include&lt;sstream&gt;
+#include&lt;algorithm&gt;
+#pragma warning(disable:4996)
+using namespace std;
+
+constexpr auto MAXN = 1000;
+constexpr auto INF = 1000000000;
+
+int n, m;
+int G[MAXN][MAXN], d[MAXN];
+bool vis[MAXN] = { false };
+int prim();
+
+int main()
+{
+#ifdef ONLINE_JUDGE                
+#else    
+	freopen(&quot;1.txt&quot;, &quot;r&quot;, stdin);
+#endif 
+
+	cin &gt;&gt; n &gt;&gt; m;
+	
+	fill(G[0], G[0] + MAXN * MAXN, INF);
+	int a1, a2, a3;
+	for (int i = 0; i &lt; m; i++)
+	{
+		cin &gt;&gt; a1 &gt;&gt; a2 &gt;&gt; a3;
+		G[a1][a2] = G[a2][a1] = a3;
+	}
+
+	int ans = prim();
+
+	cout &lt;&lt; ans;
+
+
+	system(&quot;pause&quot;);
+	return 0;
+}
+
+int prim()
+{
+	int ans = 0;
+
+	fill(d, d + MAXN, INF);
+	d[0] = 0;
+	for (int i = 0; i &lt; n; i++)
+	{
+		int u = -1, min = INF;
+		for (int j = 0; j &lt; n; j++)
+		{
+			if (vis[j] == false &amp;&amp; d[j] &lt; min)
+			{
+				u = j;
+				min = d[j];
+			}
+		}
+
+		if (u == -1)	return -1;
+		
+		ans += d[u];
+		vis[u] = true;
+		for (int v = 0; v &lt; n; v++)
+		{
+			if (vis[v] == false &amp;&amp; G[u][v] != INF)
+			{
+                //注意这是跟dijkstra的区别，重点
+				if (G[u][v] &lt; d[v])
+				{
+					d[v] = G[u][v];
+				}
+			}
+		}
+
+	}
+	return ans;
+}
+</code></pre>
               
             </div>
           </div>
