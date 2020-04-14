@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Hugo 0.58.3 with theme Tranquilpeak 0.4.7-BETA">
+<meta name="author" content="Agony的小金库">
+<meta name="keywords" content="tech, C, C&#43;&#43;, PAT">
+<meta name="description" content="">
+
+
+<meta property="og:description" content="">
+<meta property="og:type" content="article">
+<meta property="og:title" content="A_1014">
+<meta name="twitter:title" content="A_1014">
+<meta property="og:url" content="https://ccplease.github.io/2020/04/a_1014/">
+<meta property="twitter:url" content="https://ccplease.github.io/2020/04/a_1014/">
+<meta property="og:site_name" content="agony的梦想屋">
+<meta property="og:description" content="">
+<meta name="twitter:description" content="">
+<meta property="og:locale" content="zh-cn">
+
+  
+    <meta property="article:published_time" content="2020-04-10T13:28:26">
+  
+  
+    <meta property="article:modified_time" content="2020-04-10T13:28:26">
+  
+  
+  
+    
+      <meta property="article:section" content="PAT">
+    
+      <meta property="article:section" content="PAT-A">
+    
+  
+  
+    
+      <meta property="article:tag" content="PAT">
+    
+      <meta property="article:tag" content="PAT题目">
+    
+  
+
+
+<meta name="twitter:card" content="summary">
+
+
+
+
+
+
+
+  <meta property="og:image" content="https://ccplease.github.io/images/1002.jpg">
+  <meta property="twitter:image" content="https://ccplease.github.io/images/1002.jpg">
+
+
+  <meta property="og:image" content="https://ccplease.github.io/images/1002.jpg">
+  <meta property="twitter:image" content="https://ccplease.github.io/images/1002.jpg">
+
+
+
+
+  <meta property="og:image" content="https://ccplease.github.io/images/1.jpg">
+  <meta property="twitter:image" content="https://ccplease.github.io/images/1.jpg">
+
+
+    <title>A_1014</title>
+
+     <link rel="icon" href="https://ccplease.github.io/images/123.jpg"> 
+    
+
+    <link rel="icon" href="images/123.jpg">
+    
+
+    
+
+    <link rel="canonical" href="https://ccplease.github.io/2020/04/a_1014/">
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/jquery.fancybox.min.css" integrity="sha256-vuXZ9LGmmwtjqFX1F+EKin1ThZMub58gKULUyf0qECk=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.css" integrity="sha256-SEa4XYAHihTcEP1f5gARTB2K26Uk8PsndQYHQC1f4jU=" crossorigin="anonymous" />
+    
+    
+    <link rel="stylesheet" href="https://ccplease.github.io/css/style-twzjdbqhmnnacqs0pwwdzcdbt8yhv8giawvjqjmyfoqnvazl0dalmnhdkvp7.min.css" />
+    
+    
+
+    
+      
+    
+    
+  </head>
+
+  <body>
+    <div id="blog">
+      <header id="header" data-behavior="5">
+  <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+  <div class="header-title">
+    <a class="header-title-link" href="https://ccplease.github.io/">agony的梦想屋</a>
+  </div>
+  
+    
+      <a class="header-right-picture "
+         href="https://ccplease.github.io/">
+    
+    
+    
+      
+        <img class="header-picture" src="https://ccplease.github.io/images/1.jpg" alt="作者的图片" />
+      
+    
+    </a>
+  
+</header>
+
+      <nav id="sidebar" data-behavior="5">
+  <div class="sidebar-container">
+    
+      <div class="sidebar-profile">
+        <a href="https://ccplease.github.io/#about">
+          <img class="sidebar-profile-picture" src="https://ccplease.github.io/images/1.jpg" alt="作者的图片" />
+        </a>
+        <h4 class="sidebar-profile-name">Agony的小金库</h4>
+        
+          <h5 class="sidebar-profile-bio">try to do something you can&rsquo;t do!</h5>
+        
+      </div>
+    
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://ccplease.github.io/">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+      
+      <span class="sidebar-button-desc">首页</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://ccplease.github.io/categories">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
+      
+      <span class="sidebar-button-desc">类别</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://ccplease.github.io/tags">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
+      
+      <span class="sidebar-button-desc">标签</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://ccplease.github.io/archives">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+      
+      <span class="sidebar-button-desc">归档</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://ccplease.github.io/#about">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-question"></i>
+      
+      <span class="sidebar-button-desc">关于</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://github.com/ccplease" target="_blank" rel="noopener">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-github"></i>
+      
+      <span class="sidebar-button-desc">GitHub</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="http://ew50wk.coding-pages.com/" target="_blank" rel="noopener">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-heart"></i>
+      
+      <span class="sidebar-button-desc">My love</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://gitee.com/agonyus/agonyus_pic/raw/master/20200402143921.png" target="_blank" rel="noopener">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-qrcode"></i>
+      
+      <span class="sidebar-button-desc">Contact</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="http://sz2l3n.coding-pages.com/" target="_blank" rel="noopener">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-gittip"></i>
+      
+      <span class="sidebar-button-desc">memory</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://ccplease.github.io/index.xml">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-rss"></i>
+      
+      <span class="sidebar-button-desc">RSS</span>
+    </a>
+  </li>
+
+
+    </ul>
+  </div> 
+</nav>
+
+      
+  <div class="post-header-cover
+              text-center
+              post-header-cover--full"
+       style="background-image:url('/images/1002.jpg')"
+       data-behavior="5">
+    
+  </div>
+
+
+      <div id="main" data-behavior="5"
+        class="hasCover
+               hasCoverMetaOut
+               hasCoverCaption">
+        <article class="post" itemscope itemType="http://schema.org/BlogPosting">
+          
+            <span class="post-header-cover-caption caption">文章cover图片描述</span>
+          
+          
+            <div class="post-header main-content-wrap text-center">
+  
+    <h1 class="post-title" itemprop="headline">
+      A_1014
+    </h1>
+  
+  
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2020-04-10T13:28:26&#43;08:00">
+        
+  四月 10, 2020
+
+      </time>
+    
+    
+  
+  
+    <span>发布在</span>
+    
+      <a class="category-link" href="https://ccplease.github.io/categories/pat">PAT</a>, 
+    
+      <a class="category-link" href="https://ccplease.github.io/categories/pat-a">PAT-A</a>
+    
+  
+
+  </div>
+
+</div>
+          
+          <div class="post-content markdown" itemprop="articleBody">
+            <div class="main-content-wrap">
+              <h1 id="table-of-contents">目录</h1><nav id="TableOfContents">
+<ul>
+<li><a href="#题目">题目</a>
+<ul>
+<li><a href="#样例">样例</a>
+<ul>
+<li><a href="#input">Input</a></li>
+<li><a href="#output">Output</a></li>
+</ul></li>
+<li><a href="#思路和坑点">思路和坑点</a></li>
+</ul></li>
+</ul>
+</nav>
+
+<h1 id="题目">题目</h1>
+
+<p><img src="https://gitee.com/agonyus/agonyus_pic/raw/master/20200413151146.png" alt="" /></p>
+
+<h2 id="样例">样例</h2>
+
+<h3 id="input">Input</h3>
+
+<pre><code>2 2 7 5
+1 2 6 4 3 534 2
+3 4 5 6 7
+</code></pre>
+
+<h3 id="output">Output</h3>
+
+<pre><code>08:07
+08:06
+08:10
+17:00
+Sorry
+</code></pre>
+
+<h2 id="思路和坑点">思路和坑点</h2>
+
+<p>这道题读完，你就应该知道是一个线性结构，用vector(or 数组)，然后每一个窗口有很多的信息需要表示，那么结构体肯定跑不掉，结构体里包含一个starttime和endtime的变量，既然有排队，那么<strong>队列-queue</strong>肯定少不了，那么基本上框架就有了，一个一维的vector&lt;结构体&gt;就定下了，然后一个time存放每个人办理业务需要的时间，一个down_time存放每个人办完业务的时间，题目要求说有sorry的，所以个sorry数组存放当前这个人能否去选择好的窗口办理，所以本题需要的材料就准备好了，一个vector&lt;结构体&gt;，vector<int> time,down_time,vector<bool> sorry，4个数组。<br />
+这题没什么难点，但是有如下几个复杂的点:</p>
+
+<ul>
+<li>starttime和endtime分别代表的是，当前队列正在处理的人的时间点，以及当前队列最后一个人被服务完后的时间点</li>
+<li>判断当前这个人是否可以入队的条件是那个队列(窗口)的endtime是否大于等于1020，如果超出1020，表示当前这个人无法入队，放入sorry数组做记录。这也就意味着，得先判断是否可以入队，再去更新endtime</li>
+<li>因为down_time也是根据endtime来更新的，所以，down_time得再endtime更新之后</li>
+<li>队列q既可以存放当前这个即将入队(注意，是即将入队，因为不一定会入队成功)的人的编号或者是需要办理业务的时间，两个都可以，这里我选择前者<br /></li>
+</ul>
+
+<p>以上就是坑点，但其实这题不够严谨，因为当前某个人要入队办理，如果窗口时间大于等于1020则不予办理，认为这个人无法办理业务，但是现实中肯定会选择其他时间小于1020的窗口进行办理，所以你可以思考一下：<strong>如果当前即将入队的人无法入队，需要选择其他窗口该怎么办</strong></p>
+
+<pre><code>#include&lt;iostream&gt;
+#include&lt;cstdio&gt;
+#include&lt;vector&gt;
+#include&lt;cstring&gt;
+#include&lt;queue&gt;
+#include&lt;sstream&gt;
+#include&lt;algorithm&gt;
+#pragma warning(disable:4996)
+using namespace std;
+
+typedef struct node
+{
+	//这个地方我直接给480，也就是8点起开始计算，方便后面输出就不用×480了
+	int starttime=480, endtime=480;
+
+	//这里存放的是每个人离开的时间，依旧是从8点算，可以调试看一下值
+	queue&lt;int&gt; q;
+}Node;
+
+int main()
+{
+#ifdef ONLINE_JUDGE                
+#else    
+	freopen(&quot;1.txt&quot;, &quot;r&quot;, stdin);
+#endif 
+	
+	int n, m, k, q;
+	cin &gt;&gt; n &gt;&gt; m &gt;&gt; k &gt;&gt; q;
+
+	vector&lt;int&gt; time(k + 1), down_time(k + 1);
+	vector&lt;bool&gt; sorry(k + 1,false);
+
+	for (int i = 1; i &lt;= k; i++)
+	{
+		cin &gt;&gt; time[i];
+	}
+
+	vector&lt;Node&gt; window(n+1);
+	int index = 1;
+	for (int i = 1; i &lt;= m; i++)
+	{
+		for (int j = 1; j &lt;= n; j++)
+		{
+			if (index &lt;= k)
+			{
+				window[j].q.push(index);
+
+				//这个地方注意一下啊，我们先判断endtime是否大于等于1020，而不是endtime更新后在判断
+				//因为判断他是否可以入队的条件是，在他入队前，窗口的endtime是否大于等于1020
+				//如果大于540，说明接下来已经不能入队了
+				if (window[j].endtime &gt;= 1020)
+					sorry[index] = true;
+
+				window[j].endtime += time[index];
+
+				if (i == 1)
+					window[j].starttime += window[j].endtime;
+
+				//给down-time存一下每个人离开的time,请注意，不能用
+                //down_time[index]=window[j].starttime+time[index]
+				//这个写法是错的，如果仅对这个样例好像是对的，但是仔细一想逻辑是错误的
+				//想一下我们的starttime和endtime分别表示什么
+				down_time[index] = window[j].endtime;
+			
+				index++;
+			}	
+		}
+	}
+
+	//现在处理黄线后面的
+	while(index&lt;=k)
+	{
+		//我们得看看每个柜台的starttime，挑出最小的，那就是先出队的，所以得用
+		//两个变量保存当前柜台的编号及starttime
+		int tempmin = window[1].starttime, tempwindow = 1;
+		for (int j = 2; j &lt;= n; j++)
+		{
+			if (tempmin &gt; window[j].starttime)
+			{
+				tempmin = window[j].starttime;
+				tempwindow = j;
+			}
+		}
+
+		//到这里说明知道了最先应该出队的柜台
+		window[tempwindow].q.pop();
+		window[tempwindow].q.push(index);
+
+
+		//这一步跟前面一样的，都要在endtime更新前判断，如果endtime已经是1020了，那么这个窗口就结束了
+		//不会在有人入队了，所以可以直接用if-else减少时间，然后让这个index去其他窗口办理业务,可以减少
+        //时间复杂度
+		if (window[tempwindow].endtime &gt;= 1020)
+			sorry[index] = true;
+		else
+		{	//到这里说明新的人可以入队，所以要更新这个柜台的starttime,endtime和down_time
+			window[tempwindow].endtime += time[index];
+			window[tempwindow].starttime += time[window[tempwindow].q.front()];
+
+			//这个地方注意，每个人的结束时间，就是窗口的end_time，所以一定要等当前窗口的end_time更新完
+			//才可以队down_time进行更新，因为本身endtime就是表示当前窗口所有人处理完后的时间
+			down_time[index] = window[tempwindow].endtime;
+		}
+		index++;
+	}
+
+	for (int i = 0; i &lt; q; i++)
+	{
+		int num;
+		cin &gt;&gt; num;
+		if (sorry[num] == 1)
+			cout &lt;&lt; &quot;Sorry&quot; &lt;&lt; endl;
+		else
+			printf(&quot;%02d:%02d\n&quot;, down_time[num] / 60, down_time[num] % 60);
+	}
+
+	system(&quot;pause&quot;);
+	return 0;
+}
+</code></pre>
+              
+            </div>
+          </div>
+          <div id="post-footer" class="post-footer main-content-wrap">
+            
+              
+                
+                
+                  <div class="post-footer-tags">
+                    <span class="text-color-light text-small">标签</span><br/>
+                    
+  <a class="tag tag--primary tag--small" href="https://ccplease.github.io/tags/pat/">PAT</a>
+
+  <a class="tag tag--primary tag--small" href="https://ccplease.github.io/tags/pat%E9%A2%98%E7%9B%AE/">PAT题目</a>
+
+                  </div>
+                
+              
+            
+            <div class="post-actions-wrap">
+  
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://ccplease.github.io/2020/04/a_1013/" data-tooltip="A_1013">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://ccplease.github.io/2020/04/a_1015/" data-tooltip="A_1015">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+      
+      
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#disqus_thread">
+            <i class="fa fa-comment-o"></i>
+          </a>
+        </li>
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#table-of-contents">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  
+</div>
+
+            
+              <span id="/2020/04/a_1014/" class="leancloud_visitors" data-flag-title="A_1014">
+                <span class="post-meta-item-text">文章阅读量 </span>
+                <span class="leancloud-visitors-count">1000000</span>
+                <p></p>
+              </span>
+              <div id="vcomments"></div>
+              <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+              <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+              <script type="text/javascript">
+                new Valine({
+                  el: '#vcomments' ,
+                  appId: 'KS9KiLoz8opPRPlsIOwh97nY-MdYXbMMI',
+                  appKey: 'lKP9LsbdWY08ltRrlzF6Rkra',
+                  notify: 'false',
+                  verify: '',
+                  avatar:'mp', 
+                  placeholder: '说啥都行，不许开车，年纪大了，你懂的~',
+                  visitor: 'true'
+                });
+              </script>
+            
+            
+            
+              
+                <div id="disqus_thread">
+  <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+              
+            
+          </div>
+        </article>
+        <footer id="footer" class="main-content-wrap">
+  <span class="copyrights">
+    &copy; 2020 Agony的小金库. All Rights Reserved
+  </span>
+</footer>
+
+      </div>
+      <div id="bottom-bar" class="post-bottom-bar" data-behavior="5">
+        <div class="post-actions-wrap">
+  
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://ccplease.github.io/2020/04/a_1013/" data-tooltip="A_1013">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://ccplease.github.io/2020/04/a_1015/" data-tooltip="A_1015">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+      
+      
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#disqus_thread">
+            <i class="fa fa-comment-o"></i>
+          </a>
+        </li>
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#table-of-contents">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  
+</div>
+
+      </div>
+      <div id="share-options-bar" class="share-options-bar" data-behavior="5">
+  <i id="btn-close-shareoptions" class="fa fa-close"></i>
+  <ul class="share-options">
+    
+  </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+    </div>
+    
+    <div id="about">
+  <div id="about-card">
+    <div id="about-btn-close">
+      <i class="fa fa-remove"></i>
+    </div>
+    
+      <img id="about-card-picture" src="https://ccplease.github.io/images/1.jpg" alt="作者的图片" />
+    
+    <h4 id="about-card-name">Agony的小金库</h4>
+    
+      <div id="about-card-bio">try to do something you can&rsquo;t do!</div>
+    
+    
+      <div id="about-card-job">
+        <i class="fa fa-briefcase"></i>
+        <br/>
+        学生
+      </div>
+    
+    
+      <div id="about-card-location">
+        <i class="fa fa-map-marker"></i>
+        <br/>
+        武汉
+      </div>
+    
+  </div>
+</div>
+
+    
+
+    
+  
+    <div id="cover" style="background-image:url('https://api.sunweihu.com/api/bing1/api.php');"></div>
+  
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.7/js/jquery.fancybox.min.js" integrity="sha256-GEAnjcTqVP+vBp3SSc8bEDQqvWAZMiHyUSIorrWwH50=" crossorigin="anonymous"></script>
+
+
+<script src="https://ccplease.github.io/js/script-pcw6v3xilnxydl1vddzazdverrnn9ctynvnxgwho987mfyqkuylcb1nlt.min.js"></script>
+
+
+  
+    <script src="https://ccplease.github.io/js/clicklove.js"></script>
+  
+
+  
+    <script src="https://ccplease.github.io/js/sakura.js"></script>
+  
+
+<script lang="javascript">
+window.onload = updateMinWidth;
+window.onresize = updateMinWidth;
+document.getElementById("sidebar").addEventListener("transitionend", updateMinWidth);
+function updateMinWidth() {
+  var sidebar = document.getElementById("sidebar");
+  var main = document.getElementById("main");
+  main.style.minWidth = "";
+  var w1 = getComputedStyle(main).getPropertyValue("min-width");
+  var w2 = getComputedStyle(sidebar).getPropertyValue("width");
+  var w3 = getComputedStyle(sidebar).getPropertyValue("left");
+  main.style.minWidth = `calc(${w1} - ${w2} - ${w3})`;
+}
+</script>
+
+<script>
+$(document).ready(function() {
+  hljs.configure({ classPrefix: '', useBR: false });
+  $('pre.code-highlight > code, pre > code').each(function(i, block) {
+    if (!$(this).hasClass('codeblock')) {
+      $(this).addClass('codeblock');
+    }
+    hljs.highlightBlock(block);
+  });
+});
+</script>
+
+
+  
+    
+      <script>
+        var disqus_config = function () {
+          this.page.url = 'https:\/\/ccplease.github.io\/2020\/04\/a_1014\/';
+          
+            this.page.identifier = '\/2020\/04\/a_1014\/'
+          
+        };
+        (function() {
+          
+          
+          if (window.location.hostname == "localhost") {
+            return;
+          }
+          var d = document, s = d.createElement('script');
+          var disqus_shortname = 'valine';
+          s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+        })();
+      </script>
+    
+  
+
+
+
+
+    
+  </body>
+</html>
+
+
+
