@@ -298,7 +298,14 @@
             <div class="main-content-wrap">
               <h1 id="table-of-contents">目录</h1><nav id="TableOfContents">
 <ul>
-<li><a href="#并查集">并查集</a></li>
+<li><a href="#并查集">并查集</a>
+<ul>
+<li><a href="#并查集的应用">并查集的应用</a>
+<ul>
+<li><a href="#看图是否连通">看图是否连通</a></li>
+<li><a href="#一个图连通分量的个数">一个图连通分量的个数</a></li>
+</ul></li>
+</ul></li>
 <li><a href="#路径压缩">路径压缩</a></li>
 <li><a href="#例题">例题</a>
 <ul>
@@ -336,6 +343,59 @@ if(fa!=fb)
 }
 </code></pre></li>
 </ul>
+
+<h2 id="并查集的应用">并查集的应用</h2>
+
+<h3 id="看图是否连通">看图是否连通</h3>
+
+<p>比如说给你一个图，判断他是否是一个连通图，或者是否存在环,那么就可以用一下完成：</p>
+
+<pre><code class="language-C++">int findfather(int x)
+{
+    while(x!=father[x])
+        x=father[x];
+    return x;
+}
+
+int Union(int a,int b)
+{
+    int fa=findfather(a);
+    int fb=findfather(b);
+    if(fa!=fb)
+        father[fa]=fb;
+		return 1;
+	else
+		return 0;
+}
+</code></pre>
+
+<h3 id="一个图连通分量的个数">一个图连通分量的个数</h3>
+
+<p>就是求一个图中有几个连通分量，例如<code>PAT 1021</code>就有具体应用，不多说上代码</p>
+
+<pre><code class="language-C++">int cnt=5;		//表示有5个节点，并且5个节点都是各自的父节点
+int father[5]={-1,-1,-1,-1,-1};
+
+int find(int x)
+{
+	while (x != father[x])
+	{
+		x = father[x];
+	}
+	return x;
+}
+
+void Union(int  a, int b)
+{
+	int fa = find(a);
+	int fb = find(b);
+	if (fa != fb)
+	{
+		father[fb] = father[fa];
+		cnt--;
+	}
+}
+</code></pre>
 
 <h1 id="路径压缩">路径压缩</h1>
 

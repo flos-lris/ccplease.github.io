@@ -13,20 +13,20 @@
 
 <meta property="og:description" content="">
 <meta property="og:type" content="article">
-<meta property="og:title" content="A_1019">
-<meta name="twitter:title" content="A_1019">
-<meta property="og:url" content="https://ccplease.github.io/2020/04/a_1019/">
-<meta property="twitter:url" content="https://ccplease.github.io/2020/04/a_1019/">
+<meta property="og:title" content="A_1022-STL模板的使用">
+<meta name="twitter:title" content="A_1022-STL模板的使用">
+<meta property="og:url" content="https://ccplease.github.io/2020/04/a_1022-stl%E6%A8%A1%E6%9D%BF%E7%9A%84%E4%BD%BF%E7%94%A8/">
+<meta property="twitter:url" content="https://ccplease.github.io/2020/04/a_1022-stl%E6%A8%A1%E6%9D%BF%E7%9A%84%E4%BD%BF%E7%94%A8/">
 <meta property="og:site_name" content="agony的梦想屋">
 <meta property="og:description" content="">
 <meta name="twitter:description" content="">
 <meta property="og:locale" content="zh-cn">
 
   
-    <meta property="article:published_time" content="2020-04-14T16:40:25">
+    <meta property="article:published_time" content="2020-04-14T16:40:32">
   
   
-    <meta property="article:modified_time" content="2020-04-14T16:40:25">
+    <meta property="article:modified_time" content="2020-04-14T16:40:32">
   
   
   
@@ -67,7 +67,7 @@
   <meta property="twitter:image" content="https://ccplease.github.io/images/1.jpg">
 
 
-    <title>A_1019</title>
+    <title>A_1022-STL模板的使用</title>
 
      <link rel="icon" href="https://ccplease.github.io/images/123.jpg"> 
     
@@ -77,7 +77,7 @@
 
     
 
-    <link rel="canonical" href="https://ccplease.github.io/2020/04/a_1019/">
+    <link rel="canonical" href="https://ccplease.github.io/2020/04/a_1022-stl%E6%A8%A1%E6%9D%BF%E7%9A%84%E4%BD%BF%E7%94%A8/">
 
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
@@ -267,13 +267,13 @@
             <div class="post-header main-content-wrap text-center">
   
     <h1 class="post-title" itemprop="headline">
-      A_1019
+      A_1022-STL模板的使用
     </h1>
   
   
   <div class="postShorten-meta post-meta">
     
-      <time itemprop="datePublished" datetime="2020-04-14T16:40:25&#43;08:00">
+      <time itemprop="datePublished" datetime="2020-04-14T16:40:32&#43;08:00">
         
   四月 14, 2020
 
@@ -302,114 +302,81 @@
 <ul>
 <li><a href="#样例输入">样例输入</a>
 <ul>
-<li><a href="#input-1">Input_1</a></li>
-<li><a href="#output-1">Output_1</a></li>
-<li><a href="#input-2">Input_2</a></li>
-<li><a href="#output-2">Output_2</a></li>
+<li><a href="#input">Input</a></li>
+<li><a href="#output">Output</a></li>
 </ul></li>
 <li><a href="#思路和坑点">思路和坑点</a></li>
-<li><a href="#错误ac代码">错误AC代码</a></li>
-<li><a href="#正确ac代码">正确AC代码</a></li>
+<li><a href="#ac代码">AC代码</a></li>
 </ul></li>
 </ul>
 </nav>
 
 <h1 id="题目">题目</h1>
 
-<p><img src="https://gitee.com/agonyus/agonyus_pic/raw/master/20200416141745.png" alt="" /></p>
+<p><img src="https://gitee.com/agonyus/agonyus_pic/raw/master/20200418214255.png" alt="" /></p>
 
 <h2 id="样例输入">样例输入</h2>
 
-<h3 id="input-1">Input_1</h3>
+<h3 id="input">Input</h3>
 
-<pre><code>27 2
+<pre><code>3
+1111111
+The Testing Book
+Yue Chen
+test code debug sort keywords
+ZUCS Print
+2011
+3333333
+Another Testing Book
+Yue Chen
+test code sort keywords
+ZUCS Print2
+2012
+2222222
+The Testing Book
+CYLL
+keywords debug book
+ZUCS Print2
+2011
+6
+1: The Testing Book
+2: Yue Chen
+3: keywords
+4: ZUCS Print
+5: 2011
+3: blablabla
 </code></pre>
 
-<h3 id="output-1">Output_1</h3>
+<h3 id="output">Output</h3>
 
-<pre><code>Yes
-1 1 0 1 1
-</code></pre>
-
-<h3 id="input-2">Input_2</h3>
-
-<pre><code>121 5
-</code></pre>
-
-<h3 id="output-2">Output_2</h3>
-
-<pre><code>No
-4 4 1
+<pre><code>1: The Testing Book
+1111111
+2222222
+2: Yue Chen
+1111111
+3333333
+3: keywords
+1111111
+2222222
+3333333
+4: ZUCS Print
+1111111
+5: 2011
+1111111
+2222222
+3: blablabla
+Not Found
 </code></pre>
 
 <h2 id="思路和坑点">思路和坑点</h2>
 
-<p>这题本身是水题没什么问题，问题在于测试点很坑，很多人一看到题目直接to_string和reverse组合输出很容易，然后就掉坑了，这题无论进制转换还是倒置数字都要手写，用循环才可以<br />
-<div class="alert success ">
-  <p>当然啦其他题目，to_string和reverse还是可以用的</p>
-</div></p>
+<p>这题说实话不难，唯一的难点在于怎么存数据。什么意思呢？就是给了m个查找信息，你如何从图书中找出你要的，那这个问题就演变成如何存放数据，使得我们可以很好的找到相应的id。那柳神是用了<code>map&lt;string,set&lt;int&gt;&gt;</code>来存储，你要高兴，也可以用unordered_map存储都一样。</p>
 
-<h2 id="错误ac代码">错误AC代码</h2>
+<h2 id="ac代码">AC代码</h2>
 
-<p>按以下写，你会发现测试点2，4不过，为啥呢，给你一组数字，体验一下</p>
-
-<pre><code>689212004 256
-</code></pre>
-
-<pre><code class="language-C++">#include&lt;iostream&gt;
-#include&lt;stdio.h&gt;
-#include&lt;stdlib.h&gt;
-#include&lt;algorithm&gt; 
-#pragma warning(disable:4996)
-using namespace std;
-
-string intToA(int n, int radix)    //n是待转数字，radix是指定的进制
-{
-	string ans = &quot;&quot;;
-	do {
-		int t = n % radix;
-		if (t &gt;= 0 &amp;&amp; t &lt;= 9)	ans += t + '0';
-		else ans += t - 10 + 'a';
-		n /= radix;
-	} while (n != 0);	//使用do{}while（）以防止输入为0的情况
-	reverse(ans.begin(), ans.end());
-	return ans;
-}
-
-int main() {
-#ifdef ONLINE_JUDGE    
-#else    
-	freopen(&quot;1.txt&quot;, &quot;r&quot;, stdin);
-#endif
-
-	int a, b;
-
-	cin &gt;&gt; a &gt;&gt; b;
-
-	string str = intToA(a, b);
-
-	string temp = str;
-
-	reverse(str.begin(), str.end());
-
-	if (temp == str)
-		cout &lt;&lt; &quot;Yes&quot; &lt;&lt; endl;
-	else
-		cout &lt;&lt; &quot;No&quot; &lt;&lt; endl;
-
-	for (int i = 0; i &lt; temp.size(); i++)
-	{
-		if (i == 0)	cout &lt;&lt; temp[i];
-		else
-			cout&lt;&lt;&quot; &quot;&lt;&lt;temp[i];
-	}
-	return 0;
-}
-</code></pre>
-
-<p>这个错误在哪里呢？在to_string这个函数把int转为string的时候，所有我们就用int数组来输出就行，还有reverse函数也不可以用，用了你会发现错误，所以你只能用循环倒置整个数</p>
-
-<h2 id="正确ac代码">正确AC代码</h2>
+<div class="alert info ">
+  <p>厚着脸皮借鉴一下柳神的代码</p>
+</div>
 
 <pre><code class="language-C++">#include&lt;iostream&gt;
 #include&lt;stdio.h&gt;
@@ -417,22 +384,24 @@ int main() {
 #include&lt;map&gt;
 #include&lt;algorithm&gt; 
 #include&lt;vector&gt;
-#include&lt;queue&gt;
+#include&lt;set&gt;
 #include&lt;string&gt; 
 #pragma warning(disable:4996)
 using namespace std;
 
-vector&lt;int&gt; convert(int n, int radix)
-{
-	vector&lt;int&gt; ans;
-	do 
-	{
-		ans.push_back(n % radix);
-		n /= radix;
+map&lt;string, set&lt;int&gt;&gt; title,author,key,year,publisher;
 
-	} while (n != 0);
-	return ans;
+void _find(map&lt;string, set&lt;int&gt;&gt; &amp;tmp, string s)
+{
+	if (tmp.find(s) != tmp.end())
+	{
+		for (auto it = tmp[s].begin(); it != tmp[s].end(); it++)
+			printf(&quot;%07d\n&quot;, *it);
+	}
+	else
+		cout &lt;&lt; &quot;Not Found&quot; &lt;&lt; endl;
 }
+
 
 int main() {
 #ifdef ONLINE_JUDGE    
@@ -440,28 +409,48 @@ int main() {
 	freopen(&quot;1.txt&quot;, &quot;r&quot;, stdin);
 #endif
 
-	int a, b;
-	bool flag=true;
+	int n, m, id,temp;
+	string t_title, t_author, t_key, t_puli, t_year;
 
-	cin &gt;&gt; a &gt;&gt; b;
+	cin &gt;&gt; n;
 
-	vector&lt;int&gt; ans = convert(a, b);
-
-
-	for (int i = 0; i &lt; ans.size() / 2; i++)
-		if (ans[i] != ans[ans.size() - 1 - i])
-			flag = false;
-
-	if (flag)
-		cout &lt;&lt; &quot;Yes&quot; &lt;&lt; endl;
-	else
-		cout &lt;&lt; &quot;No&quot; &lt;&lt; endl;
-
-	for (int i = ans.size()-1;i&gt;=0;i--)
+	for (int i = 0; i &lt; n; i++)
 	{
-		if (i == ans.size()-1)	cout &lt;&lt; ans[i];
-		else
-			cout&lt;&lt;&quot; &quot;&lt;&lt;ans[i];
+		scanf(&quot;%d\n&quot;, &amp;id);     //这地方不能cin+geiline，有一个换行
+		getline(cin, t_title);
+		title[t_title].insert(id);
+		getline(cin, t_author);
+		author[t_author].insert(id);
+		while (cin &gt;&gt; t_key)
+		{
+			key[t_key].insert(id);
+			char c = getchar();
+			if (c == '\n')	break;		//这个地方不能给&quot;\n&quot;
+		}
+		getline(cin, t_puli);
+		publisher[t_puli].insert(id);
+		getline(cin, t_year);
+		year[t_year].insert(id);
+	}
+	
+	cin &gt;&gt; m;
+	string s;
+	for (int i = 0; i &lt; m; i++)
+	{
+		scanf(&quot;%d: &quot;, &amp;temp);
+		getline(cin, s);
+
+		cout &lt;&lt; temp &lt;&lt; &quot;: &quot; &lt;&lt; s &lt;&lt; endl;
+		if (temp == 1)
+			_find(title, s);
+		else if (temp == 2)
+			_find(author, s);
+		else if (temp == 3)
+			_find(key, s);
+		else if (temp == 4)
+			_find(publisher, s);
+		else if (temp == 5)
+			_find(year, s);
 	}
 	return 0;
 }
@@ -492,7 +481,7 @@ int main() {
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://ccplease.github.io/2020/04/a_1018-dijkstra-dfs/" data-tooltip="A_1018-dijkstra&#43;dfs">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://ccplease.github.io/2020/04/a_1021-%E8%BF%9E%E9%80%9A%E5%88%86%E9%87%8F%E4%B8%AA%E6%95%B0%E7%9A%84%E8%AE%A1%E7%AE%97-dfs/bfs/" data-tooltip="A_1021-连通分量个数的计算&#43;dfs/bfs">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -500,7 +489,7 @@ int main() {
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://ccplease.github.io/2020/04/a_1021-%E8%BF%9E%E9%80%9A%E5%88%86%E9%87%8F%E4%B8%AA%E6%95%B0%E7%9A%84%E8%AE%A1%E7%AE%97-dfs/bfs/" data-tooltip="A_1021-连通分量个数的计算&#43;dfs/bfs">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://ccplease.github.io/2020/04/a_1023-%E5%A4%A7%E6%95%B0%E5%A4%84%E7%90%86/" data-tooltip="A_1023-大数处理">
               
                   <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                   <i class="fa fa-angle-right"></i>
@@ -537,7 +526,7 @@ int main() {
 </div>
 
             
-              <span id="/2020/04/a_1019/" class="leancloud_visitors" data-flag-title="A_1019">
+              <span id="/2020/04/a_1022-stl%E6%A8%A1%E6%9D%BF%E7%9A%84%E4%BD%BF%E7%94%A8/" class="leancloud_visitors" data-flag-title="A_1022-STL模板的使用">
                 <span class="post-meta-item-text">文章阅读量 </span>
                 <span class="leancloud-visitors-count">1000000</span>
                 <p></p>
@@ -583,7 +572,7 @@ int main() {
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://ccplease.github.io/2020/04/a_1018-dijkstra-dfs/" data-tooltip="A_1018-dijkstra&#43;dfs">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://ccplease.github.io/2020/04/a_1021-%E8%BF%9E%E9%80%9A%E5%88%86%E9%87%8F%E4%B8%AA%E6%95%B0%E7%9A%84%E8%AE%A1%E7%AE%97-dfs/bfs/" data-tooltip="A_1021-连通分量个数的计算&#43;dfs/bfs">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -591,7 +580,7 @@ int main() {
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://ccplease.github.io/2020/04/a_1021-%E8%BF%9E%E9%80%9A%E5%88%86%E9%87%8F%E4%B8%AA%E6%95%B0%E7%9A%84%E8%AE%A1%E7%AE%97-dfs/bfs/" data-tooltip="A_1021-连通分量个数的计算&#43;dfs/bfs">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://ccplease.github.io/2020/04/a_1023-%E5%A4%A7%E6%95%B0%E5%A4%84%E7%90%86/" data-tooltip="A_1023-大数处理">
               
                   <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                   <i class="fa fa-angle-right"></i>
@@ -725,9 +714,9 @@ $(document).ready(function() {
     
       <script>
         var disqus_config = function () {
-          this.page.url = 'https:\/\/ccplease.github.io\/2020\/04\/a_1019\/';
+          this.page.url = 'https:\/\/ccplease.github.io\/2020\/04\/a_1022-stl%E6%A8%A1%E6%9D%BF%E7%9A%84%E4%BD%BF%E7%94%A8\/';
           
-            this.page.identifier = '\/2020\/04\/a_1019\/'
+            this.page.identifier = '\/2020\/04\/a_1022-stl%E6%A8%A1%E6%9D%BF%E7%9A%84%E4%BD%BF%E7%94%A8\/'
           
         };
         (function() {

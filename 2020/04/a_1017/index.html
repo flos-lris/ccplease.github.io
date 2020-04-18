@@ -8,18 +8,18 @@
 <meta name="generator" content="Hugo 0.58.3 with theme Tranquilpeak 0.4.7-BETA">
 <meta name="author" content="Agony的小金库">
 <meta name="keywords" content="tech, C, C&#43;&#43;, PAT">
-<meta name="description" content="#缩略显示的梗概，这里把注释删去，写成文章的简介或者梗概，在首页时候可以只显示梗概">
+<meta name="description" content="">
 
 
-<meta property="og:description" content="#缩略显示的梗概，这里把注释删去，写成文章的简介或者梗概，在首页时候可以只显示梗概">
+<meta property="og:description" content="">
 <meta property="og:type" content="article">
 <meta property="og:title" content="A_1017">
 <meta name="twitter:title" content="A_1017">
 <meta property="og:url" content="https://ccplease.github.io/2020/04/a_1017/">
 <meta property="twitter:url" content="https://ccplease.github.io/2020/04/a_1017/">
 <meta property="og:site_name" content="agony的梦想屋">
-<meta property="og:description" content="#缩略显示的梗概，这里把注释删去，写成文章的简介或者梗概，在首页时候可以只显示梗概">
-<meta name="twitter:description" content="#缩略显示的梗概，这里把注释删去，写成文章的简介或者梗概，在首页时候可以只显示梗概">
+<meta property="og:description" content="">
+<meta name="twitter:description" content="">
 <meta property="og:locale" content="zh-cn">
 
   
@@ -296,9 +296,79 @@
           
           <div class="post-content markdown" itemprop="articleBody">
             <div class="main-content-wrap">
-              <p>#缩略显示的梗概，这里把注释删去，写成文章的简介或者梗概，在首页时候可以只显示梗概</p>
+              <p>It is assumed that ..   &ndash;假定
+the total number of..   &ndash;&hellip;的总数
+<h1 id="table-of-contents">目录</h1><nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#ac">AC</a></li>
+</ul></li>
+</ul>
+</nav></p>
 
-<h1 id="table-of-contents">目录</h1>
+<h2 id="ac">AC</h2>
+
+<pre><code class="language-C++">#include&lt;iostream&gt;
+#include&lt;stdio.h&gt;
+#include&lt;stdlib.h&gt;
+#include&lt;map&gt;
+#include&lt;algorithm&gt; 
+#include&lt;vector&gt;
+#include&lt;queue&gt;
+#include&lt;string&gt; 
+#pragma warning(disable:4996)
+using namespace std;
+
+int main() {
+#ifdef ONLINE_JUDGE    
+#else    
+	freopen(&quot;1.txt&quot;, &quot;r&quot;, stdin);
+#endif
+
+	int n, k;
+	cin &gt;&gt; n &gt;&gt; k;
+
+	map&lt;int, int&gt; mmap;
+
+	for (int i = 0; i &lt; n; i++)
+	{
+		int hour, minute, second, time,sum;
+		scanf(&quot;%d:%d:%d %d&quot;, &amp;hour, &amp;minute, &amp;second, &amp;time);
+
+		sum = hour * 3600 + minute * 60 + second;
+
+		if (sum &gt; 61200)	continue;
+		mmap[sum] = time * 60;
+	}
+
+	//开始处理办理业务，这个地方用一个 priority_queue就很舒服
+	priority_queue&lt;int, vector&lt;int&gt;, greater&lt;int&gt;&gt; q;
+	for (int i = 0; i &lt; k; i++)
+		q.push(28800);
+
+	int total = 0;
+	for (auto it : mmap)
+	{
+		if (it.first &lt; q.top())
+		{
+			//说明你要等，来早了或者当前没有窗口空闲
+			total += q.top() - it.first;
+			q.push(q.top() + it.second);
+			q.pop();
+		}
+		else
+		{
+			q.push(it.first + it.second);
+			q.pop();
+		}
+	}
+
+	(!mmap.size()) ? printf(&quot;0.0&quot;) : printf(&quot;%.1lf&quot;, ((double)total / 60.0) / mmap.size());
+
+	return 0;
+}
+</code></pre>
               
             </div>
           </div>
@@ -333,7 +403,7 @@
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://ccplease.github.io/2020/04/a_1018/" data-tooltip="A_1018">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://ccplease.github.io/2020/04/a_1018-dijkstra-dfs/" data-tooltip="A_1018-dijkstra&#43;dfs">
               
                   <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                   <i class="fa fa-angle-right"></i>
@@ -424,7 +494,7 @@
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://ccplease.github.io/2020/04/a_1018/" data-tooltip="A_1018">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://ccplease.github.io/2020/04/a_1018-dijkstra-dfs/" data-tooltip="A_1018-dijkstra&#43;dfs">
               
                   <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                   <i class="fa fa-angle-right"></i>

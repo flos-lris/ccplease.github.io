@@ -13,20 +13,20 @@
 
 <meta property="og:description" content="">
 <meta property="og:type" content="article">
-<meta property="og:title" content="A_1019">
-<meta name="twitter:title" content="A_1019">
-<meta property="og:url" content="https://ccplease.github.io/2020/04/a_1019/">
-<meta property="twitter:url" content="https://ccplease.github.io/2020/04/a_1019/">
+<meta property="og:title" content="A_1003-Dijkstra">
+<meta name="twitter:title" content="A_1003-Dijkstra">
+<meta property="og:url" content="https://ccplease.github.io/2020/03/a_1003-dijkstra/">
+<meta property="twitter:url" content="https://ccplease.github.io/2020/03/a_1003-dijkstra/">
 <meta property="og:site_name" content="agony的梦想屋">
 <meta property="og:description" content="">
 <meta name="twitter:description" content="">
 <meta property="og:locale" content="zh-cn">
 
   
-    <meta property="article:published_time" content="2020-04-14T16:40:25">
+    <meta property="article:published_time" content="2020-03-29T13:02:48">
   
   
-    <meta property="article:modified_time" content="2020-04-14T16:40:25">
+    <meta property="article:modified_time" content="2020-03-29T13:02:48">
   
   
   
@@ -53,12 +53,12 @@
 
 
 
-  <meta property="og:image" content="https://ccplease.github.io/images/1002.jpg">
-  <meta property="twitter:image" content="https://ccplease.github.io/images/1002.jpg">
+  <meta property="og:image" content="https://ccplease.github.io/images/4.jpg">
+  <meta property="twitter:image" content="https://ccplease.github.io/images/4.jpg">
 
 
-  <meta property="og:image" content="https://ccplease.github.io/images/1002.jpg">
-  <meta property="twitter:image" content="https://ccplease.github.io/images/1002.jpg">
+  <meta property="og:image" content="https://ccplease.github.io/images/4.jpg">
+  <meta property="twitter:image" content="https://ccplease.github.io/images/4.jpg">
 
 
 
@@ -67,7 +67,7 @@
   <meta property="twitter:image" content="https://ccplease.github.io/images/1.jpg">
 
 
-    <title>A_1019</title>
+    <title>A_1003-Dijkstra</title>
 
      <link rel="icon" href="https://ccplease.github.io/images/123.jpg"> 
     
@@ -77,7 +77,7 @@
 
     
 
-    <link rel="canonical" href="https://ccplease.github.io/2020/04/a_1019/">
+    <link rel="canonical" href="https://ccplease.github.io/2020/03/a_1003-dijkstra/">
 
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
@@ -249,7 +249,7 @@
   <div class="post-header-cover
               text-center
               post-header-cover--full"
-       style="background-image:url('/images/1002.jpg')"
+       style="background-image:url('/images/4.jpg')"
        data-behavior="5">
     
   </div>
@@ -267,15 +267,15 @@
             <div class="post-header main-content-wrap text-center">
   
     <h1 class="post-title" itemprop="headline">
-      A_1019
+      A_1003-Dijkstra
     </h1>
   
   
   <div class="postShorten-meta post-meta">
     
-      <time itemprop="datePublished" datetime="2020-04-14T16:40:25&#43;08:00">
+      <time itemprop="datePublished" datetime="2020-03-29T13:02:48&#43;08:00">
         
-  四月 14, 2020
+  三月 29, 2020
 
       </time>
     
@@ -298,172 +298,150 @@
             <div class="main-content-wrap">
               <h1 id="table-of-contents">目录</h1><nav id="TableOfContents">
 <ul>
-<li><a href="#题目">题目</a>
-<ul>
 <li><a href="#样例输入">样例输入</a>
 <ul>
-<li><a href="#input-1">Input_1</a></li>
-<li><a href="#output-1">Output_1</a></li>
-<li><a href="#input-2">Input_2</a></li>
-<li><a href="#output-2">Output_2</a></li>
-</ul></li>
-<li><a href="#思路和坑点">思路和坑点</a></li>
-<li><a href="#错误ac代码">错误AC代码</a></li>
-<li><a href="#正确ac代码">正确AC代码</a></li>
+<li><a href="#input">Input:</a></li>
+<li><a href="#output">Output:</a></li>
 </ul></li>
 </ul>
 </nav>
 
-<h1 id="题目">题目</h1>
+<p><img src="https://gitee.com/agonyus/agonyus_pic/raw/master/20200401210147.png" alt="" /></p>
 
-<p><img src="https://gitee.com/agonyus/agonyus_pic/raw/master/20200416141745.png" alt="" /></p>
+<h1 id="样例输入">样例输入</h1>
 
-<h2 id="样例输入">样例输入</h2>
+<h2 id="input">Input:</h2>
 
-<h3 id="input-1">Input_1</h3>
-
-<pre><code>27 2
+<pre><code>5 6 0 2
+1 2 1 5 3
+0 1 1
+0 2 2
+0 3 1
+1 2 1
+2 4 1
+3 4 1
 </code></pre>
 
-<h3 id="output-1">Output_1</h3>
+<h2 id="output">Output:</h2>
 
-<pre><code>Yes
-1 1 0 1 1
-</code></pre>
-
-<h3 id="input-2">Input_2</h3>
-
-<pre><code>121 5
-</code></pre>
-
-<h3 id="output-2">Output_2</h3>
-
-<pre><code>No
-4 4 1
-</code></pre>
-
-<h2 id="思路和坑点">思路和坑点</h2>
-
-<p>这题本身是水题没什么问题，问题在于测试点很坑，很多人一看到题目直接to_string和reverse组合输出很容易，然后就掉坑了，这题无论进制转换还是倒置数字都要手写，用循环才可以<br />
-<div class="alert success ">
-  <p>当然啦其他题目，to_string和reverse还是可以用的</p>
-</div></p>
-
-<h2 id="错误ac代码">错误AC代码</h2>
-
-<p>按以下写，你会发现测试点2，4不过，为啥呢，给你一组数字，体验一下</p>
-
-<pre><code>689212004 256
+<pre><code>2 4
 </code></pre>
 
 <pre><code class="language-C++">#include&lt;iostream&gt;
-#include&lt;stdio.h&gt;
-#include&lt;stdlib.h&gt;
-#include&lt;algorithm&gt; 
-#pragma warning(disable:4996)
-using namespace std;
-
-string intToA(int n, int radix)    //n是待转数字，radix是指定的进制
-{
-	string ans = &quot;&quot;;
-	do {
-		int t = n % radix;
-		if (t &gt;= 0 &amp;&amp; t &lt;= 9)	ans += t + '0';
-		else ans += t - 10 + 'a';
-		n /= radix;
-	} while (n != 0);	//使用do{}while（）以防止输入为0的情况
-	reverse(ans.begin(), ans.end());
-	return ans;
-}
-
-int main() {
-#ifdef ONLINE_JUDGE    
-#else    
-	freopen(&quot;1.txt&quot;, &quot;r&quot;, stdin);
-#endif
-
-	int a, b;
-
-	cin &gt;&gt; a &gt;&gt; b;
-
-	string str = intToA(a, b);
-
-	string temp = str;
-
-	reverse(str.begin(), str.end());
-
-	if (temp == str)
-		cout &lt;&lt; &quot;Yes&quot; &lt;&lt; endl;
-	else
-		cout &lt;&lt; &quot;No&quot; &lt;&lt; endl;
-
-	for (int i = 0; i &lt; temp.size(); i++)
-	{
-		if (i == 0)	cout &lt;&lt; temp[i];
-		else
-			cout&lt;&lt;&quot; &quot;&lt;&lt;temp[i];
-	}
-	return 0;
-}
-</code></pre>
-
-<p>这个错误在哪里呢？在to_string这个函数把int转为string的时候，所有我们就用int数组来输出就行，还有reverse函数也不可以用，用了你会发现错误，所以你只能用循环倒置整个数</p>
-
-<h2 id="正确ac代码">正确AC代码</h2>
-
-<pre><code class="language-C++">#include&lt;iostream&gt;
-#include&lt;stdio.h&gt;
-#include&lt;stdlib.h&gt;
-#include&lt;map&gt;
-#include&lt;algorithm&gt; 
+#include&lt;cstdlib&gt;
+#include&lt;cstdio&gt;
 #include&lt;vector&gt;
 #include&lt;queue&gt;
-#include&lt;string&gt; 
+#include&lt;sstream&gt;
+#include&lt;algorithm&gt;
 #pragma warning(disable:4996)
 using namespace std;
 
-vector&lt;int&gt; convert(int n, int radix)
+constexpr auto MAXN = 501;
+constexpr auto INF = 1000000000;
+
+int G[MAXN][MAXN], weight[MAXN],d[MAXN],w[MAXN],num[MAXN];
+int n,line,origin,destin;
+void Dijkstra(int origin);
+bool vis[MAXN] = { false };
+
+int main()
 {
-	vector&lt;int&gt; ans;
-	do 
-	{
-		ans.push_back(n % radix);
-		n /= radix;
-
-	} while (n != 0);
-	return ans;
-}
-
-int main() {
-#ifdef ONLINE_JUDGE    
+#ifdef ONLINE_JUDGE                
 #else    
 	freopen(&quot;1.txt&quot;, &quot;r&quot;, stdin);
-#endif
+#endif 
 
-	int a, b;
-	bool flag=true;
+	cin &gt;&gt; n &gt;&gt; line &gt;&gt; origin &gt;&gt; destin;
 
-	cin &gt;&gt; a &gt;&gt; b;
-
-	vector&lt;int&gt; ans = convert(a, b);
-
-
-	for (int i = 0; i &lt; ans.size() / 2; i++)
-		if (ans[i] != ans[ans.size() - 1 - i])
-			flag = false;
-
-	if (flag)
-		cout &lt;&lt; &quot;Yes&quot; &lt;&lt; endl;
-	else
-		cout &lt;&lt; &quot;No&quot; &lt;&lt; endl;
-
-	for (int i = ans.size()-1;i&gt;=0;i--)
+	for (int i = 0; i &lt; n; i++)
 	{
-		if (i == ans.size()-1)	cout &lt;&lt; ans[i];
-		else
-			cout&lt;&lt;&quot; &quot;&lt;&lt;ans[i];
+		cin &gt;&gt; weight[i];
 	}
+
+	fill(G[0], G[0] + MAXN * MAXN, INF);
+	int a1, a2, a3;
+	for (int i = 0; i &lt; line; i++)
+	{
+		cin &gt;&gt; a1 &gt;&gt; a2 &gt;&gt; a3;
+		G[a1][a2] = G[a2][a1] = a3;
+	}
+
+	//这样，一个无向图就好了，那为啥一定要无向图，不可以是有向图呢
+	Dijkstra(origin);
+
+	cout &lt;&lt; num[destin] &lt;&lt; &quot; &quot; &lt;&lt; w[destin];
+
+	system(&quot;pause&quot;);
 	return 0;
+}
+
+void Dijkstra(int origin)
+{
+	//记录一下最短的距离，来个数组d
+	fill(d, d + MAXN, INF);
+	//然后我们再初始化一下最大点权之和，因为因为要求输出救援小组数目之和
+	//再初始化最短路径的条数，同样是题目要求
+	memset(w, 0, sizeof(w));
+	memset(num, 0, sizeof(num));
+
+	d[origin] = 0;
+	w[origin] = weight[origin];
+	//这个1我说下，因为不管怎么样，顶点0-顶点2，有且至少有一条路，所以不肯能是0条
+	num[origin] = 1;
+
+	for (int i = 0; i &lt; n; i++)
+	{
+		int u = -1, MIN = INF;
+		for (int j = 0; j &lt; n; j++)
+		{
+			//这个时候需要一个vis，来判断节点有没有被访问过
+			if (vis[j] == false &amp;&amp; d[j] &lt; MIN)
+			{
+				u = j;
+				MIN = d[j];
+			}
+		}
+
+        //这个不解释了吧，就是说没找到相应的u，什么情况会执行return呢，就是全都遍历完了，所有节点都遍历完了，算是退出条件
+		if (u == -1)	return;
+
+		//程序能到这里，说明找到了一个节点是我们没访问过的，并且路径(d数组)是最小的,(路径好好理解一下，是从起点到节点的最短路径,也就是边权相加最小值)
+		//这个时候解释一下u这个变量的作用，u表示我们当前的中介点的下标，也表示当前我们正在处理这个节点
+		//这个标记的深层含义要理解，不仅仅是标记访问过，这表示这个点我哦们处理完了，也就是d[u]更新过了，以后我们再去用这个点可以直接用
+		vis[u] = true;
+
+		//u找到了，那么开始开放从u出发的边
+		for (int v = 0; v &lt; n; v++)
+		{
+			//什么叫开放u出发的边呢，首先，之前访问过的，不会访问，因为已经处理过了(就是d数组更新过了），所以肯定之后的边
+			//举个例子，当u=1，那么就有1-&gt;0 and 1-&gt;2这两条边，1-&gt;0肯定不处理，因为d[0]更新过了，所以要处理1-&gt;2，所以这个循环
+			//只有当v=2的时候，才是会往下面走的，其余直接跳过
+			if (vis[v] == false &amp;&amp; G[u][v] != INF)
+			{
+				//程序到这，我们接着u=1来解释，到这里，除了数组d要更新，题目要求要求点权和路径个数(也就是数组 w 和 num)
+				//程序能走到这里，说明1-&gt;2这条边存在，也就是说2这个节点，从起点开始走，起码有一条路是通往2的，所以num[2]=0变为num[2]=1；
+				//所以不管是if还是else if都是要处理num的，得让节点2的路径条数更新，同理w也是
+				if (d[u] + G[u][v] &lt; d[v])
+				{
+					d[v] = d[u] + G[u][v];
+					w[v] = w[u] + weight[v];
+					num[v] = num[u];
+				}
+				else if (d[u] + G[u][v] == d[v])
+				{
+					if (w[u] + weight[v] &gt; w[v])
+						w[v] = w[u] + weight[v];
+					num[v] += num[u];
+				}
+				//那这里num[v]=num[u] and num[v]+=num[u];为什么这两个不一样呢.首先你要知道什么情况会进到if,什么时候会进到else if
+				//进到if里面的，肯定是num[v]=0的情况，也就是第一次找到可以从起点到v节点的路径，那么如果到else if里面说明num[v]&gt;=1
+				//也就是说，之前已经找了通路，现在又有一条通路,所以直接+就行。
+
+                //思考一下，为啥没有d[u]+G[u][v]&gt;d[v]的情况，如果这个你懂了，那你就真的懂了，略略略~
+			}
+		}
+	}
 }
 </code></pre>
               
@@ -492,7 +470,7 @@ int main() {
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://ccplease.github.io/2020/04/a_1018-dijkstra-dfs/" data-tooltip="A_1018-dijkstra&#43;dfs">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://ccplease.github.io/2020/03/%E5%9B%BE%E7%9A%84%E8%A1%A5%E5%85%85-%E6%8B%93%E6%89%91%E6%8E%92%E5%BA%8F-%E5%85%B3%E9%94%AE%E8%B7%AF%E5%BE%84/" data-tooltip="图的补充-拓扑排序&#43;关键路径">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -500,7 +478,7 @@ int main() {
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://ccplease.github.io/2020/04/a_1021-%E8%BF%9E%E9%80%9A%E5%88%86%E9%87%8F%E4%B8%AA%E6%95%B0%E7%9A%84%E8%AE%A1%E7%AE%97-dfs/bfs/" data-tooltip="A_1021-连通分量个数的计算&#43;dfs/bfs">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://ccplease.github.io/2020/04/a_1030/" data-tooltip="A_1030">
               
                   <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                   <i class="fa fa-angle-right"></i>
@@ -537,7 +515,7 @@ int main() {
 </div>
 
             
-              <span id="/2020/04/a_1019/" class="leancloud_visitors" data-flag-title="A_1019">
+              <span id="/2020/03/a_1003-dijkstra/" class="leancloud_visitors" data-flag-title="A_1003-Dijkstra">
                 <span class="post-meta-item-text">文章阅读量 </span>
                 <span class="leancloud-visitors-count">1000000</span>
                 <p></p>
@@ -583,7 +561,7 @@ int main() {
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://ccplease.github.io/2020/04/a_1018-dijkstra-dfs/" data-tooltip="A_1018-dijkstra&#43;dfs">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://ccplease.github.io/2020/03/%E5%9B%BE%E7%9A%84%E8%A1%A5%E5%85%85-%E6%8B%93%E6%89%91%E6%8E%92%E5%BA%8F-%E5%85%B3%E9%94%AE%E8%B7%AF%E5%BE%84/" data-tooltip="图的补充-拓扑排序&#43;关键路径">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -591,7 +569,7 @@ int main() {
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://ccplease.github.io/2020/04/a_1021-%E8%BF%9E%E9%80%9A%E5%88%86%E9%87%8F%E4%B8%AA%E6%95%B0%E7%9A%84%E8%AE%A1%E7%AE%97-dfs/bfs/" data-tooltip="A_1021-连通分量个数的计算&#43;dfs/bfs">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://ccplease.github.io/2020/04/a_1030/" data-tooltip="A_1030">
               
                   <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                   <i class="fa fa-angle-right"></i>
@@ -725,9 +703,9 @@ $(document).ready(function() {
     
       <script>
         var disqus_config = function () {
-          this.page.url = 'https:\/\/ccplease.github.io\/2020\/04\/a_1019\/';
+          this.page.url = 'https:\/\/ccplease.github.io\/2020\/03\/a_1003-dijkstra\/';
           
-            this.page.identifier = '\/2020\/04\/a_1019\/'
+            this.page.identifier = '\/2020\/03\/a_1003-dijkstra\/'
           
         };
         (function() {
