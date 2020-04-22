@@ -13,20 +13,20 @@
 
 <meta property="og:description" content="">
 <meta property="og:type" content="article">
-<meta property="og:title" content="A_2029">
-<meta name="twitter:title" content="A_2029">
-<meta property="og:url" content="https://ccplease.github.io/2020/04/a_2029/">
-<meta property="twitter:url" content="https://ccplease.github.io/2020/04/a_2029/">
+<meta property="og:title" content="A_2028-sort函数使用">
+<meta name="twitter:title" content="A_2028-sort函数使用">
+<meta property="og:url" content="https://ccplease.github.io/2020/04/a_2028-sort%E5%87%BD%E6%95%B0%E4%BD%BF%E7%94%A8/">
+<meta property="twitter:url" content="https://ccplease.github.io/2020/04/a_2028-sort%E5%87%BD%E6%95%B0%E4%BD%BF%E7%94%A8/">
 <meta property="og:site_name" content="agony的梦想屋">
 <meta property="og:description" content="">
 <meta name="twitter:description" content="">
 <meta property="og:locale" content="zh-cn">
 
   
-    <meta property="article:published_time" content="2020-04-19T20:41:45">
+    <meta property="article:published_time" content="2020-04-19T20:41:43">
   
   
-    <meta property="article:modified_time" content="2020-04-19T20:41:45">
+    <meta property="article:modified_time" content="2020-04-19T20:41:43">
   
   
   
@@ -67,7 +67,7 @@
   <meta property="twitter:image" content="https://ccplease.github.io/images/1.jpg">
 
 
-    <title>A_2029</title>
+    <title>A_2028-sort函数使用</title>
 
      <link rel="icon" href="https://ccplease.github.io/images/123.jpg"> 
     
@@ -77,7 +77,7 @@
 
     
 
-    <link rel="canonical" href="https://ccplease.github.io/2020/04/a_2029/">
+    <link rel="canonical" href="https://ccplease.github.io/2020/04/a_2028-sort%E5%87%BD%E6%95%B0%E4%BD%BF%E7%94%A8/">
 
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
@@ -267,13 +267,13 @@
             <div class="post-header main-content-wrap text-center">
   
     <h1 class="post-title" itemprop="headline">
-      A_2029
+      A_2028-sort函数使用
     </h1>
   
   
   <div class="postShorten-meta post-meta">
     
-      <time itemprop="datePublished" datetime="2020-04-19T20:41:45&#43;08:00">
+      <time itemprop="datePublished" datetime="2020-04-19T20:41:43&#43;08:00">
         
   四月 19, 2020
 
@@ -296,7 +296,165 @@
           
           <div class="post-content markdown" itemprop="articleBody">
             <div class="main-content-wrap">
-              <h1 id="table-of-contents">目录</h1>
+              <h1 id="table-of-contents">目录</h1><nav id="TableOfContents">
+<ul>
+<li><a href="#题目">题目</a>
+<ul>
+<li><a href="#样例输入">样例输入</a>
+<ul>
+<li><a href="#input-1">Input_1</a></li>
+<li><a href="#output-1">Output_1</a></li>
+<li><a href="#input-2">Input_2</a></li>
+<li><a href="#output-2">Output_2</a></li>
+<li><a href="#input-3">Input_3</a></li>
+<li><a href="#output-3">Output_3</a></li>
+</ul></li>
+<li><a href="#思考与坑点">思考与坑点</a></li>
+<li><a href="#ac代码">AC代码</a></li>
+</ul></li>
+</ul>
+</nav>
+
+<h1 id="题目">题目</h1>
+
+<p><img src="https://gitee.com/agonyus/agonyus_pic/raw/master/20200422215842.png" alt="" /></p>
+
+<h2 id="样例输入">样例输入</h2>
+
+<h3 id="input-1">Input_1</h3>
+
+<pre><code>3 1
+000007 James 85
+000010 Amy 90
+000001 Zoe 60
+</code></pre>
+
+<h3 id="output-1">Output_1</h3>
+
+<pre><code>000001 Zoe 60
+000007 James 85
+000010 Amy 90
+</code></pre>
+
+<h3 id="input-2">Input_2</h3>
+
+<pre><code>4 2
+000007 James 85
+000010 Amy 90
+000001 Zoe 60
+000002 James 98
+</code></pre>
+
+<h3 id="output-2">Output_2</h3>
+
+<pre><code>000010 Amy 90
+000002 James 98
+000007 James 85
+000001 Zoe 60
+</code></pre>
+
+<h3 id="input-3">Input_3</h3>
+
+<pre><code>4 3
+000007 James 85
+000010 Amy 90
+000001 Zoe 60
+000002 James 90
+</code></pre>
+
+<h3 id="output-3">Output_3</h3>
+
+<pre><code>000001 Zoe 60
+000007 James 85
+000002 James 90
+000010 Amy 90
+</code></pre>
+
+<h2 id="思考与坑点">思考与坑点</h2>
+
+<p>这题不难，就是一个排序，用sort+谓词就可以。要注意的是你如果用string测试会超时，所以得改成char数组，看代码应该很容易就懂。
+<div class="alert info ">
+  <p>注意，既然换成char数组，那么就得配套使用strcmp，不能跟string一样直接比较大小了。</p>
+</div></p>
+
+<h2 id="ac代码">AC代码</h2>
+
+<pre><code class="language-C++">#include&lt;iostream&gt;
+#include&lt;stdio.h&gt;
+#include&lt;cstring&gt;
+#include&lt;queue&gt;
+#include&lt;algorithm&gt;
+#include&lt;vector&gt;
+#include&lt;set&gt;
+#include&lt;string&gt;
+#pragma warning(disable:4996)
+using namespace std;
+
+constexpr auto MAXN = 100001;
+
+typedef struct node
+{
+	//string name;
+	char name[10];
+	int id, mark;
+}Node;
+Node v[MAXN];
+
+//vector&lt;Node&gt; v;
+
+bool cmp1(Node a, Node b)
+{
+	return a.id &lt; b.id;
+}
+
+bool cmp2(Node a, Node b)
+{
+	//return a.name != b.name ? a.name &lt; b.name : a.id &lt; b.id;
+	if (strcmp(a.name, b.name) == 0) return a.id &lt; b.id;
+	return strcmp(a.name, b.name) &lt;= 0;
+}
+
+bool cmp3(Node a, Node b)
+{
+	return a.mark != b.mark ? a.mark &lt; b.mark : a.id &lt; b.id;
+}
+
+int main() {
+#ifdef ONLINE_JUDGE
+#else
+	freopen(&quot;1.txt&quot;, &quot;r&quot;, stdin);
+#endif
+
+	int n, flag;
+	scanf(&quot;%d %d&quot;,&amp;n,&amp;flag);
+
+	for (int i = 0; i &lt; n; i++)
+	{
+		scanf(&quot;%d %s %d&quot;, &amp;v[i].id, &amp;v[i].name, &amp;v[i].mark);
+	}
+
+	if (flag == 1)
+	{
+		sort(v, v+n, cmp1);
+	}
+	else if (flag == 2)
+	{
+		sort(v, v + n, cmp2);
+	}
+	else if (flag == 3)
+	{
+		sort(v, v + n, cmp3);
+	}
+	
+	for (int i=0;i&lt;n;i++)
+	{
+		printf(&quot;%06d %s %d\n&quot;, v[i].id,v[i].name,v[i].mark);
+		//cout &lt;&lt; it-&gt;name &lt;&lt; &quot; &quot; &lt;&lt; it-&gt;mark &lt;&lt; endl;
+	}
+
+	return 0;
+}
+</code></pre>
               
             </div>
           </div>
@@ -323,7 +481,7 @@
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://ccplease.github.io/2020/04/a_2028-sort%E5%87%BD%E6%95%B0%E4%BD%BF%E7%94%A8/" data-tooltip="A_2028-sort函数使用">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://ccplease.github.io/2020/04/a_2027-%E8%BF%9B%E5%88%B6%E8%BD%AC%E6%8D%A2/" data-tooltip="A_2027-进制转换">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -331,7 +489,7 @@
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://ccplease.github.io/2020/04/a_2031/" data-tooltip="A_2031">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://ccplease.github.io/2020/04/a_2029/" data-tooltip="A_2029">
               
                   <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                   <i class="fa fa-angle-right"></i>
@@ -368,7 +526,7 @@
 </div>
 
             
-              <span id="/2020/04/a_2029/" class="leancloud_visitors" data-flag-title="A_2029">
+              <span id="/2020/04/a_2028-sort%E5%87%BD%E6%95%B0%E4%BD%BF%E7%94%A8/" class="leancloud_visitors" data-flag-title="A_2028-sort函数使用">
                 <span class="post-meta-item-text">文章阅读量 </span>
                 <span class="leancloud-visitors-count">1000000</span>
                 <p></p>
@@ -414,7 +572,7 @@
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://ccplease.github.io/2020/04/a_2028-sort%E5%87%BD%E6%95%B0%E4%BD%BF%E7%94%A8/" data-tooltip="A_2028-sort函数使用">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://ccplease.github.io/2020/04/a_2027-%E8%BF%9B%E5%88%B6%E8%BD%AC%E6%8D%A2/" data-tooltip="A_2027-进制转换">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -422,7 +580,7 @@
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://ccplease.github.io/2020/04/a_2031/" data-tooltip="A_2031">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://ccplease.github.io/2020/04/a_2029/" data-tooltip="A_2029">
               
                   <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                   <i class="fa fa-angle-right"></i>
@@ -558,9 +716,9 @@ $(document).ready(function() {
     
       <script>
         var disqus_config = function () {
-          this.page.url = 'https:\/\/ccplease.github.io\/2020\/04\/a_2029\/';
+          this.page.url = 'https:\/\/ccplease.github.io\/2020\/04\/a_2028-sort%E5%87%BD%E6%95%B0%E4%BD%BF%E7%94%A8\/';
           
-            this.page.identifier = '\/2020\/04\/a_2029\/'
+            this.page.identifier = '\/2020\/04\/a_2028-sort%E5%87%BD%E6%95%B0%E4%BD%BF%E7%94%A8\/'
           
         };
         (function() {
