@@ -6,10 +6,46 @@
     <description>Recent content in PAT on agony的梦想屋</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 19 Apr 2020 20:41:50 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 26 Apr 2020 15:35:40 +0800</lastBuildDate>
     
 	<atom:link href="https://ccplease.github.io/tags/pat/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>A_1037-贪心</title>
+      <link>https://ccplease.github.io/2020/04/a_1037-%E8%B4%AA%E5%BF%83/</link>
+      <pubDate>Sun, 26 Apr 2020 15:35:40 +0800</pubDate>
+      
+      <guid>https://ccplease.github.io/2020/04/a_1037-%E8%B4%AA%E5%BF%83/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>A_1035-字符串</title>
+      <link>https://ccplease.github.io/2020/04/a_1035-%E5%AD%97%E7%AC%A6%E4%B8%B2/</link>
+      <pubDate>Sat, 25 Apr 2020 14:11:33 +0800</pubDate>
+      
+      <guid>https://ccplease.github.io/2020/04/a_1035-%E5%AD%97%E7%AC%A6%E4%B8%B2/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>A_1033-贪心问题</title>
+      <link>https://ccplease.github.io/2020/04/a_1033-%E8%B4%AA%E5%BF%83%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Sat, 25 Apr 2020 14:11:29 +0800</pubDate>
+      
+      <guid>https://ccplease.github.io/2020/04/a_1033-%E8%B4%AA%E5%BF%83%E9%97%AE%E9%A2%98/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>A_1032-链表</title>
+      <link>https://ccplease.github.io/2020/04/a_1032-%E9%93%BE%E8%A1%A8/</link>
+      <pubDate>Sat, 25 Apr 2020 14:11:25 +0800</pubDate>
+      
+      <guid>https://ccplease.github.io/2020/04/a_1032-%E9%93%BE%E8%A1%A8/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>A_2031-字符串</title>
@@ -273,11 +309,11 @@
     </item>
     
     <item>
-      <title>A_1034</title>
-      <link>https://ccplease.github.io/2020/03/a_1034/</link>
+      <title>A_1034-dijkstra&#43;DFS</title>
+      <link>https://ccplease.github.io/2020/03/a_1034-dijkstra-dfs/</link>
       <pubDate>Tue, 24 Mar 2020 10:50:23 +0800</pubDate>
       
-      <guid>https://ccplease.github.io/2020/03/a_1034/</guid>
+      <guid>https://ccplease.github.io/2020/03/a_1034-dijkstra-dfs/</guid>
       <description></description>
     </item>
     

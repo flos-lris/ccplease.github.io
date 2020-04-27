@@ -296,7 +296,93 @@
           
           <div class="post-content markdown" itemprop="articleBody">
             <div class="main-content-wrap">
-              <h1 id="table-of-contents">目录</h1>
+              <h1 id="table-of-contents">目录</h1><nav id="TableOfContents">
+<ul>
+<li><a href="#题目">题目</a>
+<ul>
+<li><a href="#样例输入">样例输入</a>
+<ul>
+<li><a href="#input">Input</a></li>
+<li><a href="#output">Output</a></li>
+</ul></li>
+<li><a href="#思考与坑点">思考与坑点</a></li>
+<li><a href="#ac代码">AC代码</a></li>
+</ul></li>
+</ul>
+</nav>
+
+<h1 id="题目">题目</h1>
+
+<h2 id="样例输入">样例输入</h2>
+
+<h3 id="input">Input</h3>
+
+<h3 id="output">Output</h3>
+
+<h2 id="思考与坑点">思考与坑点</h2>
+
+<div class="alert warning ">
+  <p>本题借鉴呆神思路</p>
+</div>
+
+<p>这题是关于字符串的，字符串本身比较头疼，这题还行，主要找到n1，n2，n3和空格的关系。这题可以一行一行输出，因为都是有规律的，不像螺旋矩阵。</p>
+
+<ul>
+<li>n1==n3</li>
+<li>n2=(len-2*n1)+2</li>
+
+<li><p>空格数=n2-2 &ndash;&gt; 空格数=len-2*n1</p>
+
+<h2 id="ac代码">AC代码</h2>
+
+<pre><code class="language-C++">#include&lt;iostream&gt;
+#include&lt;stdlib.h&gt;
+#include&lt;stdio.h&gt;
+#include&lt;string.h&gt;
+#include&lt;math.h&gt;
+#include&lt;algorithm&gt;
+#include&lt;vector&gt;
+#include&lt;string&gt;
+#pragma warning(disable:4996)
+using namespace std;
+
+int main() 
+{
+#ifdef ONLINE_JUDGE
+#else
+	freopen(&quot;1.txt&quot;, &quot;r&quot;, stdin);
+#endif
+	
+	int n1;
+	string str,temp;
+
+	cin &gt;&gt; str;
+	int len = str.size();
+	
+	n1 = (len + 2) / 3;
+
+	int k = len - (2 * n1);
+
+	for (int i = 0; i &lt; k; i++)
+		temp.push_back(' ');
+	
+	int i;
+	for (i = 0; i &lt; n1-1; i++)
+	{
+		cout &lt;&lt; str[i];
+		cout &lt;&lt; temp;
+		cout &lt;&lt; str[len - 1 - i] &lt;&lt; endl;;
+	}
+
+	//这地方你用substr也是可以的，只要知道n2是几个字符就行
+	for (int j = i; j &lt; i+k + 2; j++)
+	{
+		cout &lt;&lt; str[j];
+	}
+	return 0;
+}
+</code></pre></li>
+</ul>
               
             </div>
           </div>
@@ -331,7 +417,7 @@
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://ccplease.github.io/2020/04/%E8%BF%91%E6%9C%9F%E5%85%AC%E5%91%8A/" data-tooltip="近期公告">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://ccplease.github.io/2020/04/a_1032-%E9%93%BE%E8%A1%A8/" data-tooltip="A_1032-链表">
               
                   <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                   <i class="fa fa-angle-right"></i>
@@ -422,7 +508,7 @@
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://ccplease.github.io/2020/04/%E8%BF%91%E6%9C%9F%E5%85%AC%E5%91%8A/" data-tooltip="近期公告">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://ccplease.github.io/2020/04/a_1032-%E9%93%BE%E8%A1%A8/" data-tooltip="A_1032-链表">
               
                   <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                   <i class="fa fa-angle-right"></i>

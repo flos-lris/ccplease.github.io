@@ -6,7 +6,7 @@
     <description>Recent content on agony的梦想屋</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 19 Apr 2020 23:00:36 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 27 Apr 2020 23:00:36 +0900</lastBuildDate>
     
 	<atom:link href="https://ccplease.github.io/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,10 +14,73 @@
     <item>
       <title>近期公告</title>
       <link>https://ccplease.github.io/2020/04/%E8%BF%91%E6%9C%9F%E5%85%AC%E5%91%8A/</link>
-      <pubDate>Sun, 19 Apr 2020 23:00:36 +0900</pubDate>
+      <pubDate>Mon, 27 Apr 2020 23:00:36 +0900</pubDate>
       
       <guid>https://ccplease.github.io/2020/04/%E8%BF%91%E6%9C%9F%E5%85%AC%E5%91%8A/</guid>
       <description>&lt;p&gt;原因和结果，一切从选择开始&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>A_1039</title>
+      <link>https://ccplease.github.io/2020/04/a_1039/</link>
+      <pubDate>Sun, 26 Apr 2020 15:35:45 +0800</pubDate>
+      
+      <guid>https://ccplease.github.io/2020/04/a_1039/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>A_1038-贪心</title>
+      <link>https://ccplease.github.io/2020/04/a_1038-%E8%B4%AA%E5%BF%83/</link>
+      <pubDate>Sun, 26 Apr 2020 15:35:43 +0800</pubDate>
+      
+      <guid>https://ccplease.github.io/2020/04/a_1038-%E8%B4%AA%E5%BF%83/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>A_1037-贪心</title>
+      <link>https://ccplease.github.io/2020/04/a_1037-%E8%B4%AA%E5%BF%83/</link>
+      <pubDate>Sun, 26 Apr 2020 15:35:40 +0800</pubDate>
+      
+      <guid>https://ccplease.github.io/2020/04/a_1037-%E8%B4%AA%E5%BF%83/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>A_1036-查找元素</title>
+      <link>https://ccplease.github.io/2020/04/a_1036-%E6%9F%A5%E6%89%BE%E5%85%83%E7%B4%A0/</link>
+      <pubDate>Sat, 25 Apr 2020 14:11:35 +0800</pubDate>
+      
+      <guid>https://ccplease.github.io/2020/04/a_1036-%E6%9F%A5%E6%89%BE%E5%85%83%E7%B4%A0/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>A_1035-字符串</title>
+      <link>https://ccplease.github.io/2020/04/a_1035-%E5%AD%97%E7%AC%A6%E4%B8%B2/</link>
+      <pubDate>Sat, 25 Apr 2020 14:11:33 +0800</pubDate>
+      
+      <guid>https://ccplease.github.io/2020/04/a_1035-%E5%AD%97%E7%AC%A6%E4%B8%B2/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>A_1033-贪心问题</title>
+      <link>https://ccplease.github.io/2020/04/a_1033-%E8%B4%AA%E5%BF%83%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Sat, 25 Apr 2020 14:11:29 +0800</pubDate>
+      
+      <guid>https://ccplease.github.io/2020/04/a_1033-%E8%B4%AA%E5%BF%83%E9%97%AE%E9%A2%98/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>A_1032-链表</title>
+      <link>https://ccplease.github.io/2020/04/a_1032-%E9%93%BE%E8%A1%A8/</link>
+      <pubDate>Sat, 25 Apr 2020 14:11:25 +0800</pubDate>
+      
+      <guid>https://ccplease.github.io/2020/04/a_1032-%E9%93%BE%E8%A1%A8/</guid>
+      <description></description>
     </item>
     
     <item>
@@ -354,11 +417,11 @@
     </item>
     
     <item>
-      <title>A_1034</title>
-      <link>https://ccplease.github.io/2020/03/a_1034/</link>
+      <title>A_1034-dijkstra&#43;DFS</title>
+      <link>https://ccplease.github.io/2020/03/a_1034-dijkstra-dfs/</link>
       <pubDate>Tue, 24 Mar 2020 10:50:23 +0800</pubDate>
       
-      <guid>https://ccplease.github.io/2020/03/a_1034/</guid>
+      <guid>https://ccplease.github.io/2020/03/a_1034-dijkstra-dfs/</guid>
       <description></description>
     </item>
     
