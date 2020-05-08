@@ -296,7 +296,89 @@
           
           <div class="post-content markdown" itemprop="articleBody">
             <div class="main-content-wrap">
-              <h1 id="table-of-contents">目录</h1>
+              <h1 id="table-of-contents">目录</h1><nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#ac代码">AC代码</a></li>
+</ul></li>
+</ul>
+</nav>
+
+<h2 id="ac代码">AC代码</h2>
+
+<pre><code class="language-C++">#include&lt;iostream&gt;
+#include&lt;stdlib.h&gt;
+#include&lt;stdio.h&gt;
+#include&lt;string.h&gt;
+#include&lt;math.h&gt;
+#include&lt;algorithm&gt;
+#include&lt;vector&gt;
+#include&lt;string&gt;
+#include&lt;map&gt;
+#include&lt;unordered_map&gt;
+#pragma warning(disable:4996)
+using namespace std;
+
+typedef struct node
+{
+	char name[10];
+	int age, wealth;
+}NODE;
+
+vector&lt;NODE&gt; arr;
+
+bool cmp(node a, node b)
+{
+	if (a.wealth != b.wealth)
+		return a.wealth &gt; b.wealth;
+	else if (a.age != b.age)
+		return a.age &lt; b.age;
+	else
+		return (strcmp(a.name, b.name) &lt; 0);
+}
+
+int main(void) {
+#ifdef ONLINE_JUDGE
+#else
+	freopen(&quot;1.txt&quot;, &quot;r&quot;, stdin);
+#endif
+
+	int n, m;
+	cin &gt;&gt; n &gt;&gt; m;
+
+	arr.resize(n);
+	for (int i = 0; i &lt; n; i++)
+		scanf(&quot;%s %d %d&quot;, arr[i].name,&amp;arr[i].age,&amp;arr[i].wealth);
+
+	sort(arr.begin(), arr.end(), cmp);
+
+	int a, b, c;
+	for (int i = 0; i &lt; m; i++)
+	{
+		cin &gt;&gt; a &gt;&gt; b &gt;&gt; c;
+
+		int cnt = 0;
+
+		printf(&quot;Case #%d:\n&quot;, i + 1);
+		for (int j = 0; j &lt; arr.size(); j++)
+		{
+			if (arr[j].age &gt;= b &amp;&amp; arr[j].age &lt;= c)
+			{
+				printf(&quot;%s %d %d\n&quot;, arr[j].name, arr[j].age, arr[j].wealth);
+				cnt++;
+			}
+			if (cnt &gt;= a)	break;
+		}
+		if (cnt == 0)
+		{
+			printf(&quot;None\n&quot;);
+			break;
+		}
+	}
+	return 0;
+}
+</code></pre>
               
             </div>
           </div>
@@ -331,7 +413,7 @@
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://ccplease.github.io/2020/05/a_1056/" data-tooltip="A_1056">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://ccplease.github.io/2020/05/a_1056-queue/" data-tooltip="A_1056-queue(※)">
               
                   <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                   <i class="fa fa-angle-right"></i>
@@ -422,7 +504,7 @@
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://ccplease.github.io/2020/05/a_1056/" data-tooltip="A_1056">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://ccplease.github.io/2020/05/a_1056-queue/" data-tooltip="A_1056-queue(※)">
               
                   <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                   <i class="fa fa-angle-right"></i>
