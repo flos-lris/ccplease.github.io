@@ -13,20 +13,20 @@
 
 <meta property="og:description" content="">
 <meta property="og:type" content="article">
-<meta property="og:title" content="A_1070-贪心">
-<meta name="twitter:title" content="A_1070-贪心">
-<meta property="og:url" content="https://ccplease.github.io/2020/05/a_1070-%E8%B4%AA%E5%BF%83/">
-<meta property="twitter:url" content="https://ccplease.github.io/2020/05/a_1070-%E8%B4%AA%E5%BF%83/">
+<meta property="og:title" content="A_1073-科学计数法">
+<meta name="twitter:title" content="A_1073-科学计数法">
+<meta property="og:url" content="https://ccplease.github.io/2020/05/a_1073-%E7%A7%91%E5%AD%A6%E8%AE%A1%E6%95%B0%E6%B3%95/">
+<meta property="twitter:url" content="https://ccplease.github.io/2020/05/a_1073-%E7%A7%91%E5%AD%A6%E8%AE%A1%E6%95%B0%E6%B3%95/">
 <meta property="og:site_name" content="agony的梦想屋">
 <meta property="og:description" content="">
 <meta name="twitter:description" content="">
 <meta property="og:locale" content="zh-cn">
 
   
-    <meta property="article:published_time" content="2020-05-08T19:16:51">
+    <meta property="article:published_time" content="2020-05-08T19:23:20">
   
   
-    <meta property="article:modified_time" content="2020-05-08T19:16:51">
+    <meta property="article:modified_time" content="2020-05-08T19:23:20">
   
   
   
@@ -67,7 +67,7 @@
   <meta property="twitter:image" content="https://ccplease.github.io/images/1.jpg">
 
 
-    <title>A_1070-贪心</title>
+    <title>A_1073-科学计数法</title>
 
      <link rel="icon" href="https://ccplease.github.io/images/123.jpg"> 
     
@@ -77,7 +77,7 @@
 
     
 
-    <link rel="canonical" href="https://ccplease.github.io/2020/05/a_1070-%E8%B4%AA%E5%BF%83/">
+    <link rel="canonical" href="https://ccplease.github.io/2020/05/a_1073-%E7%A7%91%E5%AD%A6%E8%AE%A1%E6%95%B0%E6%B3%95/">
 
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
@@ -267,13 +267,13 @@
             <div class="post-header main-content-wrap text-center">
   
     <h1 class="post-title" itemprop="headline">
-      A_1070-贪心
+      A_1073-科学计数法
     </h1>
   
   
   <div class="postShorten-meta post-meta">
     
-      <time itemprop="datePublished" datetime="2020-05-08T19:16:51&#43;08:00">
+      <time itemprop="datePublished" datetime="2020-05-08T19:23:20&#43;08:00">
         
   五月 8, 2020
 
@@ -300,10 +300,12 @@
 <ul>
 <li><a href="#题目">题目</a>
 <ul>
-<li><a href="#输入样例">输入样例</a>
+<li><a href="#样例输入">样例输入</a>
 <ul>
-<li><a href="#input">Input</a></li>
-<li><a href="#output">Output</a></li>
+<li><a href="#inuput-1">Inuput_1</a></li>
+<li><a href="#output-1">Output_1</a></li>
+<li><a href="#input-2">Input_2</a></li>
+<li><a href="#output-2">Output_2</a></li>
 </ul></li>
 <li><a href="#思考与坑点">思考与坑点</a></li>
 <li><a href="#ac代码">AC代码</a></li>
@@ -313,88 +315,63 @@
 
 <h1 id="题目">题目</h1>
 
-<p><img src="https://gitee.com/agonyus/agonyus_pic/raw/master/20200509224107.png" alt="" /></p>
+<p><img src="https://gitee.com/agonyus/agonyus_pic/raw/master/20200509221223.png" alt="" /></p>
 
-<h2 id="输入样例">输入样例</h2>
+<h2 id="样例输入">样例输入</h2>
 
-<h3 id="input">Input</h3>
+<h3 id="inuput-1">Inuput_1</h3>
 
-<pre><code>3 200
-180 150 100
-7.5 7.2 4.5
+<pre><code>+1.23400E-03
 </code></pre>
 
-<h3 id="output">Output</h3>
+<h3 id="output-1">Output_1</h3>
 
-<pre><code>9.45
+<pre><code>0.00123400
+</code></pre>
+
+<h3 id="input-2">Input_2</h3>
+
+<pre><code>-1.2E+10
+</code></pre>
+
+<h3 id="output-2">Output_2</h3>
+
+<pre><code>-12000000000
 </code></pre>
 
 <h2 id="思考与坑点">思考与坑点</h2>
 
-<p>同乙级 ‘月饼’</p>
+<p>同乙级1024.</p>
 
 <h2 id="ac代码">AC代码</h2>
 
-<pre><code class="language-C++">#include&lt;iostream&gt;
-#include&lt;cstdlib&gt;
-#include&lt;vector&gt;
-#include&lt;algorithm&gt;
-#include&lt;iomanip&gt;
-#pragma warning(disable:4996)
+<pre><code class="language-C++">#include &lt;iostream&gt;
 using namespace std;
-
-typedef struct mooncake
-{
-	double store, sell, unit_price;
-}cake;
-
-int cmp(mooncake a, mooncake b)
-{
-	return a.unit_price &gt; b.unit_price;
-}
-
-int main()
-{
-#ifdef ONLINE_JUDGE                
-#else    
-	freopen(&quot;1.txt&quot;, &quot;r&quot;, stdin);
-#endif 
-	
-	int n,D;
-	cin &gt;&gt; n&gt;&gt;D;
-
-	vector&lt;cake&gt; v(n);
-
-	for (int i = 0; i &lt; n; i++)
-		cin &gt;&gt; v[i].store;
-
-	for (int i = 0; i &lt; n; i++)
-	{
-		cin &gt;&gt; v[i].sell;
-		v[i].unit_price = v[i].sell / v[i].store;
-	}
-
-	sort(v.begin(), v.end(), cmp);
-
-	double sum = 0;
-	for (int i = 0; i &lt; n; i++)
-	{
-		//这个地方注意，必须把&lt;=需求量放在第一个，&gt;需求量的放后面，因为假如，你得单价最高的库存没有需求量大，你还需要
-		if (v[i].store &lt;= D)
-		{
-			sum += v[i].sell;
-		}
-		else
-		{
-			sum += v[i].unit_price*D;
-			break;
-		}
-		D -= v[i].store;
-	}
-
-	cout &lt;&lt; fixed &lt;&lt; setprecision(2) &lt;&lt; sum;
-	system(&quot;pause&quot;);
-	return 0;
+int main() {
+    string s;
+    cin &gt;&gt; s;
+    int i = 0;
+    while (s[i] != 'E') i++;
+    string t = s.substr(1, i-1);
+    int n = stoi(s.substr(i+1));
+    if (s[0] == '-') cout &lt;&lt; &quot;-&quot;;
+    if (n &lt; 0) {
+        cout &lt;&lt; &quot;0.&quot;;
+        for (int j = 0; j &lt; abs(n) - 1; j++) cout &lt;&lt; '0';
+        for (int j = 0; j &lt; t.length(); j++)
+            if (t[j] != '.') cout &lt;&lt; t[j];
+    } else {
+        cout &lt;&lt; t[0];
+        int cnt, j;
+        for (j = 2, cnt = 0; j &lt; t.length() &amp;&amp; cnt &lt; n; j++, cnt++) cout &lt;&lt; t[j];
+        if (j == t.length()) {
+            for (int k = 0; k &lt; n - cnt; k++) cout &lt;&lt; '0';
+        } else {
+            cout &lt;&lt; '.';
+            for (int k = j; k &lt; t.length(); k++) cout &lt;&lt; t[k];
+        }
+    }
+    return 0;
 }
 </code></pre>
               
@@ -423,7 +400,7 @@ int main()
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://ccplease.github.io/2020/05/a_1069-%E6%95%B0%E5%AD%A6%E9%97%AE%E9%A2%98/" data-tooltip="A_1069-数学问题">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://ccplease.github.io/2020/05/a_1072-dijkstra/" data-tooltip="A_1072-dijkstra">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -431,7 +408,7 @@ int main()
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://ccplease.github.io/2020/05/a_1071-map%E5%A4%84%E7%90%86%E5%AD%97%E7%AC%A6%E4%B8%B2/" data-tooltip="A_1071-map处理字符串">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://ccplease.github.io/2020/05/a_1074-%E9%80%86%E7%BD%AE%E9%93%BE%E8%A1%A8/" data-tooltip="A_1074-逆置链表">
               
                   <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                   <i class="fa fa-angle-right"></i>
@@ -468,7 +445,7 @@ int main()
 </div>
 
             
-              <span id="/2020/05/a_1070-%E8%B4%AA%E5%BF%83/" class="leancloud_visitors" data-flag-title="A_1070-贪心">
+              <span id="/2020/05/a_1073-%E7%A7%91%E5%AD%A6%E8%AE%A1%E6%95%B0%E6%B3%95/" class="leancloud_visitors" data-flag-title="A_1073-科学计数法">
                 <span class="post-meta-item-text">文章阅读量 </span>
                 <span class="leancloud-visitors-count">1000000</span>
                 <p></p>
@@ -514,7 +491,7 @@ int main()
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://ccplease.github.io/2020/05/a_1069-%E6%95%B0%E5%AD%A6%E9%97%AE%E9%A2%98/" data-tooltip="A_1069-数学问题">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://ccplease.github.io/2020/05/a_1072-dijkstra/" data-tooltip="A_1072-dijkstra">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -522,7 +499,7 @@ int main()
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://ccplease.github.io/2020/05/a_1071-map%E5%A4%84%E7%90%86%E5%AD%97%E7%AC%A6%E4%B8%B2/" data-tooltip="A_1071-map处理字符串">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://ccplease.github.io/2020/05/a_1074-%E9%80%86%E7%BD%AE%E9%93%BE%E8%A1%A8/" data-tooltip="A_1074-逆置链表">
               
                   <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                   <i class="fa fa-angle-right"></i>
@@ -658,9 +635,9 @@ $(document).ready(function() {
     
       <script>
         var disqus_config = function () {
-          this.page.url = 'https:\/\/ccplease.github.io\/2020\/05\/a_1070-%E8%B4%AA%E5%BF%83\/';
+          this.page.url = 'https:\/\/ccplease.github.io\/2020\/05\/a_1073-%E7%A7%91%E5%AD%A6%E8%AE%A1%E6%95%B0%E6%B3%95\/';
           
-            this.page.identifier = '\/2020\/05\/a_1070-%E8%B4%AA%E5%BF%83\/'
+            this.page.identifier = '\/2020\/05\/a_1073-%E7%A7%91%E5%AD%A6%E8%AE%A1%E6%95%B0%E6%B3%95\/'
           
         };
         (function() {

@@ -13,20 +13,20 @@
 
 <meta property="og:description" content="">
 <meta property="og:type" content="article">
-<meta property="og:title" content="A_1070-贪心">
-<meta name="twitter:title" content="A_1070-贪心">
-<meta property="og:url" content="https://ccplease.github.io/2020/05/a_1070-%E8%B4%AA%E5%BF%83/">
-<meta property="twitter:url" content="https://ccplease.github.io/2020/05/a_1070-%E8%B4%AA%E5%BF%83/">
+<meta property="og:title" content="A_1071-map处理字符串">
+<meta name="twitter:title" content="A_1071-map处理字符串">
+<meta property="og:url" content="https://ccplease.github.io/2020/05/a_1071-map%E5%A4%84%E7%90%86%E5%AD%97%E7%AC%A6%E4%B8%B2/">
+<meta property="twitter:url" content="https://ccplease.github.io/2020/05/a_1071-map%E5%A4%84%E7%90%86%E5%AD%97%E7%AC%A6%E4%B8%B2/">
 <meta property="og:site_name" content="agony的梦想屋">
 <meta property="og:description" content="">
 <meta name="twitter:description" content="">
 <meta property="og:locale" content="zh-cn">
 
   
-    <meta property="article:published_time" content="2020-05-08T19:16:51">
+    <meta property="article:published_time" content="2020-05-08T19:23:16">
   
   
-    <meta property="article:modified_time" content="2020-05-08T19:16:51">
+    <meta property="article:modified_time" content="2020-05-08T19:23:16">
   
   
   
@@ -67,7 +67,7 @@
   <meta property="twitter:image" content="https://ccplease.github.io/images/1.jpg">
 
 
-    <title>A_1070-贪心</title>
+    <title>A_1071-map处理字符串</title>
 
      <link rel="icon" href="https://ccplease.github.io/images/123.jpg"> 
     
@@ -77,7 +77,7 @@
 
     
 
-    <link rel="canonical" href="https://ccplease.github.io/2020/05/a_1070-%E8%B4%AA%E5%BF%83/">
+    <link rel="canonical" href="https://ccplease.github.io/2020/05/a_1071-map%E5%A4%84%E7%90%86%E5%AD%97%E7%AC%A6%E4%B8%B2/">
 
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
@@ -267,13 +267,13 @@
             <div class="post-header main-content-wrap text-center">
   
     <h1 class="post-title" itemprop="headline">
-      A_1070-贪心
+      A_1071-map处理字符串
     </h1>
   
   
   <div class="postShorten-meta post-meta">
     
-      <time itemprop="datePublished" datetime="2020-05-08T19:16:51&#43;08:00">
+      <time itemprop="datePublished" datetime="2020-05-08T19:23:16&#43;08:00">
         
   五月 8, 2020
 
@@ -296,7 +296,12 @@
           
           <div class="post-content markdown" itemprop="articleBody">
             <div class="main-content-wrap">
-              <h1 id="table-of-contents">目录</h1><nav id="TableOfContents">
+              <p>synonyms    &ndash;同义词
+narrow down &ndash;缩小，限制
+validating  &ndash;验证，确认
+online avatar   &ndash;网络头像
+text sampled    &ndash;文本样本
+<h1 id="table-of-contents">目录</h1><nav id="TableOfContents">
 <ul>
 <li><a href="#题目">题目</a>
 <ul>
@@ -309,49 +314,46 @@
 <li><a href="#ac代码">AC代码</a></li>
 </ul></li>
 </ul>
-</nav>
+</nav></p>
 
 <h1 id="题目">题目</h1>
 
-<p><img src="https://gitee.com/agonyus/agonyus_pic/raw/master/20200509224107.png" alt="" /></p>
+<p><img src="https://gitee.com/agonyus/agonyus_pic/raw/master/20200509223941.png" alt="" /></p>
 
 <h2 id="输入样例">输入样例</h2>
 
 <h3 id="input">Input</h3>
 
-<pre><code>3 200
-180 150 100
-7.5 7.2 4.5
+<pre><code>Can1: &quot;Can a can can a can?  It can!&quot;
 </code></pre>
 
 <h3 id="output">Output</h3>
 
-<pre><code>9.45
+<pre><code>can 5
 </code></pre>
 
 <h2 id="思考与坑点">思考与坑点</h2>
 
-<p>同乙级 ‘月饼’</p>
+<p>这题用map就可以做了，把单词放进map然后计数，最后求次数最高的那个单词，但是这题有两个点要注意：</p>
+
+<ul>
+<li>最好用isalnum，因为isalnum=isalpha+isdigit,方便很多</li>
+<li>题目中有一句话：<strong>Here a &ldquo;word&rdquo; is defined as a continuous sequence of alphanumerical characters separated by non-alphanumerical characters or the line beginning/end.</strong>，这句话的意思是，比如：can a can b，这个b依旧是一个单词，因为我们判断一个字符出是否是单词是看前后有没有字符，can的左和右都是空格，而b只有左边有空格，右边是<code>\n</code>，所以得特殊处理，否则我们会把这个单词丢掉，这是第4个测试点</li>
+</ul>
 
 <h2 id="ac代码">AC代码</h2>
 
 <pre><code class="language-C++">#include&lt;iostream&gt;
-#include&lt;cstdlib&gt;
+#include&lt;cctype&gt;
+#include&lt;cstdio&gt;
 #include&lt;vector&gt;
+#include&lt;unordered_map&gt;
+#include&lt;sstream&gt;
+#include&lt;map&gt;
+#include&lt;queue&gt;
 #include&lt;algorithm&gt;
-#include&lt;iomanip&gt;
 #pragma warning(disable:4996)
 using namespace std;
-
-typedef struct mooncake
-{
-	double store, sell, unit_price;
-}cake;
-
-int cmp(mooncake a, mooncake b)
-{
-	return a.unit_price &gt; b.unit_price;
-}
 
 int main()
 {
@@ -359,40 +361,41 @@ int main()
 #else    
 	freopen(&quot;1.txt&quot;, &quot;r&quot;, stdin);
 #endif 
-	
-	int n,D;
-	cin &gt;&gt; n&gt;&gt;D;
 
-	vector&lt;cake&gt; v(n);
+	string str,tmp;
+	getline(cin, str);
 
-	for (int i = 0; i &lt; n; i++)
-		cin &gt;&gt; v[i].store;
+	map&lt;string, int&gt; m;
 
-	for (int i = 0; i &lt; n; i++)
+	for (int i = 0; i &lt; str.size(); i++)
 	{
-		cin &gt;&gt; v[i].sell;
-		v[i].unit_price = v[i].sell / v[i].store;
+		if (isalnum(str[i]))
+		{
+			str[i]=towlower(str[i]);
+			tmp += str[i];
+		}
+        //这个地方很重要，最后一个测试点，如果最后一个是数字或者字母，都当成单词
+		if (!isalnum(str[i]) || i == str.length() - 1)
+		{
+			if (tmp.size() != 0)
+				m[tmp]++;
+			tmp = &quot;&quot;;
+		}		
 	}
 
-	sort(v.begin(), v.end(), cmp);
-
-	double sum = 0;
-	for (int i = 0; i &lt; n; i++)
+	int cnt = 0;
+	string s;
+	for (auto it = m.begin(); it != m.end(); it++)
 	{
-		//这个地方注意，必须把&lt;=需求量放在第一个，&gt;需求量的放后面，因为假如，你得单价最高的库存没有需求量大，你还需要
-		if (v[i].store &lt;= D)
+		if (it-&gt;second &gt; cnt)
 		{
-			sum += v[i].sell;
+			cnt = it-&gt;second;
+			s = it-&gt;first;
 		}
-		else
-		{
-			sum += v[i].unit_price*D;
-			break;
-		}
-		D -= v[i].store;
 	}
 
-	cout &lt;&lt; fixed &lt;&lt; setprecision(2) &lt;&lt; sum;
+	cout &lt;&lt; s &lt;&lt; &quot; &quot; &lt;&lt; cnt;
+
 	system(&quot;pause&quot;);
 	return 0;
 }
@@ -423,7 +426,7 @@ int main()
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://ccplease.github.io/2020/05/a_1069-%E6%95%B0%E5%AD%A6%E9%97%AE%E9%A2%98/" data-tooltip="A_1069-数学问题">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://ccplease.github.io/2020/05/a_1070-%E8%B4%AA%E5%BF%83/" data-tooltip="A_1070-贪心">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -431,7 +434,7 @@ int main()
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://ccplease.github.io/2020/05/a_1071-map%E5%A4%84%E7%90%86%E5%AD%97%E7%AC%A6%E4%B8%B2/" data-tooltip="A_1071-map处理字符串">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://ccplease.github.io/2020/05/a_1072-dijkstra/" data-tooltip="A_1072-dijkstra">
               
                   <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                   <i class="fa fa-angle-right"></i>
@@ -468,7 +471,7 @@ int main()
 </div>
 
             
-              <span id="/2020/05/a_1070-%E8%B4%AA%E5%BF%83/" class="leancloud_visitors" data-flag-title="A_1070-贪心">
+              <span id="/2020/05/a_1071-map%E5%A4%84%E7%90%86%E5%AD%97%E7%AC%A6%E4%B8%B2/" class="leancloud_visitors" data-flag-title="A_1071-map处理字符串">
                 <span class="post-meta-item-text">文章阅读量 </span>
                 <span class="leancloud-visitors-count">1000000</span>
                 <p></p>
@@ -514,7 +517,7 @@ int main()
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://ccplease.github.io/2020/05/a_1069-%E6%95%B0%E5%AD%A6%E9%97%AE%E9%A2%98/" data-tooltip="A_1069-数学问题">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://ccplease.github.io/2020/05/a_1070-%E8%B4%AA%E5%BF%83/" data-tooltip="A_1070-贪心">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -522,7 +525,7 @@ int main()
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://ccplease.github.io/2020/05/a_1071-map%E5%A4%84%E7%90%86%E5%AD%97%E7%AC%A6%E4%B8%B2/" data-tooltip="A_1071-map处理字符串">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://ccplease.github.io/2020/05/a_1072-dijkstra/" data-tooltip="A_1072-dijkstra">
               
                   <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                   <i class="fa fa-angle-right"></i>
@@ -658,9 +661,9 @@ $(document).ready(function() {
     
       <script>
         var disqus_config = function () {
-          this.page.url = 'https:\/\/ccplease.github.io\/2020\/05\/a_1070-%E8%B4%AA%E5%BF%83\/';
+          this.page.url = 'https:\/\/ccplease.github.io\/2020\/05\/a_1071-map%E5%A4%84%E7%90%86%E5%AD%97%E7%AC%A6%E4%B8%B2\/';
           
-            this.page.identifier = '\/2020\/05\/a_1070-%E8%B4%AA%E5%BF%83\/'
+            this.page.identifier = '\/2020\/05\/a_1071-map%E5%A4%84%E7%90%86%E5%AD%97%E7%AC%A6%E4%B8%B2\/'
           
         };
         (function() {

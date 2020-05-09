@@ -6,7 +6,7 @@
     <description>Recent content on agony的梦想屋</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 08 May 2020 19:24:20 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 09 May 2020 19:24:20 +0800</lastBuildDate>
     
 	<atom:link href="https://ccplease.github.io/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,36 +14,45 @@
     <item>
       <title>近期公告</title>
       <link>https://ccplease.github.io/2020/05/%E8%BF%91%E6%9C%9F%E5%85%AC%E5%91%8A/</link>
-      <pubDate>Fri, 08 May 2020 19:24:20 +0800</pubDate>
+      <pubDate>Sat, 09 May 2020 19:24:20 +0800</pubDate>
       
       <guid>https://ccplease.github.io/2020/05/%E8%BF%91%E6%9C%9F%E5%85%AC%E5%91%8A/</guid>
       <description>&lt;p&gt;La doice vita yeah&lt;/p&gt;</description>
     </item>
     
     <item>
-      <title>A_1073</title>
-      <link>https://ccplease.github.io/2020/05/a_1073/</link>
+      <title>A_1074-逆置链表</title>
+      <link>https://ccplease.github.io/2020/05/a_1074-%E9%80%86%E7%BD%AE%E9%93%BE%E8%A1%A8/</link>
+      <pubDate>Sat, 09 May 2020 19:01:24 +0800</pubDate>
+      
+      <guid>https://ccplease.github.io/2020/05/a_1074-%E9%80%86%E7%BD%AE%E9%93%BE%E8%A1%A8/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>A_1073-科学计数法</title>
+      <link>https://ccplease.github.io/2020/05/a_1073-%E7%A7%91%E5%AD%A6%E8%AE%A1%E6%95%B0%E6%B3%95/</link>
       <pubDate>Fri, 08 May 2020 19:23:20 +0800</pubDate>
       
-      <guid>https://ccplease.github.io/2020/05/a_1073/</guid>
+      <guid>https://ccplease.github.io/2020/05/a_1073-%E7%A7%91%E5%AD%A6%E8%AE%A1%E6%95%B0%E6%B3%95/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>A_1072</title>
-      <link>https://ccplease.github.io/2020/05/a_1072/</link>
+      <title>A_1072-dijkstra</title>
+      <link>https://ccplease.github.io/2020/05/a_1072-dijkstra/</link>
       <pubDate>Fri, 08 May 2020 19:23:18 +0800</pubDate>
       
-      <guid>https://ccplease.github.io/2020/05/a_1072/</guid>
+      <guid>https://ccplease.github.io/2020/05/a_1072-dijkstra/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>A_1071</title>
-      <link>https://ccplease.github.io/2020/05/a_1071/</link>
+      <title>A_1071-map处理字符串</title>
+      <link>https://ccplease.github.io/2020/05/a_1071-map%E5%A4%84%E7%90%86%E5%AD%97%E7%AC%A6%E4%B8%B2/</link>
       <pubDate>Fri, 08 May 2020 19:23:16 +0800</pubDate>
       
-      <guid>https://ccplease.github.io/2020/05/a_1071/</guid>
+      <guid>https://ccplease.github.io/2020/05/a_1071-map%E5%A4%84%E7%90%86%E5%AD%97%E7%AC%A6%E4%B8%B2/</guid>
       <description></description>
     </item>
     

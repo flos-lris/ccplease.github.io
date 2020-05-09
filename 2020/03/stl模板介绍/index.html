@@ -296,11 +296,18 @@
           
           <div class="post-content markdown" itemprop="articleBody">
             <div class="main-content-wrap">
-              <h1 id="table-of-contents">目录</h1>
-
-<pre><code>STL所提供的各式各样算法中，sort()是最复杂最庞大的一个。这个算法接受两个RandomAccestlerators（随机存取迭代器），然后将区间内的所有元素以渐增方式由小到大重新排列。第二个版本则允许用户指定一个仿函数（functor），作为排序标准，STL的所有关系型容器主要包括set和map这两种容器（associative containers）都拥有自动排序功能（底层结构采用RB-tree，所以不需要用到这个sort算法。至于序列式容器（squence containers）中的 stack、queue 和priority-queue都有特别的出入口，不允许用户对元素排序。剩下vector.deque和list，前两者的迭代器属于RandomAccessiterators，适合使用sort算法，list的迭代器则属于Bidirectioinallterators,适合使用sort算法.list的迭代器则属于Bidirectionallterators,不在STL标准之列的slist,其迭代器更属于ForwardIIterators,不在STL标准之列的slist,其迭代器更属于ForwardIIterators,都不适用与sort算法，如果要对list或slist排序，应该使用它们自己提供的member functions sort().
-
+              <pre><code>STL所提供的各式各样算法中，sort()是最复杂最庞大的一个。这个算法接受两个RandomAccestlerators（随机存取
+迭代器），然后将区间内的所有元素以渐增方式由小到大重新排列。第二个版本则允许用户指定一个仿函数（functo-
+r），作为排序标准，STL的所有关系型容器主要包括set和map这两种容器（associative containers）都拥有自动
+排序功能（底层结构采用RB-tree，所以不需要用到这个sort算法。至于序列式容器（squence containers）中的 
+stack、queue 和priority-queue都有特别的出入口，不允许用户对元素排序。剩下vector.deque和list，前两者
+的迭代器属于RandomAccessiterators，适合使用sort算法，list的迭代器则属于Bidirectioinallterators,适
+合使用sort算法.list的迭代器则属于Bidirectionallterators,不在STL标准之列的slist,其迭代器更属于Forwa-
+rdIIterators,不在STL标准之列的slist,其迭代器更属于ForwardIIterators,都不适用与sort算法，如果要对list
+或slist排序，应该使用它们自己提供的member functions sort().
 </code></pre>
+
+<h1 id="table-of-contents">目录</h1>
               
             </div>
           </div>
