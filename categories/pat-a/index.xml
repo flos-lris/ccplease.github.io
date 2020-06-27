@@ -6,10 +6,199 @@
     <description>Recent content in PAT-A on agony的梦想屋</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 09 May 2020 19:01:24 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 17 May 2020 21:08:58 +0800</lastBuildDate>
     
 	<atom:link href="https://ccplease.github.io/categories/pat-a/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>A_1096-逻辑题</title>
+      <link>https://ccplease.github.io/2020/05/a_1096-%E9%80%BB%E8%BE%91%E9%A2%98/</link>
+      <pubDate>Sun, 17 May 2020 21:08:58 +0800</pubDate>
+      
+      <guid>https://ccplease.github.io/2020/05/a_1096-%E9%80%BB%E8%BE%91%E9%A2%98/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>A_1100-字符串(*)</title>
+      <link>https://ccplease.github.io/2020/05/a_1100-%E5%AD%97%E7%AC%A6%E4%B8%B2/</link>
+      <pubDate>Sun, 17 May 2020 18:56:54 +0800</pubDate>
+      
+      <guid>https://ccplease.github.io/2020/05/a_1100-%E5%AD%97%E7%AC%A6%E4%B8%B2/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>A_1094</title>
+      <link>https://ccplease.github.io/2020/05/a_1094/</link>
+      <pubDate>Sat, 16 May 2020 17:46:52 +0800</pubDate>
+      
+      <guid>https://ccplease.github.io/2020/05/a_1094/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>A_1093-逻辑题(*)</title>
+      <link>https://ccplease.github.io/2020/05/a_1093-%E9%80%BB%E8%BE%91%E9%A2%98/</link>
+      <pubDate>Sat, 16 May 2020 15:52:04 +0800</pubDate>
+      
+      <guid>https://ccplease.github.io/2020/05/a_1093-%E9%80%BB%E8%BE%91%E9%A2%98/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>A_1092-hash散列</title>
+      <link>https://ccplease.github.io/2020/05/a_1092-hash%E6%95%A3%E5%88%97/</link>
+      <pubDate>Sat, 16 May 2020 15:51:01 +0800</pubDate>
+      
+      <guid>https://ccplease.github.io/2020/05/a_1092-hash%E6%95%A3%E5%88%97/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>A_1091</title>
+      <link>https://ccplease.github.io/2020/05/a_1091/</link>
+      <pubDate>Sat, 16 May 2020 15:50:59 +0800</pubDate>
+      
+      <guid>https://ccplease.github.io/2020/05/a_1091/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>A_1090-多叉树的遍历(BFS/DFS)</title>
+      <link>https://ccplease.github.io/2020/05/a_1090-%E5%A4%9A%E5%8F%89%E6%A0%91%E7%9A%84%E9%81%8D%E5%8E%86bfs/dfs/</link>
+      <pubDate>Fri, 15 May 2020 20:14:34 +0800</pubDate>
+      
+      <guid>https://ccplease.github.io/2020/05/a_1090-%E5%A4%9A%E5%8F%89%E6%A0%91%E7%9A%84%E9%81%8D%E5%8E%86bfs/dfs/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>A_1089-插入与归并</title>
+      <link>https://ccplease.github.io/2020/05/a_1089-%E6%8F%92%E5%85%A5%E4%B8%8E%E5%BD%92%E5%B9%B6/</link>
+      <pubDate>Fri, 15 May 2020 20:14:30 +0800</pubDate>
+      
+      <guid>https://ccplease.github.io/2020/05/a_1089-%E6%8F%92%E5%85%A5%E4%B8%8E%E5%BD%92%E5%B9%B6/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>A_1088-分数的四则运算</title>
+      <link>https://ccplease.github.io/2020/05/a_1088-%E5%88%86%E6%95%B0%E7%9A%84%E5%9B%9B%E5%88%99%E8%BF%90%E7%AE%97/</link>
+      <pubDate>Fri, 15 May 2020 18:04:50 +0800</pubDate>
+      
+      <guid>https://ccplease.github.io/2020/05/a_1088-%E5%88%86%E6%95%B0%E7%9A%84%E5%9B%9B%E5%88%99%E8%BF%90%E7%AE%97/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>A_1087-dijkstra&#43;DFS/dijkstra</title>
+      <link>https://ccplease.github.io/2020/05/a_1087-dijkstra-dfs/dijkstra/</link>
+      <pubDate>Fri, 15 May 2020 18:04:48 +0800</pubDate>
+      
+      <guid>https://ccplease.github.io/2020/05/a_1087-dijkstra-dfs/dijkstra/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>A_1086-树的遍历(中序&#43;先序求后序)</title>
+      <link>https://ccplease.github.io/2020/05/a_1086-%E6%A0%91%E7%9A%84%E9%81%8D%E5%8E%86%E4%B8%AD%E5%BA%8F-%E5%85%88%E5%BA%8F%E6%B1%82%E5%90%8E%E5%BA%8F/</link>
+      <pubDate>Thu, 14 May 2020 16:16:42 +0800</pubDate>
+      
+      <guid>https://ccplease.github.io/2020/05/a_1086-%E6%A0%91%E7%9A%84%E9%81%8D%E5%8E%86%E4%B8%AD%E5%BA%8F-%E5%85%88%E5%BA%8F%E6%B1%82%E5%90%8E%E5%BA%8F/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>A_1085-二分查找</title>
+      <link>https://ccplease.github.io/2020/05/a_1085-%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/</link>
+      <pubDate>Wed, 13 May 2020 21:43:01 +0800</pubDate>
+      
+      <guid>https://ccplease.github.io/2020/05/a_1085-%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>A_1084-字符串</title>
+      <link>https://ccplease.github.io/2020/05/a_1084-%E5%AD%97%E7%AC%A6%E4%B8%B2/</link>
+      <pubDate>Wed, 13 May 2020 16:16:12 +0800</pubDate>
+      
+      <guid>https://ccplease.github.io/2020/05/a_1084-%E5%AD%97%E7%AC%A6%E4%B8%B2/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>A_1083-排序</title>
+      <link>https://ccplease.github.io/2020/05/a_1083-%E6%8E%92%E5%BA%8F/</link>
+      <pubDate>Wed, 13 May 2020 16:16:10 +0800</pubDate>
+      
+      <guid>https://ccplease.github.io/2020/05/a_1083-%E6%8E%92%E5%BA%8F/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>A_1082</title>
+      <link>https://ccplease.github.io/2020/05/a_1082/</link>
+      <pubDate>Tue, 12 May 2020 14:10:11 +0800</pubDate>
+      
+      <guid>https://ccplease.github.io/2020/05/a_1082/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>A_1081-分数的加法</title>
+      <link>https://ccplease.github.io/2020/05/a_1081-%E5%88%86%E6%95%B0%E7%9A%84%E5%8A%A0%E6%B3%95/</link>
+      <pubDate>Tue, 12 May 2020 14:10:08 +0800</pubDate>
+      
+      <guid>https://ccplease.github.io/2020/05/a_1081-%E5%88%86%E6%95%B0%E7%9A%84%E5%8A%A0%E6%B3%95/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>A_1080-排序</title>
+      <link>https://ccplease.github.io/2020/05/a_1080-%E6%8E%92%E5%BA%8F/</link>
+      <pubDate>Tue, 12 May 2020 14:10:05 +0800</pubDate>
+      
+      <guid>https://ccplease.github.io/2020/05/a_1080-%E6%8E%92%E5%BA%8F/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>A_1079-多叉树的遍历(DFS/BFS)</title>
+      <link>https://ccplease.github.io/2020/05/a_1079-%E5%A4%9A%E5%8F%89%E6%A0%91%E7%9A%84%E9%81%8D%E5%8E%86dfs/bfs/</link>
+      <pubDate>Mon, 11 May 2020 13:58:03 +0800</pubDate>
+      
+      <guid>https://ccplease.github.io/2020/05/a_1079-%E5%A4%9A%E5%8F%89%E6%A0%91%E7%9A%84%E9%81%8D%E5%8E%86dfs/bfs/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>A_1078-二次方探测</title>
+      <link>https://ccplease.github.io/2020/05/a_1078-%E4%BA%8C%E6%AC%A1%E6%96%B9%E6%8E%A2%E6%B5%8B/</link>
+      <pubDate>Mon, 11 May 2020 13:58:00 +0800</pubDate>
+      
+      <guid>https://ccplease.github.io/2020/05/a_1078-%E4%BA%8C%E6%AC%A1%E6%96%B9%E6%8E%A2%E6%B5%8B/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>A_1077-字符串处理</title>
+      <link>https://ccplease.github.io/2020/05/a_1077-%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%A4%84%E7%90%86/</link>
+      <pubDate>Mon, 11 May 2020 13:57:49 +0800</pubDate>
+      
+      <guid>https://ccplease.github.io/2020/05/a_1077-%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%A4%84%E7%90%86/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>A_1075-排序</title>
+      <link>https://ccplease.github.io/2020/05/a_1075-%E6%8E%92%E5%BA%8F/</link>
+      <pubDate>Mon, 11 May 2020 13:56:46 +0800</pubDate>
+      
+      <guid>https://ccplease.github.io/2020/05/a_1075-%E6%8E%92%E5%BA%8F/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>A_1074-逆置链表</title>
@@ -30,7 +219,7 @@
     </item>
     
     <item>
-      <title>A_1072-dijkstra</title>
+      <title>A_1072-dijkstra(*)</title>
       <link>https://ccplease.github.io/2020/05/a_1072-dijkstra/</link>
       <pubDate>Fri, 08 May 2020 19:23:18 +0800</pubDate>
       
@@ -363,47 +552,47 @@
     </item>
     
     <item>
-      <title>A_2031-字符串</title>
-      <link>https://ccplease.github.io/2020/04/a_2031-%E5%AD%97%E7%AC%A6%E4%B8%B2/</link>
+      <title>A_1031-字符串</title>
+      <link>https://ccplease.github.io/2020/04/a_1031-%E5%AD%97%E7%AC%A6%E4%B8%B2/</link>
       <pubDate>Sun, 19 Apr 2020 20:41:50 +0800</pubDate>
       
-      <guid>https://ccplease.github.io/2020/04/a_2031-%E5%AD%97%E7%AC%A6%E4%B8%B2/</guid>
+      <guid>https://ccplease.github.io/2020/04/a_1031-%E5%AD%97%E7%AC%A6%E4%B8%B2/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>A_2029-合并数组&#43;在线处理</title>
-      <link>https://ccplease.github.io/2020/04/a_2029-%E5%90%88%E5%B9%B6%E6%95%B0%E7%BB%84-%E5%9C%A8%E7%BA%BF%E5%A4%84%E7%90%86/</link>
+      <title>A_1029-合并数组&#43;在线处理</title>
+      <link>https://ccplease.github.io/2020/04/a_1029-%E5%90%88%E5%B9%B6%E6%95%B0%E7%BB%84-%E5%9C%A8%E7%BA%BF%E5%A4%84%E7%90%86/</link>
       <pubDate>Sun, 19 Apr 2020 20:41:45 +0800</pubDate>
       
-      <guid>https://ccplease.github.io/2020/04/a_2029-%E5%90%88%E5%B9%B6%E6%95%B0%E7%BB%84-%E5%9C%A8%E7%BA%BF%E5%A4%84%E7%90%86/</guid>
+      <guid>https://ccplease.github.io/2020/04/a_1029-%E5%90%88%E5%B9%B6%E6%95%B0%E7%BB%84-%E5%9C%A8%E7%BA%BF%E5%A4%84%E7%90%86/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>A_2028-sort函数使用</title>
-      <link>https://ccplease.github.io/2020/04/a_2028-sort%E5%87%BD%E6%95%B0%E4%BD%BF%E7%94%A8/</link>
+      <title>A_1028-sort函数使用</title>
+      <link>https://ccplease.github.io/2020/04/a_1028-sort%E5%87%BD%E6%95%B0%E4%BD%BF%E7%94%A8/</link>
       <pubDate>Sun, 19 Apr 2020 20:41:43 +0800</pubDate>
       
-      <guid>https://ccplease.github.io/2020/04/a_2028-sort%E5%87%BD%E6%95%B0%E4%BD%BF%E7%94%A8/</guid>
+      <guid>https://ccplease.github.io/2020/04/a_1028-sort%E5%87%BD%E6%95%B0%E4%BD%BF%E7%94%A8/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>A_2027-进制转换</title>
-      <link>https://ccplease.github.io/2020/04/a_2027-%E8%BF%9B%E5%88%B6%E8%BD%AC%E6%8D%A2/</link>
+      <title>A_1027-进制转换</title>
+      <link>https://ccplease.github.io/2020/04/a_1027-%E8%BF%9B%E5%88%B6%E8%BD%AC%E6%8D%A2/</link>
       <pubDate>Sun, 19 Apr 2020 20:41:40 +0800</pubDate>
       
-      <guid>https://ccplease.github.io/2020/04/a_2027-%E8%BF%9B%E5%88%B6%E8%BD%AC%E6%8D%A2/</guid>
+      <guid>https://ccplease.github.io/2020/04/a_1027-%E8%BF%9B%E5%88%B6%E8%BD%AC%E6%8D%A2/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>A_2026-队列模拟</title>
-      <link>https://ccplease.github.io/2020/04/a_2026-%E9%98%9F%E5%88%97%E6%A8%A1%E6%8B%9F/</link>
+      <title>A_1026-队列模拟</title>
+      <link>https://ccplease.github.io/2020/04/a_1026-%E9%98%9F%E5%88%97%E6%A8%A1%E6%8B%9F/</link>
       <pubDate>Sun, 19 Apr 2020 20:41:37 +0800</pubDate>
       
-      <guid>https://ccplease.github.io/2020/04/a_2026-%E9%98%9F%E5%88%97%E6%A8%A1%E6%8B%9F/</guid>
+      <guid>https://ccplease.github.io/2020/04/a_1026-%E9%98%9F%E5%88%97%E6%A8%A1%E6%8B%9F/</guid>
       <description></description>
     </item>
     
@@ -597,11 +786,11 @@
     </item>
     
     <item>
-      <title>A-1076</title>
-      <link>https://ccplease.github.io/2020/03/a-1076/</link>
+      <title>A-1076-图的遍历(bfs)</title>
+      <link>https://ccplease.github.io/2020/03/a-1076-%E5%9B%BE%E7%9A%84%E9%81%8D%E5%8E%86bfs/</link>
       <pubDate>Fri, 27 Mar 2020 19:39:21 +0800</pubDate>
       
-      <guid>https://ccplease.github.io/2020/03/a-1076/</guid>
+      <guid>https://ccplease.github.io/2020/03/a-1076-%E5%9B%BE%E7%9A%84%E9%81%8D%E5%8E%86bfs/</guid>
       <description></description>
     </item>
     

@@ -6,24 +6,15 @@
     <description>Recent content in Categories on agony的梦想屋</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 09 May 2020 19:24:20 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 17 May 2020 21:08:58 +0800</lastBuildDate>
     
 	<atom:link href="https://ccplease.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>通知</title>
-      <link>https://ccplease.github.io/categories/%E9%80%9A%E7%9F%A5/</link>
-      <pubDate>Sat, 09 May 2020 19:24:20 +0800</pubDate>
-      
-      <guid>https://ccplease.github.io/categories/%E9%80%9A%E7%9F%A5/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>PAT</title>
       <link>https://ccplease.github.io/categories/pat/</link>
-      <pubDate>Sat, 09 May 2020 19:01:24 +0800</pubDate>
+      <pubDate>Sun, 17 May 2020 21:08:58 +0800</pubDate>
       
       <guid>https://ccplease.github.io/categories/pat/</guid>
       <description></description>
@@ -32,9 +23,18 @@
     <item>
       <title>PAT-A</title>
       <link>https://ccplease.github.io/categories/pat-a/</link>
-      <pubDate>Sat, 09 May 2020 19:01:24 +0800</pubDate>
+      <pubDate>Sun, 17 May 2020 21:08:58 +0800</pubDate>
       
       <guid>https://ccplease.github.io/categories/pat-a/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>通知</title>
+      <link>https://ccplease.github.io/categories/%E9%80%9A%E7%9F%A5/</link>
+      <pubDate>Sat, 09 May 2020 19:24:20 +0800</pubDate>
+      
+      <guid>https://ccplease.github.io/categories/%E9%80%9A%E7%9F%A5/</guid>
       <description></description>
     </item>
     
